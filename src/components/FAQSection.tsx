@@ -7,28 +7,24 @@ import {
 
 const faqs = [
   {
-    question: "How quickly can I get started?",
-    answer: "Most teams are up and running within 15 minutes. Our onboarding wizard walks you through connecting your first data sources, and you'll see insights appearing immediately.",
+    question: "What is intotheopen?",
+    answer: "intotheopen is an AI-powered content platform that helps marketing and sales teams create content that lands, resonates, and performs. We validate, optimize, and refine your content to maximize engagement and conversions.",
   },
   {
-    question: "What integrations do you support?",
-    answer: "We integrate with 100+ marketing and sales tools including Google Ads, Meta Ads, LinkedIn, HubSpot, Salesforce, Google Analytics, Mixpanel, and many more. Custom integrations are available on Enterprise plans.",
+    question: "How does the validation engine work?",
+    answer: "Our validation engine analyzes your content against proven frameworks and best practices. It checks for clarity, emotional resonance, call-to-action effectiveness, and audience alignment to ensure your message hits the mark.",
   },
   {
-    question: "Is my data secure?",
-    answer: "Absolutely. We're SOC 2 Type II certified, GDPR compliant, and CCPA compliant. Your data is encrypted at rest and in transit, and we never sell or share your information.",
+    question: "Can I integrate intotheopen with my existing tools?",
+    answer: "Yes! intotheopen integrates seamlessly with popular marketing tools, CRMs, and content management systems. Enterprise plans include custom API access for deeper integrations.",
   },
   {
-    question: "Can I cancel anytime?",
-    answer: "Yes, you can cancel your subscription at any time. If you cancel, you'll retain access until the end of your current billing period. We also offer a 30-day money-back guarantee.",
+    question: "What types of content can I optimize?",
+    answer: "You can optimize any marketing or sales content including emails, landing pages, ad copy, social media posts, blog articles, product descriptions, and more.",
   },
   {
-    question: "Do you offer discounts for startups or nonprofits?",
-    answer: "Yes! We offer special pricing for qualified startups, educational institutions, and nonprofit organizations. Contact our sales team to learn more about our discount programs.",
-  },
-  {
-    question: "What kind of support do you provide?",
-    answer: "All plans include email support with response times under 24 hours. Professional plans get priority support with live chat, and Enterprise customers receive a dedicated account manager and phone support.",
+    question: "Is there a free trial available?",
+    answer: "Yes, we offer a 14-day free trial on all plans so you can experience the full power of intotheopen before committing. No credit card required to start.",
   },
 ];
 
