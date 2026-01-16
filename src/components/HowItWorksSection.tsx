@@ -1,77 +1,101 @@
-import { ArrowRight, Link, Gauge, Rocket } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 const steps = [
   {
-    number: "01",
-    icon: Link,
-    title: "Connect Your Sources",
-    description: "Integrate your ad platforms, CRM, website analytics, and more in just a few clicks. We support 100+ integrations out of the box.",
+    title: "Submit Draft",
+    tagline: "The first step to transforming your content from average to overachieving",
+    description: "Upload your draft and campaign brief. Our AI instantly forecasts performance and assigns a quality score, giving you a clear look into the future before publishing.",
+    cta: "Discover more",
   },
   {
-    number: "02",
-    icon: Gauge,
-    title: "See Your Data Unified",
-    description: "Watch as all your metrics come together in beautiful, customizable dashboards. No SQL required—just drag and drop.",
+    title: "Validation Engine",
+    tagline: "Engineer content that lands, resonates, and performs with our proprietary validation series that tests against 10+ performance signals",
+    description: "Run your content through our multi-layer validation series, where it's tested against multiple performance signals, including synthetic audience simulations and AI personas, delivering feedback in seconds, not weeks.",
+    cta: "Discover more",
   },
   {
-    number: "03",
-    icon: Rocket,
-    title: "Drive Growth with Insights",
-    description: "Act on AI-powered recommendations. Identify winning campaigns, cut waste, and prove ROI to stakeholders.",
+    title: "Optimisation Engine",
+    tagline: "Select from multiple optimised variants and get one step closer to the 30% of content that successfully delivers ROI",
+    description: "Our AI optimisation engine aggregates and synthesises results to generate multiple high-impact variants of your content, turning good ideas into great outcomes.",
+    cta: "Get started",
+  },
+  {
+    title: "Compare Insights",
+    tagline: "Stop guessing what works when you can know what works with intotheopen",
+    description: "Review side-by-side variants with predictive analytics, making it simple to choose the version most likely to deliver measurable impact.",
+    cta: "Get started",
+  },
+  {
+    title: "Publish & Refine",
+    tagline: "We don't stop at publication; our AI continues optimising until your content reaches its full potential. Publish anywhere.",
+    description: "Once live, intotheopen tracks performance in real time and automatically refines messaging to maximise ROI.",
+    cta: "Get started",
   },
 ];
 
 const HowItWorksSection = () => {
   return (
-    <section id="how-it-works" className="py-24 bg-secondary/50">
+    <section id="how-it-works" className="py-24 bg-[#0a0a0a]">
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <span className="inline-block text-accent font-medium text-sm mb-4 tracking-wide uppercase">
-            How it Works
-          </span>
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            Up and running in minutes
+          <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
+            How it works
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            No complex setup. No learning curve. Start seeing insights on day one.
+          <p className="text-lg text-gray-400 max-w-2xl mx-auto">
+            The magical conveyor belt transforming your drafts into high-impact content in five simple steps.
           </p>
         </div>
 
-        {/* Steps */}
-        <div className="max-w-4xl mx-auto">
+        {/* Steps - Stacked Cards */}
+        <div className="max-w-5xl mx-auto relative">
           {steps.map((step, index) => (
             <div
               key={index}
-              className="relative flex flex-col md:flex-row items-start gap-6 mb-12 last:mb-0"
+              className="relative mb-4 last:mb-0"
+              style={{
+                marginTop: index === 0 ? 0 : '-20px',
+                zIndex: steps.length - index,
+              }}
             >
-              {/* Step Number & Connector */}
-              <div className="flex flex-col items-center">
-                <div className="w-16 h-16 bg-accent text-accent-foreground rounded-2xl flex items-center justify-center font-bold text-xl shadow-glow">
-                  {step.number}
-                </div>
-                {index < steps.length - 1 && (
-                  <div className="hidden md:block w-0.5 h-24 bg-gradient-to-b from-accent to-transparent mt-4" />
-                )}
-              </div>
-
-              {/* Content Card */}
-              <div className="flex-1 bg-card rounded-xl p-6 border border-border shadow-soft hover:shadow-medium transition-all duration-300">
-                <div className="flex items-center gap-3 mb-3">
-                  <step.icon className="w-5 h-5 text-accent" />
-                  <h3 className="text-xl font-semibold text-foreground">
-                    {step.title}
-                  </h3>
-                </div>
-                <p className="text-muted-foreground">
-                  {step.description}
-                </p>
-                {index < steps.length - 1 && (
-                  <div className="mt-4 flex items-center gap-2 text-accent text-sm font-medium">
-                    <span>Then</span>
-                    <ArrowRight className="w-4 h-4" />
+              <div 
+                className="bg-[#0d1321] rounded-2xl overflow-hidden border border-gray-800/50"
+                style={{
+                  transform: `translateY(${index * 8}px)`,
+                }}
+              >
+                <div className="flex flex-col md:flex-row">
+                  {/* Content Side */}
+                  <div className="flex-1 p-8 md:p-12 flex flex-col justify-center">
+                    <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">
+                      {step.title}
+                    </h3>
+                    <p className="text-gray-400 italic mb-4 leading-relaxed">
+                      {step.tagline}
+                    </p>
+                    <p className="text-gray-500 mb-6 leading-relaxed">
+                      {step.description}
+                    </p>
+                    <a 
+                      href="#" 
+                      className="inline-flex items-center gap-2 text-accent font-medium hover:gap-3 transition-all"
+                    >
+                      {step.cta}
+                      <ArrowRight className="w-4 h-4" />
+                    </a>
                   </div>
-                )}
+
+                  {/* Image Side */}
+                  <div className="flex-1 relative min-h-[300px] md:min-h-[400px]">
+                    <div className="absolute inset-0 bg-gradient-to-br from-amber-200/20 via-blue-300/20 to-orange-200/20 rounded-xl m-4">
+                      <img
+                        src="/placeholder.svg"
+                        alt={step.title}
+                        className="w-full h-full object-cover rounded-xl opacity-60"
+                      />
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           ))}
