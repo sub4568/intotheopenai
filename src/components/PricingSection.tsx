@@ -4,9 +4,9 @@ import { Check } from "lucide-react";
 const plans = [
   {
     name: "Core",
-    price: "$49",
+    price: "$649",
     period: "/mo",
-    description: "For individuals and small teams getting started",
+    description: "Access essential features to boost your content strategy.",
     features: [
       "5 content pieces per month",
       "Basic validation engine",
@@ -20,9 +20,9 @@ const plans = [
   },
   {
     name: "Professional",
-    price: "$99",
+    price: "$1199",
     period: "/mo",
-    description: "For growing teams who need more power",
+    description: "Unlock more features to scale your content impact.",
     features: [
       "25 content pieces per month",
       "Advanced validation engine",
@@ -40,7 +40,7 @@ const plans = [
     name: "Enterprise",
     price: "Custom",
     period: " Pricing",
-    description: "For large organizations with custom needs",
+    description: "Comprehensive solutions for maximum efficiency.",
     features: [
       "Unlimited content pieces",
       "Custom validation rules",
