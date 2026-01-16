@@ -1,43 +1,58 @@
 import { 
-  BarChart3, 
-  Zap, 
-  Target, 
-  LineChart, 
-  Shield, 
-  Puzzle 
+  CheckCircle, 
+  Calendar, 
+  MessageCircle, 
+  Sparkles, 
+  User,
+  X
 } from "lucide-react";
 
 const features = [
   {
-    icon: BarChart3,
-    title: "Unified Dashboard",
-    description: "All your marketing channels in one view. No more switching between platforms.",
+    icon: CheckCircle,
+    title: "Validate at Scale",
+    subtitle: "Instant feedback without focus groups",
+    description: "Run your content through our proprietary validation engine, testing against 10+ performance signals and synthetic audience simulations in seconds.",
   },
   {
-    icon: Zap,
-    title: "Real-time Analytics",
-    description: "See performance as it happens. React instantly to market changes.",
+    icon: Calendar,
+    title: "Predict Performance",
+    subtitle: "Know what works before you publish",
+    description: "Forecast how your content will perform with AI-powered predictive analytics, so you can invest only in content that delivers ROI.",
   },
   {
-    icon: Target,
-    title: "Campaign Attribution",
-    description: "Know exactly which campaigns drive revenue with multi-touch attribution.",
+    icon: MessageCircle,
+    title: "Optimise Messaging",
+    subtitle: "Transform drafts into high-impact content",
+    description: "Our optimisation engine generates multiple variants of your content, showing side-by-side comparisons with predicted performance scores.",
+  },
+];
+
+const bottomFeatures = [
+  {
+    icon: Sparkles,
+    title: "Real-Time Tracking",
+    subtitle: "Stay ahead after you hit publish",
+    description: "Monitor engagement metrics live, track KPIs in real time, and see exactly how your content is landing with your audience.",
   },
   {
-    icon: LineChart,
-    title: "Predictive Insights",
-    description: "AI-powered forecasting helps you plan budgets with confidence.",
+    icon: User,
+    title: "Continuous Refinement",
+    subtitle: "Content that gets smarter over time",
+    description: "intotheopen automatically fine-tunes messaging after publication, ensuring your content always reaches its full potential.",
   },
-  {
-    icon: Shield,
-    title: "Data Privacy First",
-    description: "GDPR and CCPA compliant. Your data stays yours, always.",
-  },
-  {
-    icon: Puzzle,
-    title: "Easy Integrations",
-    description: "Connect 100+ tools in minutes. No engineering required.",
-  },
+];
+
+const intoTheopenBenefits = [
+  "Forecasts how content will perform before publishing, no wasted campaigns",
+  "Automatically generates optimised versions and refines content in real time post-publish",
+  "Tests content against 10+ performance signals, including synthetic audiences and AI personas, delivering feedback in seconds.",
+];
+
+const traditionalDrawbacks = [
+  "Success is only measured after launch through A/B tests and analytics, wasting budget on underperforming content.",
+  "Relies on slow, costly focus groups, surveys, or endless internal reviews; feedback takes days, weeks, or months.",
+  "Content is static once published; improvements require a full rewrite or new campaign, increasing cost and effort.",
 ];
 
 const FeaturesSection = () => {
@@ -46,35 +61,102 @@ const FeaturesSection = () => {
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <span className="inline-block text-accent font-medium text-sm mb-4 tracking-wide uppercase">
-            Features
-          </span>
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            Everything you need to scale marketing
+            Our features
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Purpose-built for marketing and sales teams who need clarity, speed, and results.
+            Supercharge your content with AI-driven proactive content intelligence
           </p>
         </div>
 
-        {/* Features Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* Top Features Grid - 3 columns */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
           {features.map((feature, index) => (
             <div
               key={index}
-              className="group p-6 bg-card rounded-xl border border-border hover:border-accent/30 hover:shadow-medium transition-all duration-300"
+              className="group p-6 bg-card rounded-2xl border border-border hover:border-accent/30 transition-all duration-300"
             >
-              <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-accent/20 transition-colors">
+              <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center mb-4">
                 <feature.icon className="w-6 h-6 text-accent" />
               </div>
-              <h3 className="text-lg font-semibold text-foreground mb-2">
+              <h3 className="text-xl font-semibold text-foreground mb-2">
                 {feature.title}
               </h3>
-              <p className="text-muted-foreground">
+              <p className="text-sm text-accent italic mb-3">
+                {feature.subtitle}
+              </p>
+              <p className="text-muted-foreground text-sm leading-relaxed">
                 {feature.description}
               </p>
             </div>
           ))}
+        </div>
+
+        {/* Bottom Features Grid - 2 columns */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto mb-24">
+          {bottomFeatures.map((feature, index) => (
+            <div
+              key={index}
+              className="group p-6 bg-card rounded-2xl border border-border hover:border-accent/30 transition-all duration-300"
+            >
+              <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center mb-4">
+                <feature.icon className="w-6 h-6 text-accent" />
+              </div>
+              <h3 className="text-xl font-semibold text-foreground mb-2">
+                {feature.title}
+              </h3>
+              <p className="text-sm text-accent italic mb-3">
+                {feature.subtitle}
+              </p>
+              <p className="text-muted-foreground text-sm leading-relaxed">
+                {feature.description}
+              </p>
+            </div>
+          ))}
+        </div>
+
+        {/* Why Teams Choose Section */}
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground">
+            Why teams choose intotheopen
+          </h2>
+        </div>
+
+        {/* Comparison Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+          {/* Intotheopen Card */}
+          <div className="p-8 bg-card rounded-2xl border border-border">
+            <h3 className="text-xl font-semibold text-foreground mb-6 text-center">
+              Intotheopen
+            </h3>
+            <div className="space-y-4">
+              {intoTheopenBenefits.map((benefit, index) => (
+                <div key={index} className="flex items-start gap-3">
+                  <Sparkles className="w-5 h-5 text-accent mt-0.5 flex-shrink-0" />
+                  <p className="text-muted-foreground text-sm leading-relaxed">
+                    {benefit}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Traditional Methods Card */}
+          <div className="p-8 bg-card rounded-2xl border border-border">
+            <h3 className="text-xl font-semibold text-foreground mb-6 text-center">
+              Traditional methods
+            </h3>
+            <div className="space-y-4">
+              {traditionalDrawbacks.map((drawback, index) => (
+                <div key={index} className="flex items-start gap-3">
+                  <X className="w-5 h-5 text-destructive mt-0.5 flex-shrink-0" />
+                  <p className="text-muted-foreground text-sm leading-relaxed">
+                    {drawback}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </section>
