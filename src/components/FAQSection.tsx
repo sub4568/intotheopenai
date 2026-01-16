@@ -8,24 +8,32 @@ import {
 const faqs = [
   {
     question: "What is intotheopen?",
-    answer: "intotheopen is an AI-powered content platform that helps marketing and sales teams create content that lands, resonates, and performs. We validate, optimize, and refine your content to maximize engagement and conversions.",
+    answer: "intotheopen is an AI-driven proactive content intelligence platform that predicts, validates, and optimises high-impact content performance before and after it goes live, helping comms and marketing teams eliminate wasted time, effort, and budget.",
   },
   {
-    question: "How does the validation engine work?",
-    answer: "Our validation engine analyzes your content against proven frameworks and best practices. It checks for clarity, emotional resonance, call-to-action effectiveness, and audience alignment to ensure your message hits the mark.",
+    question: "How does intotheopen work?",
+    answer: "Our platform forecasts how content will perform, tests it against 10+ performance signals (including synthetic audiences), generates optimised variants ready to be published, and tracks performance in real time for continuous refinement to maximise ROI.",
   },
   {
-    question: "Can I integrate intotheopen with my existing tools?",
-    answer: "Yes! intotheopen integrates seamlessly with popular marketing tools, CRMs, and content management systems. Enterprise plans include custom API access for deeper integrations.",
+    question: "Who is intotheopen for?",
+    answer: "We’re built for comms and marketing teams in agencies, brands, and enterprises who want to improve content effectiveness, reduce wasted spend, and prove ROI with data-backed insights.",
   },
   {
-    question: "What types of content can I optimize?",
-    answer: "You can optimize any marketing or sales content including emails, landing pages, ad copy, social media posts, blog articles, product descriptions, and more.",
+    question: "What makes intotheopen different from traditional tools?",
+    answer: "Unlike reactive tools that only measure results after publishing, intotheopen is proactive. We show you how content will perform before it goes live, and keep improving it afterwards.",
   },
   {
-    question: "Is there a free trial available?",
-    answer: "Yes, we offer a 14-day free trial on all plans so you can experience the full power of intotheopen before committing. No credit card required to start.",
+    question: "How many performance indicators does intotheopen test against?",
+    answer: "Content is tested against 10+ performance signals, covering clarity, tone, engagement, audience resonance, and more. These insights are aggregated into a single optimisation engine for actionable results.",
   },
+  {
+    question: "Can you directly push through intotheopen?",
+    answer: "Yes. You can publish content directly from intotheopen or use our insights to refine content published on other platforms. Either way, your content is continuously tracked and optimised.",
+  },
+  {
+    question: "How much does intotheopen cost?",
+    answer: "We offer tiered subscription plans for startups, agencies, and enterprises, starting from $649/month. Pricing scales with your team’s needs, integrations, and usage.",
+  }
 ];
 
 const FAQSection = () => {
