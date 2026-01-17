@@ -1,7 +1,16 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import { useEffect, useState } from "react";
 
 const HeroSection = () => {
+  const [scrollY, setScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => setScrollY(window.scrollY);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <section className="relative min-h-screen pt-24 pb-20 overflow-hidden bg-background">
       <div className="container mx-auto px-4 relative z-10">
@@ -30,7 +39,10 @@ const HeroSection = () => {
           </div>
 
           <div className="relative h-[500px] lg:h-[600px]">
-            <div className="absolute top-0 right-0 w-[85%] h-[55%] rounded-2xl overflow-hidden shadow-large opacity-0 animate-fade-up [animation-delay:300ms] [animation-fill-mode:forwards]">
+            <div
+              className="absolute top-0 right-0 w-[85%] h-[55%] rounded-2xl overflow-hidden shadow-large opacity-0 animate-fade-up [animation-delay:300ms] [animation-fill-mode:forwards]"
+              style={{ transform: `translateY(${scrollY * 0.1}px)` }}
+            >
               <img
                 src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80"
                 alt="Dashboard analytics"
@@ -38,7 +50,10 @@ const HeroSection = () => {
               />
             </div>
 
-            <div className="absolute bottom-0 left-0 w-[85%] h-[55%] rounded-2xl overflow-hidden shadow-large opacity-0 animate-fade-up [animation-delay:500ms] [animation-fill-mode:forwards]">
+            <div
+              className="absolute bottom-0 left-0 w-[85%] h-[55%] rounded-2xl overflow-hidden shadow-large opacity-0 animate-fade-up [animation-delay:500ms] [animation-fill-mode:forwards]"
+              style={{ transform: `translateY(${scrollY * -0.05}px)` }}
+            >
               <img
                 src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80"
                 alt="Team collaboration"
