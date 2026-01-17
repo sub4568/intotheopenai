@@ -1,11 +1,12 @@
-import { 
-  CheckCircle, 
-  Calendar, 
-  MessageCircle, 
-  Sparkles, 
+import {
+  CheckCircle,
+  Calendar,
+  MessageCircle,
+  Sparkles,
   User,
   X
 } from "lucide-react";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const features = [
   {
@@ -56,11 +57,18 @@ const traditionalDrawbacks = [
 ];
 
 const FeaturesSection = () => {
+  const { ref: headerRef, isVisible: headerVisible } = useScrollAnimation();
+  const { ref: gridRef, isVisible: gridVisible } = useScrollAnimation();
+  const { ref: bottomRef, isVisible: bottomVisible } = useScrollAnimation();
+  const { ref: comparisonRef, isVisible: comparisonVisible } = useScrollAnimation();
+
   return (
     <section id="features" className="py-24 bg-background">
       <div className="container mx-auto px-4">
-        {/* Section Header */}
-        <div className="text-center mb-16">
+        <div
+          ref={headerRef}
+          className={`text-center mb-16 transition-all duration-700 ${headerVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+        >
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
             Our features
           </h2>
@@ -69,14 +77,14 @@ const FeaturesSection = () => {
           </p>
         </div>
 
-        {/* Top Features Grid - 3 columns */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+        <div ref={gridRef} className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
           {features.map((feature, index) => (
             <div
               key={index}
-              className="group p-6 bg-card rounded-2xl border border-border hover:border-accent/30 transition-all duration-300"
+              className={`group p-6 bg-card rounded-2xl border border-border hover:border-accent/30 hover:shadow-medium hover:-translate-y-1 transition-all duration-300 ${gridVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+              style={{ transitionDelay: gridVisible ? `${index * 100}ms` : '0ms' }}
             >
-              <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center mb-4">
+              <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
                 <feature.icon className="w-6 h-6 text-accent" />
               </div>
               <h3 className="text-xl font-semibold text-foreground mb-2">
@@ -92,14 +100,14 @@ const FeaturesSection = () => {
           ))}
         </div>
 
-        {/* Bottom Features Grid - 2 columns */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto mb-24">
+        <div ref={bottomRef} className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto mb-24">
           {bottomFeatures.map((feature, index) => (
             <div
               key={index}
-              className="group p-6 bg-card rounded-2xl border border-border hover:border-accent/30 transition-all duration-300"
+              className={`group p-6 bg-card rounded-2xl border border-border hover:border-accent/30 hover:shadow-medium hover:-translate-y-1 transition-all duration-300 ${bottomVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+              style={{ transitionDelay: bottomVisible ? `${index * 100}ms` : '0ms' }}
             >
-              <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center mb-4">
+              <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
                 <feature.icon className="w-6 h-6 text-accent" />
               </div>
               <h3 className="text-xl font-semibold text-foreground mb-2">
@@ -115,17 +123,20 @@ const FeaturesSection = () => {
           ))}
         </div>
 
-        {/* Why Teams Choose Section */}
-        <div className="text-center mb-12">
+        <div
+          ref={comparisonRef}
+          className={`text-center mb-12 transition-all duration-700 ${comparisonVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+        >
           <h2 className="text-3xl md:text-4xl font-bold text-foreground">
             Why teams choose intotheopen
           </h2>
         </div>
 
-        {/* Comparison Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
-          {/* Intotheopen Card */}
-          <div className="p-8 bg-card rounded-2xl border border-border">
+          <div
+            className={`p-8 bg-card rounded-2xl border border-border hover:shadow-medium transition-all duration-300 ${comparisonVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+            style={{ transitionDelay: comparisonVisible ? '100ms' : '0ms' }}
+          >
             <h3 className="text-xl font-semibold text-foreground mb-6 text-center">
               Intotheopen
             </h3>
@@ -141,8 +152,10 @@ const FeaturesSection = () => {
             </div>
           </div>
 
-          {/* Traditional Methods Card */}
-          <div className="p-8 bg-card rounded-2xl border border-border">
+          <div
+            className={`p-8 bg-card rounded-2xl border border-border hover:shadow-medium transition-all duration-300 ${comparisonVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+            style={{ transitionDelay: comparisonVisible ? '200ms' : '0ms' }}
+          >
             <h3 className="text-xl font-semibold text-foreground mb-6 text-center">
               Traditional methods
             </h3>

@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Check } from "lucide-react";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const plans = [
   {
@@ -57,11 +58,16 @@ const plans = [
 ];
 
 const PricingSection = () => {
+  const { ref: headerRef, isVisible: headerVisible } = useScrollAnimation();
+  const { ref: cardsRef, isVisible: cardsVisible } = useScrollAnimation();
+
   return (
     <section id="pricing" className="py-24 bg-secondary/50">
       <div className="container mx-auto px-4">
-        {/* Section Header */}
-        <div className="text-center mb-16">
+        <div
+          ref={headerRef}
+          className={`text-center mb-16 transition-all duration-700 ${headerVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+        >
           <span className="inline-block text-accent font-medium text-sm mb-4 tracking-wide uppercase">
             Transparent Pricing
           </span>
@@ -73,18 +79,17 @@ const PricingSection = () => {
           </p>
         </div>
 
-        {/* Pricing Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        <div ref={cardsRef} className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
           {plans.map((plan, index) => (
             <div
               key={index}
-              className={`relative p-8 rounded-2xl border transition-all duration-300 ${
+              className={`relative p-8 rounded-2xl border transition-all duration-300 hover:-translate-y-2 ${
                 plan.popular
                   ? "bg-card border-accent shadow-glow scale-105"
                   : "bg-card border-border hover:border-accent/30 hover:shadow-medium"
-              }`}
+              } ${cardsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+              style={{ transitionDelay: cardsVisible ? `${index * 150}ms` : '0ms' }}
             >
-              {/* Popular Badge */}
               {plan.popular && (
                 <div className="absolute -top-4 left-1/2 -translate-x-1/2">
                   <span className="bg-gradient-accent text-accent-foreground text-xs font-bold px-4 py-1 rounded-full shadow-glow">
@@ -93,7 +98,6 @@ const PricingSection = () => {
                 </div>
               )}
 
-              {/* Plan Header */}
               <div className="text-center mb-6">
                 <h3 className="text-xl font-semibold text-foreground mb-2">
                   {plan.name}
@@ -109,7 +113,6 @@ const PricingSection = () => {
                 </p>
               </div>
 
-              {/* Features */}
               <ul className="space-y-3 mb-8">
                 {plan.features.map((feature, featureIndex) => (
                   <li key={featureIndex} className="flex items-start gap-3">
@@ -119,11 +122,10 @@ const PricingSection = () => {
                 ))}
               </ul>
 
-              {/* CTA */}
               <Button
                 variant={plan.variant}
                 size="lg"
-                className="w-full"
+                className="w-full hover:scale-105 transition-transform duration-200"
               >
                 {plan.cta}
               </Button>
@@ -131,8 +133,10 @@ const PricingSection = () => {
           ))}
         </div>
 
-        {/* Trust Note */}
-        <p className="text-center text-sm text-muted-foreground mt-12">
+        <p
+          className={`text-center text-sm text-muted-foreground mt-12 transition-all duration-700 ${cardsVisible ? 'opacity-100' : 'opacity-0'}`}
+          style={{ transitionDelay: cardsVisible ? '500ms' : '0ms' }}
+        >
           All plans include a 14-day free trial. No credit card required.
         </p>
       </div>
