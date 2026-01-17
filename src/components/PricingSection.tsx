@@ -83,7 +83,7 @@ const PricingSection = () => {
           {plans.map((plan, index) => (
             <div
               key={index}
-              className={`group relative p-8 rounded-2xl border transition-all duration-300 hover:-translate-y-3 hover:scale-[1.03] cursor-pointer ${
+              className={`group relative p-8 rounded-2xl border transition-all duration-300 hover:-translate-y-3 hover:scale-[1.03] cursor-pointer flex flex-col ${
                 plan.popular
                   ? "bg-card border-accent shadow-glow scale-105 hover:shadow-2xl"
                   : "bg-card border-border hover:border-accent/50 hover:shadow-xl"
@@ -113,7 +113,7 @@ const PricingSection = () => {
                 </p>
               </div>
 
-              <ul className="space-y-3 mb-8">
+              <ul className="space-y-3 mb-8 flex-grow">
                 {plan.features.map((feature, featureIndex) => (
                   <li key={featureIndex} className="flex items-start gap-3 group/item hover:translate-x-1 transition-transform duration-200">
                     <Check className="w-5 h-5 text-accent shrink-0 mt-0.5 group-hover/item:scale-125 transition-transform duration-200" />
@@ -125,7 +125,7 @@ const PricingSection = () => {
               <Button
                 variant={plan.variant}
                 size="lg"
-                className="w-full hover:scale-105 transition-transform duration-200"
+                className="w-full hover:scale-105 transition-transform duration-200 mt-auto"
               >
                 {plan.cta}
               </Button>
