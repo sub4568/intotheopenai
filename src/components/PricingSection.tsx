@@ -83,10 +83,10 @@ const PricingSection = () => {
           {plans.map((plan, index) => (
             <div
               key={index}
-              className={`relative p-8 rounded-2xl border transition-all duration-300 hover:-translate-y-2 ${
+              className={`group relative p-8 rounded-2xl border transition-all duration-300 hover:-translate-y-3 hover:scale-[1.03] cursor-pointer ${
                 plan.popular
-                  ? "bg-card border-accent shadow-glow scale-105"
-                  : "bg-card border-border hover:border-accent/30 hover:shadow-medium"
+                  ? "bg-card border-accent shadow-glow scale-105 hover:shadow-2xl"
+                  : "bg-card border-border hover:border-accent/50 hover:shadow-xl"
               } ${cardsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
               style={{ transitionDelay: cardsVisible ? `${index * 150}ms` : '0ms' }}
             >
@@ -99,10 +99,10 @@ const PricingSection = () => {
               )}
 
               <div className="text-center mb-6">
-                <h3 className="text-xl font-semibold text-foreground mb-2">
+                <h3 className="text-xl font-semibold text-foreground mb-2 group-hover:text-accent transition-colors duration-300">
                   {plan.name}
                 </h3>
-                <div className="flex items-baseline justify-center gap-1">
+                <div className="flex items-baseline justify-center gap-1 group-hover:scale-110 transition-transform duration-300">
                   <span className="text-4xl font-bold text-foreground">
                     {plan.price}
                   </span>
@@ -115,8 +115,8 @@ const PricingSection = () => {
 
               <ul className="space-y-3 mb-8">
                 {plan.features.map((feature, featureIndex) => (
-                  <li key={featureIndex} className="flex items-start gap-3">
-                    <Check className="w-5 h-5 text-accent shrink-0 mt-0.5" />
+                  <li key={featureIndex} className="flex items-start gap-3 group/item hover:translate-x-1 transition-transform duration-200">
+                    <Check className="w-5 h-5 text-accent shrink-0 mt-0.5 group-hover/item:scale-125 transition-transform duration-200" />
                     <span className="text-sm text-foreground">{feature}</span>
                   </li>
                 ))}
