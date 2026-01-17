@@ -1,9 +1,16 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useMemo } from "react";
+import { motion } from "framer-motion";
+import { BackgroundPaths } from "@/components/ui/background-paths";
 
 const HeroSection = () => {
   const [scrollY, setScrollY] = useState(0);
+  const [titleNumber, setTitleNumber] = useState(0);
+  const titles = useMemo(
+    () => ["performs", "converts", "delivers", "succeeds", "resonates"],
+    []
+  );
 
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY);
@@ -11,8 +18,20 @@ const HeroSection = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+    const timeoutId = setTimeout(() => {
+      if (titleNumber === titles.length - 1) {
+        setTitleNumber(0);
+      } else {
+        setTitleNumber(titleNumber + 1);
+      }
+    }, 2000);
+    return () => clearTimeout(timeoutId);
+  }, [titleNumber, titles]);
+
   return (
     <section className="relative min-h-screen pt-24 pb-20 overflow-hidden bg-background">
+      <BackgroundPaths />
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-20 left-10 w-72 h-72 bg-accent/5 rounded-full blur-3xl animate-float-slow" />
         <div className="absolute bottom-20 right-10 w-96 h-96 bg-primary/5 rounded-full blur-3xl animate-float-medium" />
@@ -25,7 +44,33 @@ const HeroSection = () => {
               Engineer content<br />
               that lands,<br />
               resonates,<br />
-              <span className="text-accent">and performs</span>
+              <span className="text-accent inline-block">
+                and&nbsp;
+                <span className="relative inline-block min-w-[200px] md:min-w-[280px] lg:min-w-[320px]">
+                  {titles.map((title, index) => (
+                    <motion.span
+                      key={index}
+                      className="absolute left-0"
+                      initial={{ opacity: 0, y: "-100" }}
+                      transition={{ type: "spring", stiffness: 50 }}
+                      animate={
+                        titleNumber === index
+                          ? {
+                              y: 0,
+                              opacity: 1,
+                            }
+                          : {
+                              y: titleNumber > index ? -150 : 150,
+                              opacity: 0,
+                            }
+                      }
+                    >
+                      {title}
+                    </motion.span>
+                  ))}
+                  <span className="invisible">{titles[0]}</span>
+                </span>
+              </span>
             </h1>
 
             <p className="text-lg text-muted-foreground mb-8 leading-relaxed opacity-0 animate-fade-up [animation-delay:200ms] [animation-fill-mode:forwards]">
