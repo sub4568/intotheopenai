@@ -17,11 +17,11 @@ const Navbar = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <a href="#" className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-gradient-accent rounded-lg flex items-center justify-center">
+          <a href="#" className="flex items-center gap-2 group">
+            <div className="w-8 h-8 bg-gradient-accent rounded-lg flex items-center justify-center group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
               <span className="text-accent-foreground font-bold text-sm">io</span>
             </div>
-            <span className="font-semibold text-foreground">intotheopen</span>
+            <span className="font-semibold text-foreground group-hover:text-accent transition-colors duration-300">intotheopen</span>
           </a>
 
           {/* Desktop Navigation */}
@@ -30,7 +30,7 @@ const Navbar = () => {
               <a
                 key={link.label}
                 href={link.href}
-                className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                className="relative text-sm text-muted-foreground hover:text-accent transition-all duration-300 hover:scale-110 after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-accent after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300"
               >
                 {link.label}
               </a>
@@ -39,12 +39,7 @@ const Navbar = () => {
 
           {/* CTA Buttons */}
           <div className="hidden md:flex items-center gap-3">
-            <Button variant="ghost" size="sm">
-              Log in
-            </Button>
-            <Button variant="accent" size="sm">
-              Start Free Trial
-            </Button>
+            {/* Removed login and trial buttons */}
           </div>
 
           {/* Mobile Menu Button */}
@@ -65,20 +60,12 @@ const Navbar = () => {
                 <a
                   key={link.label}
                   href={link.href}
-                  className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                  className="text-sm text-muted-foreground hover:text-accent hover:translate-x-2 transition-all duration-300"
                   onClick={() => setIsOpen(false)}
                 >
                   {link.label}
                 </a>
               ))}
-              <div className="flex flex-col gap-2 pt-4 border-t border-border">
-                <Button variant="ghost" size="sm">
-                  Log in
-                </Button>
-                <Button variant="accent" size="sm">
-                  Start Free Trial
-                </Button>
-              </div>
             </div>
           </div>
         )}

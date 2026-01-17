@@ -33,23 +33,23 @@ const Footer = () => {
         <div className="grid grid-cols-2 md:grid-cols-5 gap-8 mb-12">
           {/* Brand Column */}
           <div className="col-span-2 md:col-span-1">
-            <a href="#" className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 bg-gradient-accent rounded-lg flex items-center justify-center">
+            <a href="#" className="flex items-center gap-2 mb-4 group">
+              <div className="w-8 h-8 bg-gradient-accent rounded-lg flex items-center justify-center group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
                 <span className="text-accent-foreground font-bold text-sm">io</span>
               </div>
-              <span className="font-semibold text-foreground">intotheopen</span>
+              <span className="font-semibold text-foreground group-hover:text-accent transition-colors duration-300">intotheopen</span>
             </a>
             <p className="text-sm text-muted-foreground mb-4">
               Marketing analytics that drive real results.
             </p>
             <div className="flex items-center gap-4">
-              <a href="#" className="text-muted-foreground hover:text-accent transition-colors">
+              <a href="#" className="text-muted-foreground hover:text-accent hover:scale-125 hover:-translate-y-1 transition-all duration-300">
                 <Twitter className="w-5 h-5" />
               </a>
-              <a href="#" className="text-muted-foreground hover:text-accent transition-colors">
+              <a href="#" className="text-muted-foreground hover:text-accent hover:scale-125 hover:-translate-y-1 transition-all duration-300">
                 <Linkedin className="w-5 h-5" />
               </a>
-              <a href="#" className="text-muted-foreground hover:text-accent transition-colors">
+              <a href="#" className="text-muted-foreground hover:text-accent hover:scale-125 hover:-translate-y-1 transition-all duration-300">
                 <Youtube className="w-5 h-5" />
               </a>
             </div>
@@ -61,7 +61,7 @@ const Footer = () => {
             <ul className="space-y-3">
               {footerLinks.product.map((link) => (
                 <li key={link.label}>
-                  <a href={link.href} className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                  <a href={link.href} className="text-sm text-muted-foreground hover:text-accent hover:translate-x-1 inline-block transition-all duration-300">
                     {link.label}
                   </a>
                 </li>
@@ -75,7 +75,7 @@ const Footer = () => {
             <ul className="space-y-3">
               {footerLinks.company.map((link) => (
                 <li key={link.label}>
-                  <a href={link.href} className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                  <a href={link.href} className="text-sm text-muted-foreground hover:text-accent hover:translate-x-1 inline-block transition-all duration-300">
                     {link.label}
                   </a>
                 </li>
@@ -89,7 +89,7 @@ const Footer = () => {
             <ul className="space-y-3">
               {footerLinks.resources.map((link) => (
                 <li key={link.label}>
-                  <a href={link.href} className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                  <a href={link.href} className="text-sm text-muted-foreground hover:text-accent hover:translate-x-1 inline-block transition-all duration-300">
                     {link.label}
                   </a>
                 </li>
@@ -103,7 +103,7 @@ const Footer = () => {
             <ul className="space-y-3">
               {footerLinks.legal.map((link) => (
                 <li key={link.label}>
-                  <a href={link.href} className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                  <a href={link.href} className="text-sm text-muted-foreground hover:text-accent hover:translate-x-1 inline-block transition-all duration-300">
                     {link.label}
                   </a>
                 </li>
