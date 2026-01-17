@@ -65,8 +65,7 @@ const ContactSection = () => {
           </div>
 
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
-            {/* Form */}
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-6 animate-slide-in-left">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-primary-foreground mb-2">
                   Your name
@@ -118,8 +117,7 @@ const ContactSection = () => {
               </Button>
             </form>
 
-            {/* Contact Details */}
-            <div className="space-y-10 lg:pl-8">
+            <div className="space-y-10 lg:pl-8 animate-slide-in-right">
               {/* Email */}
               <div className="text-center lg:text-left">
                 <div className="flex items-center justify-center lg:justify-start gap-2 mb-3">
