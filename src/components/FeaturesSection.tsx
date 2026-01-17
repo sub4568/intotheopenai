@@ -81,7 +81,7 @@ const FeaturesSection = () => {
           {features.map((feature, index) => (
             <div
               key={index}
-              className={`group p-6 bg-card rounded-2xl border border-border hover:border-accent/50 hover:shadow-xl hover:-translate-y-2 hover:scale-[1.02] transition-all duration-300 cursor-pointer animate-float-slow ${gridVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+              className={`group p-6 bg-card rounded-2xl border border-border hover:border-accent/50 hover:shadow-xl hover:-translate-y-2 hover:scale-[1.02] transition-all duration-300 cursor-pointer ${gridVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
               style={{
                 transitionDelay: gridVisible ? `${index * 100}ms` : '0ms',
                 animationDelay: `${index * 0.5}s`
@@ -107,7 +107,7 @@ const FeaturesSection = () => {
           {bottomFeatures.map((feature, index) => (
             <div
               key={index}
-              className={`group p-6 bg-card rounded-2xl border border-border hover:border-accent/50 hover:shadow-xl hover:-translate-y-2 hover:scale-[1.02] transition-all duration-300 cursor-pointer animate-float-medium ${bottomVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+              className={`group p-6 bg-card rounded-2xl border border-border hover:border-accent/50 hover:shadow-xl hover:-translate-y-2 hover:scale-[1.02] transition-all duration-300 cursor-pointer ${bottomVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
               style={{
                 transitionDelay: bottomVisible ? `${index * 100}ms` : '0ms',
                 animationDelay: `${index * 0.7}s`
