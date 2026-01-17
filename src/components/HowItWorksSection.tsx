@@ -92,11 +92,11 @@ const HowItWorksSection = () => {
 
                   {/* Image Side */}
                   <div className="flex-1 relative min-h-[300px] md:min-h-[400px] overflow-hidden">
-                    <div className="absolute inset-0 rounded-xl m-4 group-hover:scale-105 transition-transform duration-500 overflow-hidden">
+                    <div className="absolute inset-0 rounded-xl m-4 overflow-hidden">
                       <img
                         src={step.image}
                         alt={step.title}
-                        className="w-full h-full object-cover rounded-xl group-hover:scale-110 transition-transform duration-700"
+                        className="w-full h-full object-cover rounded-xl"
                       />
                       <div className="absolute inset-0 bg-gradient-to-br from-accent/20 via-transparent to-primary/20 group-hover:opacity-50 transition-opacity duration-300" />
                     </div>
