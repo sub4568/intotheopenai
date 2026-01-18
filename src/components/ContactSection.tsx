@@ -2,7 +2,6 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { supabase } from "@/lib/supabase";
-import { Mail, MapPin, Phone } from "lucide-react";
 import { useState } from "react";
 import { toast } from "sonner";
 import { z } from "zod";
@@ -64,7 +63,7 @@ const ContactSection = () => {
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
+          <div className="max-w-2xl mx-auto">
             <form onSubmit={handleSubmit} className="space-y-6 animate-slide-in-left">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-primary-foreground mb-2">
@@ -117,55 +116,6 @@ const ContactSection = () => {
               </Button>
             </form>
 
-            <div className="space-y-10 lg:pl-8 animate-slide-in-right">
-              {/* Email */}
-              <div className="text-center lg:text-left">
-                <div className="flex items-center justify-center lg:justify-start gap-2 mb-3">
-                  <Mail className="w-5 h-5 text-accent" />
-                  <h3 className="font-semibold text-primary-foreground">Email</h3>
-                </div>
-                <p className="text-primary-foreground/70 mb-2">
-                  Direct support from our experts.
-                </p>
-                <a
-                  href="mailto:Emmanuel@intotheopen.ai"
-                  className="text-accent hover:underline"
-                >
-                  Emmanuel@intotheopen.ai
-                </a>
-              </div>
-
-              {/* Phone */}
-              <div className="text-center lg:text-left">
-                <div className="flex items-center justify-center lg:justify-start gap-2 mb-3">
-                  <Phone className="w-5 h-5 text-accent" />
-                  <h3 className="font-semibold text-primary-foreground">Phone</h3>
-                </div>
-                <p className="text-primary-foreground/70 mb-2">
-                  Weekdays, 8am–5pm (UK time)
-                </p>
-                <a
-                  href="tel:+447572648134"
-                  className="text-primary-foreground hover:text-accent transition-colors"
-                >
-                  +44 7572 648134
-                </a>
-              </div>
-
-              {/* Location */}
-              <div className="text-center lg:text-left">
-                <div className="flex items-center justify-center lg:justify-start gap-2 mb-3">
-                  <MapPin className="w-5 h-5 text-accent" />
-                  <h3 className="font-semibold text-primary-foreground">Location</h3>
-                </div>
-                <p className="text-primary-foreground/70 mb-2">
-                  101 Web Lane, London, UK
-                </p>
-                <p className="text-primary-foreground/70">
-                  Visit our London office.
-                </p>
-              </div>
-            </div>
           </div>
         </div>
       </div>

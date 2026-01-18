@@ -59,7 +59,7 @@ const HowItWorksSection = () => {
               key={index}
               className="relative mb-4 last:mb-0"
               style={{
-                marginTop: index === 0 ? 0 : '-20px',
+                marginTop: index === 0 ? 0 : '-40px',
                 zIndex: steps.length - index,
               }}
             >
@@ -81,13 +81,23 @@ const HowItWorksSection = () => {
                     <p className="text-secondary-foreground/70 mb-6 leading-relaxed group-hover:text-secondary-foreground/90 transition-colors duration-300">
                       {step.description}
                     </p>
-                    <a
-                      href="#"
-                      className="inline-flex items-center gap-2 text-accent font-medium hover:gap-4 hover:translate-x-1 transition-all duration-300"
-                    >
-                      {step.cta}
-                      <ArrowRight className="w-4 h-4 group-hover:scale-125 transition-transform duration-300" />
-                    </a>
+                    {step.cta === "Discover more" ? (
+                      <a
+                        href="#contact"
+                        className="inline-flex items-center gap-2 text-accent font-medium hover:gap-4 hover:translate-x-1 transition-all duration-300"
+                      >
+                        Book a demo
+                        <ArrowRight className="w-4 h-4 group-hover:scale-125 transition-transform duration-300" />
+                      </a>
+                    ) : (
+                      <a
+                        href="#pricing"
+                        className="inline-flex items-center gap-2 text-accent font-medium hover:gap-4 hover:translate-x-1 transition-all duration-300"
+                      >
+                        {step.cta}
+                        <ArrowRight className="w-4 h-4 group-hover:scale-125 transition-transform duration-300" />
+                      </a>
+                    )}
                   </div>
 
                   {/* Image Side */}

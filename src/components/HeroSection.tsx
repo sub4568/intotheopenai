@@ -105,9 +105,10 @@ const HeroSection = () => {
               style={{ transform: isMobile ? 'none' : `translateY(${scrollY * 0.1}px)` }}
             >
               <img
-                src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80"
-                alt="Dashboard analytics"
+                src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&q=90&auto=format&fit=crop"
+                alt="AI Content Intelligence Dashboard"
                 className="w-full h-full object-cover hover:scale-110 transition-transform duration-700"
+                loading="eager"
               />
               <div className="absolute inset-0 bg-gradient-to-br from-accent/10 to-transparent pointer-events-none" />
             </div>
@@ -117,9 +118,10 @@ const HeroSection = () => {
               style={{ transform: isMobile ? 'none' : `translateY(${scrollY * -0.05}px)` }}
             >
               <img
-                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80"
-                alt="Team collaboration"
+                src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&q=90&auto=format&fit=crop"
+                alt="Content Analytics and Insights"
                 className="w-full h-full object-cover hover:scale-110 transition-transform duration-700"
+                loading="eager"
               />
               <div className="absolute inset-0 bg-gradient-to-tl from-primary/10 to-transparent pointer-events-none" />
             </div>
