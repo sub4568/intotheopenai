@@ -98,7 +98,7 @@ const HowItWorksSection = () => {
                         alt={step.title}
                         className="w-full h-full object-cover rounded-xl"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-br from-accent/20 via-transparent to-primary/20 group-hover:opacity-50 transition-opacity duration-300" />
+                      <div className="absolute inset-0 bg-gradient-to-br from-accent/20 via-transparent to-primary/20 group-hover:from-accent/30 group-hover:to-primary/30 group-hover:opacity-70 transition-all duration-300" />
                     </div>
                   </div>
                 </div>

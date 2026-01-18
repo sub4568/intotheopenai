@@ -3,10 +3,12 @@ import { ArrowRight } from "lucide-react";
 import { useEffect, useState, useMemo } from "react";
 import { motion } from "framer-motion";
 import { BackgroundPaths } from "@/components/ui/background-paths";
+import { useIsMobile } from "@/hooks/useIsMobile";
 
 const HeroSection = () => {
   const [scrollY, setScrollY] = useState(0);
   const [titleNumber, setTitleNumber] = useState(0);
+  const isMobile = useIsMobile();
   const titles = useMemo(
     () => ["performs", "converts", "delivers", "succeeds", "resonates"],
     []
@@ -30,12 +32,21 @@ const HeroSection = () => {
   }, [titleNumber, titles]);
 
   return (
-    <section className="relative min-h-screen pt-24 pb-20 overflow-hidden bg-background">
+    <section className="relative min-h-screen pt-32 pb-20 overflow-hidden bg-background">
       <BackgroundPaths />
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-accent/5 rounded-full blur-3xl animate-float-slow" />
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-primary/5 rounded-full blur-3xl animate-float-medium" />
-        <div className="absolute top-1/2 left-1/3 w-64 h-64 bg-accent/3 rounded-full blur-3xl animate-float-slow [animation-delay:1s]" />
+        <div
+          className="absolute top-20 left-10 w-72 h-72 bg-accent/5 rounded-full blur-3xl animate-float-slow"
+          style={{ transform: isMobile ? 'none' : `translateY(${scrollY * 0.05}px)` }}
+        />
+        <div
+          className="absolute bottom-20 right-10 w-96 h-96 bg-primary/5 rounded-full blur-3xl animate-float-medium"
+          style={{ transform: isMobile ? 'none' : `translateY(${scrollY * -0.03}px)` }}
+        />
+        <div
+          className="absolute top-1/2 left-1/3 w-64 h-64 bg-accent/3 rounded-full blur-3xl animate-float-slow [animation-delay:1s]"
+          style={{ transform: isMobile ? 'none' : `translateY(${scrollY * 0.08}px)` }}
+        />
       </div>
       <div className="container mx-auto px-4 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center min-h-[80vh]">
@@ -91,7 +102,7 @@ const HeroSection = () => {
           <div className="relative h-[500px] lg:h-[600px]">
             <div
               className="absolute top-0 right-0 w-[85%] h-[55%] rounded-2xl overflow-hidden shadow-2xl opacity-0 animate-fade-up [animation-delay:300ms] [animation-fill-mode:forwards]"
-              style={{ transform: `translateY(${scrollY * 0.1}px)` }}
+              style={{ transform: isMobile ? 'none' : `translateY(${scrollY * 0.1}px)` }}
             >
               <img
                 src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80"
@@ -103,7 +114,7 @@ const HeroSection = () => {
 
             <div
               className="absolute bottom-0 left-0 w-[85%] h-[55%] rounded-2xl overflow-hidden shadow-2xl opacity-0 animate-fade-up [animation-delay:500ms] [animation-fill-mode:forwards]"
-              style={{ transform: `translateY(${scrollY * -0.05}px)` }}
+              style={{ transform: isMobile ? 'none' : `translateY(${scrollY * -0.05}px)` }}
             >
               <img
                 src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80"

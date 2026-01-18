@@ -81,13 +81,13 @@ const FeaturesSection = () => {
           {features.map((feature, index) => (
             <div
               key={index}
-              className={`group p-6 bg-card rounded-2xl border border-border hover:border-accent/50 hover:shadow-xl hover:-translate-y-2 hover:scale-[1.02] transition-all duration-300 cursor-pointer ${gridVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+              className={`group p-6 bg-card rounded-2xl border border-border hover:border-accent/50 hover:shadow-xl hover:shadow-accent/5 hover:-translate-y-2 hover:scale-[1.02] transition-all duration-300 cursor-pointer ${gridVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
               style={{
                 transitionDelay: gridVisible ? `${index * 100}ms` : '0ms',
                 animationDelay: `${index * 0.5}s`
               }}
             >
-              <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 group-hover:bg-accent/20 group-hover:rotate-3 transition-all duration-300">
+              <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 group-hover:bg-accent/20 group-hover:rotate-6 transition-all duration-300">
                 <feature.icon className="w-6 h-6 text-accent group-hover:scale-110 transition-transform duration-300" />
               </div>
               <h3 className="text-xl font-semibold text-foreground mb-2">
@@ -107,13 +107,13 @@ const FeaturesSection = () => {
           {bottomFeatures.map((feature, index) => (
             <div
               key={index}
-              className={`group p-6 bg-card rounded-2xl border border-border hover:border-accent/50 hover:shadow-xl hover:-translate-y-2 hover:scale-[1.02] transition-all duration-300 cursor-pointer ${bottomVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+              className={`group p-6 bg-card rounded-2xl border border-border hover:border-accent/50 hover:shadow-xl hover:shadow-accent/5 hover:-translate-y-2 hover:scale-[1.02] transition-all duration-300 cursor-pointer ${bottomVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
               style={{
                 transitionDelay: bottomVisible ? `${index * 100}ms` : '0ms',
                 animationDelay: `${index * 0.7}s`
               }}
             >
-              <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 group-hover:bg-accent/20 group-hover:rotate-3 transition-all duration-300">
+              <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 group-hover:bg-accent/20 group-hover:rotate-6 transition-all duration-300">
                 <feature.icon className="w-6 h-6 text-accent group-hover:scale-110 transition-transform duration-300" />
               </div>
               <h3 className="text-xl font-semibold text-foreground mb-2">
