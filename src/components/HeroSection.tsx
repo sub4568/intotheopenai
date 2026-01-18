@@ -36,28 +36,37 @@ const HeroSection = () => {
       <BackgroundPaths />
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div
-          className="absolute top-20 left-10 w-72 h-72 bg-accent/5 rounded-full blur-3xl animate-float-slow"
-          style={{ transform: isMobile ? 'none' : `translateY(${scrollY * 0.05}px)` }}
+          className="absolute top-20 left-10 w-72 h-72 rounded-full blur-3xl animate-float-slow"
+          style={{ 
+            backgroundColor: 'rgba(22, 75, 130, 0.05)',
+            transform: isMobile ? 'none' : `translateY(${scrollY * 0.05}px)` 
+          }}
         />
         <div
-          className="absolute bottom-20 right-10 w-96 h-96 bg-primary/5 rounded-full blur-3xl animate-float-medium"
-          style={{ transform: isMobile ? 'none' : `translateY(${scrollY * -0.03}px)` }}
+          className="absolute bottom-20 right-10 w-96 h-96 rounded-full blur-3xl animate-float-medium"
+          style={{ 
+            backgroundColor: 'rgba(228, 183, 149, 0.15)',
+            transform: isMobile ? 'none' : `translateY(${scrollY * -0.03}px)` 
+          }}
         />
         <div
-          className="absolute top-1/2 left-1/3 w-64 h-64 bg-accent/3 rounded-full blur-3xl animate-float-slow [animation-delay:1s]"
-          style={{ transform: isMobile ? 'none' : `translateY(${scrollY * 0.08}px)` }}
+          className="absolute top-1/2 left-1/3 w-64 h-64 rounded-full blur-3xl animate-float-slow [animation-delay:1s]"
+          style={{ 
+            backgroundColor: 'rgba(105, 154, 205, 0.03)',
+            transform: isMobile ? 'none' : `translateY(${scrollY * 0.08}px)` 
+          }}
         />
       </div>
       <div className="container mx-auto px-4 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center min-h-[80vh]">
-          <div className="max-w-xl animate-fade-up">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight">
+        <div className="max-w-4xl mx-auto min-h-[80vh] flex flex-col justify-center">
+          <div className="max-w-2xl mx-auto w-full animate-fade-up">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight text-left">
               Engineer content<br />
               that lands,<br />
               resonates,<br />
-              <span className="text-accent inline-block">
-                and&nbsp;
-                <span className="relative inline-block min-w-[200px] md:min-w-[280px] lg:min-w-[320px]">
+              <span className="text-accent inline-flex items-center gap-2">
+                <span>and</span>
+                <span className="relative inline-block min-w-[200px] md:min-w-[280px] lg:min-w-[320px] text-left">
                   {titles.map((title, index) => (
                     <motion.span
                       key={index}
@@ -84,7 +93,7 @@ const HeroSection = () => {
               </span>
             </h1>
 
-            <p className="text-lg text-muted-foreground mb-8 leading-relaxed opacity-0 animate-fade-up [animation-delay:200ms] [animation-fill-mode:forwards]">
+            <p className="text-lg text-muted-foreground mb-8 leading-relaxed opacity-0 animate-fade-up [animation-delay:200ms] [animation-fill-mode:forwards] text-left">
               Unlock your content's full potential with our AI-driven content intelligence that predicts, validates, and optimises high-impact content before and after it goes live.
             </p>
 
@@ -96,34 +105,6 @@ const HeroSection = () => {
               <Button variant="hero-outline" size="xl" className="hover:scale-105 transition-transform duration-200">
                 Explore Features
               </Button>
-            </div>
-          </div>
-
-          <div className="relative h-[500px] lg:h-[600px]">
-            <div
-              className="absolute top-0 right-0 w-[85%] h-[55%] rounded-2xl overflow-hidden shadow-2xl opacity-0 animate-fade-up [animation-delay:300ms] [animation-fill-mode:forwards]"
-              style={{ transform: isMobile ? 'none' : `translateY(${scrollY * 0.1}px)` }}
-            >
-              <img
-                src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&q=90&auto=format&fit=crop"
-                alt="AI Content Intelligence Dashboard"
-                className="w-full h-full object-cover hover:scale-110 transition-transform duration-700"
-                loading="eager"
-              />
-              <div className="absolute inset-0 bg-gradient-to-br from-accent/10 to-transparent pointer-events-none" />
-            </div>
-
-            <div
-              className="absolute bottom-0 left-0 w-[85%] h-[55%] rounded-2xl overflow-hidden shadow-2xl opacity-0 animate-fade-up [animation-delay:500ms] [animation-fill-mode:forwards]"
-              style={{ transform: isMobile ? 'none' : `translateY(${scrollY * -0.05}px)` }}
-            >
-              <img
-                src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&q=90&auto=format&fit=crop"
-                alt="Content Analytics and Insights"
-                className="w-full h-full object-cover hover:scale-110 transition-transform duration-700"
-                loading="eager"
-              />
-              <div className="absolute inset-0 bg-gradient-to-tl from-primary/10 to-transparent pointer-events-none" />
             </div>
           </div>
         </div>
