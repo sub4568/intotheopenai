@@ -40,14 +40,14 @@ const steps = [
 
 const HowItWorksSection = () => {
   return (
-    <section id="how-it-works" className="py-24 bg-[#0a0a0a]">
+    <section id="how-it-works" className="py-24" style={{ backgroundColor: '#164B82' }}>
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
+          <h2 className="text-3xl md:text-5xl font-bold text-primary-foreground mb-4">
             How it works
           </h2>
-          <p className="text-lg text-gray-400 max-w-2xl mx-auto">
+          <p className="text-lg text-primary-foreground/70 max-w-2xl mx-auto">
             The magical conveyor belt transforming your drafts into high-impact content in five simple steps.
           </p>
         </div>
@@ -64,7 +64,7 @@ const HowItWorksSection = () => {
               }}
             >
               <div
-                className="group bg-[#0d1321] rounded-2xl overflow-hidden border border-gray-800/50 hover:border-accent/50 hover:shadow-2xl hover:-translate-y-2 hover:scale-[1.02] transition-all duration-300 cursor-pointer"
+                className="group bg-secondary rounded-2xl overflow-hidden border border-primary/30 hover:border-accent/50 hover:shadow-2xl hover:-translate-y-2 hover:scale-[1.02] transition-all duration-300 cursor-pointer"
                 style={{
                   transform: `translateY(${index * 8}px)`,
                 }}
@@ -72,13 +72,13 @@ const HowItWorksSection = () => {
                 <div className="flex flex-col md:flex-row">
                   {/* Content Side */}
                   <div className="flex-1 p-8 md:p-12 flex flex-col justify-center">
-                    <h3 className="text-2xl md:text-3xl font-bold text-white mb-4 group-hover:text-accent transition-colors duration-300">
+                    <h3 className="text-2xl md:text-3xl font-bold text-secondary-foreground mb-4 group-hover:text-accent transition-colors duration-300">
                       {step.title}
                     </h3>
-                    <p className="text-gray-400 italic mb-4 leading-relaxed">
+                    <p className="text-secondary-foreground/80 italic mb-4 leading-relaxed">
                       {step.tagline}
                     </p>
-                    <p className="text-gray-500 mb-6 leading-relaxed group-hover:text-gray-400 transition-colors duration-300">
+                    <p className="text-secondary-foreground/70 mb-6 leading-relaxed group-hover:text-secondary-foreground/90 transition-colors duration-300">
                       {step.description}
                     </p>
                     <a

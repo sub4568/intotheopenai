@@ -159,16 +159,16 @@ const FeaturesSection = () => {
           </div>
 
           <div
-            className={`group p-8 bg-card rounded-2xl border border-border hover:border-destructive/30 hover:shadow-xl hover:-translate-y-2 hover:scale-[1.02] transition-all duration-300 cursor-pointer ${comparisonVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+            className={`group p-8 bg-card rounded-2xl border border-border hover:border-primary/50 hover:shadow-xl hover:-translate-y-2 hover:scale-[1.02] transition-all duration-300 cursor-pointer ${comparisonVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
             style={{ transitionDelay: comparisonVisible ? '200ms' : '0ms' }}
           >
-            <h3 className="text-xl font-semibold text-foreground mb-6 text-center group-hover:text-destructive transition-colors duration-300">
+            <h3 className="text-xl font-semibold text-foreground mb-6 text-center group-hover:text-primary transition-colors duration-300">
               Traditional methods
             </h3>
             <div className="space-y-4">
               {traditionalDrawbacks.map((drawback, index) => (
                 <div key={index} className="flex items-start gap-3 group/item hover:translate-x-1 transition-transform duration-200">
-                  <X className="w-5 h-5 text-destructive mt-0.5 flex-shrink-0 group-hover/item:scale-110 transition-transform duration-200" />
+                  <X className="w-5 h-5 text-primary mt-0.5 flex-shrink-0 group-hover/item:scale-110 transition-transform duration-200" />
                   <p className="text-muted-foreground text-sm leading-relaxed">
                     {drawback}
                   </p>

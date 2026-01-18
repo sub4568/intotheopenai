@@ -118,7 +118,7 @@ const Footer = () => {
             © 2026 intotheopen. All rights reserved.
           </p>
           <div className="flex items-center gap-2">
-            <span className="w-2 h-2 bg-success rounded-full" />
+            <span className="w-2 h-2 bg-accent rounded-full" />
             <span className="text-sm text-muted-foreground">All systems operational</span>
           </div>
         </div>
