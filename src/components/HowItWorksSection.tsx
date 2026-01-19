@@ -1,4 +1,4 @@
-import { ArrowRight, ArrowDown } from "lucide-react";
+import { ArrowDown, ArrowRight } from "lucide-react";
 
 const steps = [
   {
@@ -6,14 +6,14 @@ const steps = [
     tagline: "The first step to transforming your content from average to overachieving",
     description: "Upload your draft and campaign brief. Our AI instantly forecasts performance and assigns a quality score, giving you a clear look into the future before publishing.",
     cta: "Discover more",
-    image: "https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=800&q=80",
+    image: "https://images.unsplash.com/photo-1763568258533-d0597f86ce62?q=80&w=1740&auto=format&fit=crop",
   },
   {
     title: "Validation Engine",
     tagline: "Engineer content that lands, resonates, and performs with our proprietary validation series that tests against 10+ performance signals",
     description: "Run your content through our multi-layer validation series, where it's tested against multiple performance signals, including synthetic audience simulations and AI personas, delivering feedback in seconds, not weeks.",
     cta: "Discover more",
-    image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&q=80",
+    image: "https://images.unsplash.com/photo-1563461660947-507ef49e9c47?q=80&w=1374&auto=format&fit=crop",
   },
   {
     title: "Optimisation Engine",

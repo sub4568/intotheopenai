@@ -1,9 +1,9 @@
-import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
-import { useEffect, useState, useMemo } from "react";
-import { motion } from "framer-motion";
 import { BackgroundPaths } from "@/components/ui/background-paths";
+import { Button } from "@/components/ui/button";
 import { useIsMobile } from "@/hooks/useIsMobile";
+import { motion } from "framer-motion";
+import { ArrowRight } from "lucide-react";
+import { useEffect, useMemo, useState } from "react";
 
 const HeroSection = () => {
   const [scrollY, setScrollY] = useState(0);
@@ -57,9 +57,13 @@ const HeroSection = () => {
           }}
         />
       </div>
+      
       <div className="container mx-auto px-4 relative z-10">
-        <div className="max-w-4xl mx-auto min-h-[80vh] flex flex-col justify-center">
-          <div className="max-w-2xl mx-auto w-full animate-fade-up">
+        {/* Changed to Flex Row for 2 Columns */}
+        <div className="flex flex-col lg:flex-row items-center gap-12 min-h-[80vh]">
+          
+          {/* Left Column: Text */}
+          <div className="flex-1 max-w-2xl w-full animate-fade-up">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight text-left">
               Engineer content<br />
               that lands,<br />
@@ -107,6 +111,32 @@ const HeroSection = () => {
               </Button>
             </div>
           </div>
+
+          {/* Right Column: Images */}
+          <div className="flex-1 w-full hidden lg:block relative">
+             <div className="relative w-full max-w-lg mx-auto h-[500px] flex items-center justify-center">
+                
+                {/* Back Image (UPDATED: New AI Brain Picture) */}
+                <div className="absolute top-0 right-0 w-[90%] rounded-2xl overflow-hidden shadow-2xl border border-white/10 z-10">
+                  <img 
+                    src="https://images.unsplash.com/photo-1625297670911-8311cd5e7832?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+                    alt="AI Technology" 
+                    className="w-full h-auto object-cover opacity-90"
+                  />
+                </div>
+
+                {/* Front Image (Stays the same: Team Working) */}
+                <div className="absolute bottom-0 left-0 w-[90%] rounded-2xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.5)] border border-gray-700 z-20">
+                  <img 
+                    src="https://images.unsplash.com/photo-1563461660947-507ef49e9c47?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+                    alt="Team working" 
+                    className="w-full h-auto object-cover"
+                  />
+                </div>
+
+             </div>
+          </div>
+
         </div>
       </div>
     </section>
