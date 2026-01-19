@@ -45,9 +45,10 @@ const bottomFeatures = [
 ];
 
 const intoTheopenBenefits = [
-  "Forecasts how content will perform before publishing, no wasted campaigns",
-  "Automatically generates optimised versions and refines content in real time post-publish",
-  "Tests content against 10+ performance signals, including synthetic audiences and AI personas, delivering feedback in seconds.",
+  "Predicts content performance before launch",
+  "Reduces wasted spend on underperforming campaigns",
+  "Delivers insight in seconds, not weeks",
+  "Improves live content without rewrites or relaunches",
 ];
 
 const traditionalDrawbacks = [
