@@ -2,23 +2,23 @@ import { Linkedin, Twitter, Youtube } from "lucide-react";
 
 const footerLinks = {
   product: [
-    { label: "Features", href: "#features" },
-    { label: "Pricing", href: "#pricing" },
-    { label: "Integrations", href: "#" },
-    { label: "Changelog", href: "#" },
+    { label: "Features", href: "#features" }, // Features points to #features section
+    { label: "Pricing", href: "#pricing" }, // Pricing points to #pricing section
+    // { label: "Integrations", href: "#" }, // Commented out - Integrations
+    // { label: "Changelog", href: "#" }, // Commented out - Changelog
   ],
-  company: [
-    { label: "About", href: "#" },
-    { label: "Blog", href: "#" },
-    { label: "Careers", href: "#" },
-    { label: "Contact", href: "#" },
-  ],
-  resources: [
-    { label: "Documentation", href: "#" },
-    { label: "Help Center", href: "#" },
-    { label: "API Reference", href: "#" },
-    { label: "Status", href: "#" },
-  ],
+  // company: [ // Commented out - Company section
+  //   { label: "About", href: "#" },
+  //   { label: "Blog", href: "#" },
+  //   { label: "Careers", href: "#" },
+  //   { label: "Contact", href: "#" },
+  // ],
+  // resources: [ // Commented out - Resources section
+  //   { label: "Documentation", href: "#" },
+  //   { label: "Help Center", href: "#" },
+  //   { label: "API Reference", href: "#" },
+  //   { label: "Status", href: "#" },
+  // ],
   legal: [
       { label: "Privacy", href: "/privacy" },
       { label: "Terms", href: "/terms" },
@@ -30,7 +30,7 @@ const Footer = () => {
   return (
     <footer className="py-16 bg-background border-t border-border">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-8 mb-12">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-8 mb-12">
           {/* Brand Column */}
           <div className="col-span-2 md:col-span-1">
             <a href="#" className="flex items-center gap-2 mb-4 group">
@@ -69,8 +69,8 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Company Links */}
-          <div>
+          {/* Company Links - Commented out for documentation */}
+          {/* <div>
             <h4 className="font-semibold text-foreground mb-4">Company</h4>
             <ul className="space-y-3">
               {footerLinks.company.map((link) => (
@@ -81,10 +81,10 @@ const Footer = () => {
                 </li>
               ))}
             </ul>
-          </div>
+          </div> */}
 
-          {/* Resources Links */}
-          <div>
+          {/* Resources Links - Commented out for documentation */}
+          {/* <div>
             <h4 className="font-semibold text-foreground mb-4">Resources</h4>
             <ul className="space-y-3">
               {footerLinks.resources.map((link) => (
@@ -95,7 +95,7 @@ const Footer = () => {
                 </li>
               ))}
             </ul>
-          </div>
+          </div> */}
 
           {/* Legal Links */}
           <div>

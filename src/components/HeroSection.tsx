@@ -98,12 +98,26 @@ const HeroSection = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row items-start gap-4 opacity-0 animate-fade-up [animation-delay:400ms] [animation-fill-mode:forwards]">
-              <Button variant="hero" size="xl" className="hover:scale-105 transition-transform duration-200">
-                Get Early Access
-                <ArrowRight className="w-5 h-5" />
+              <Button 
+                variant="hero" 
+                size="xl" 
+                className="hover:scale-105 transition-transform duration-200"
+                asChild
+              >
+                <a href="https://intotheopen-144935016950.us-west1.run.app/" target="_blank" rel="noopener noreferrer">
+                  Get Early Access
+                  <ArrowRight className="w-5 h-5" />
+                </a>
               </Button>
-              <Button variant="hero-outline" size="xl" className="hover:scale-105 transition-transform duration-200">
-                Explore Features
+              <Button 
+                variant="hero-outline" 
+                size="xl" 
+                className="hover:scale-105 transition-transform duration-200"
+                asChild
+              >
+                <a href="#features">
+                  Explore Features
+                </a>
               </Button>
             </div>
           </div>
