@@ -35,7 +35,7 @@ const Footer = () => {
           <div className="col-span-2 md:col-span-1">
             <a href="#" className="flex items-center gap-2 mb-4 group">
               <div className="w-8 h-8 bg-gradient-accent rounded-lg flex items-center justify-center group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
-                <span className="text-accent-foreground font-bold text-sm">io</span>
+                <span className="text-accent-foreground font-bold text-sm">ITO</span>
               </div>
               <span className="font-semibold text-foreground group-hover:text-accent transition-colors duration-300">intotheopen</span>
             </a>

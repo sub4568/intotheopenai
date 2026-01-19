@@ -1,4 +1,4 @@
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ArrowDown } from "lucide-react";
 
 const steps = [
   {
@@ -55,20 +55,21 @@ const HowItWorksSection = () => {
         {/* Steps - Stacked Cards */}
         <div className="max-w-5xl mx-auto relative">
           {steps.map((step, index) => (
-            <div
-              key={index}
-              className="relative mb-4 last:mb-0"
-              style={{
-                marginTop: index === 0 ? 0 : '-40px',
-                zIndex: steps.length - index,
-              }}
-            >
+            <div key={index} className="relative">
               <div
-                className="group bg-secondary rounded-2xl overflow-hidden border border-primary/30 hover:border-accent/50 hover:shadow-2xl hover:-translate-y-2 hover:scale-[1.02] transition-all duration-300 cursor-pointer"
+                className="group bg-secondary rounded-2xl overflow-hidden border border-primary/30 hover:border-accent/50 hover:shadow-2xl hover:-translate-y-2 hover:scale-[1.02] transition-all duration-300 cursor-pointer relative mb-24 md:mb-32 last:mb-0"
                 style={{
                   transform: `translateY(${index * 8}px)`,
+                  zIndex: steps.length - index,
                 }}
               >
+                {/* Step Number Badge */}
+                <div className="absolute top-4 left-4 md:top-6 md:left-6 z-20">
+                  <div className="w-10 h-10 md:w-12 md:h-12 bg-accent rounded-full flex items-center justify-center border-2 border-primary/20 group-hover:scale-110 group-hover:border-accent transition-all duration-300">
+                    <span className="text-primary-foreground font-bold text-sm md:text-base">{index + 1}</span>
+                  </div>
+                </div>
+
                 <div className="flex flex-col md:flex-row">
                   {/* Content Side */}
                   <div className="flex-1 p-8 md:p-12 flex flex-col justify-center">
@@ -113,6 +114,17 @@ const HowItWorksSection = () => {
                   </div>
                 </div>
               </div>
+
+              {/* Arrow Connector (between steps, hidden on mobile) */}
+              {index < steps.length - 1 && (
+                <div className="hidden md:flex absolute -bottom-12 left-1/2 -translate-x-1/2 z-10 items-center justify-center">
+                  <div className="flex flex-col items-center gap-2">
+                    <div className="w-0.5 h-8 bg-accent/50" />
+                    <ArrowDown className="w-8 h-8 text-accent/80 animate-bounce" />
+                    <div className="w-0.5 h-8 bg-accent/50" />
+                  </div>
+                </div>
+              )}
             </div>
           ))}
         </div>
