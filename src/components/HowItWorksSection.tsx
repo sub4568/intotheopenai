@@ -2,37 +2,37 @@ import { ArrowDown, ArrowRight } from "lucide-react";
 
 const steps = [
   {
-    title: "Submit Draft",
-    tagline: "The first step to transforming your content from average to overachieving",
-    description: "Upload your draft and campaign brief. Our AI instantly forecasts performance and assigns a quality score, giving you a clear look into the future before publishing.",
+    title: "Predict performance before you publish",
+    tagline: "",
+    description: "Forecast how content will land using AI-powered predictive scoring, so only content built to perform goes live.",
     cta: "Discover more",
     image: "https://images.unsplash.com/photo-1763568258533-d0597f86ce62?q=80&w=1740&auto=format&fit=crop",
   },
   {
-    title: "Validation Engine",
-    tagline: "Engineer content that lands, resonates, and performs with our proprietary validation series that tests against 10+ performance signals",
-    description: "Run your content through our multi-layer validation series, where it's tested against multiple performance signals, including synthetic audience simulations and AI personas, delivering feedback in seconds, not weeks.",
+    title: "Validate at scale, instantly",
+    tagline: "",
+    description: "Understand your content’s likely impact in seconds by validating against 15+ performance evaluations, including synthetic audience testing.",
     cta: "Discover more",
     image: "https://images.unsplash.com/photo-1563461660947-507ef49e9c47?q=80&w=1374&auto=format&fit=crop",
   },
   {
-    title: "Optimisation Engine",
-    tagline: "Select from multiple optimised variants and get one step closer to the 30% of content that successfully delivers ROI",
-    description: "Our AI optimisation engine aggregates and synthesises results to generate multiple high-impact variants of your content, turning good ideas into great outcomes.",
+    title: "Optimise messaging with evidence",
+    tagline: "",
+    description: "Generate and compare multiple optimised variants, each scored for predicted performance, making decisions clearer and faster.",
     cta: "Get started",
     image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
   },
   {
-    title: "Compare Insights",
-    tagline: "Stop guessing what works when you can know what works with intotheopen",
-    description: "Review side-by-side variants with predictive analytics, making it simple to choose the version most likely to deliver measurable impact.",
+    title: "Publish anywhere",
+    tagline: "",
+    description: "Intotheopen fits into your existing workflow. Publish on the platforms you already use.",
     cta: "Get started",
     image: "https://images.unsplash.com/photo-1553877522-43269d4ea984?w=800&q=80",
   },
   {
-    title: "Publish & Refine",
-    tagline: "We don't stop at publication; our AI continues optimising until your content reaches its full potential. Publish anywhere.",
-    description: "Once live, intotheopen tracks performance in real time and automatically refines messaging to maximise ROI.",
+    title: "Track and refine in real time",
+    tagline: "",
+    description: "Once live, performance is continuously monitored and messaging refined automatically to maximise performance.",
     cta: "Get started",
     image: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&q=80",
   },
@@ -45,10 +45,10 @@ const HowItWorksSection = () => {
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-5xl font-bold text-primary-foreground mb-4">
-            How it works
+            From draft to performance
           </h2>
           <p className="text-lg text-primary-foreground/70 max-w-2xl mx-auto">
-            The magical conveyor belt transforming your drafts into high-impact content in five simple steps.
+            A continuous workflow that predicts, validates, and optimises content across its entire lifecycle.
           </p>
         </div>
 
@@ -76,9 +76,14 @@ const HowItWorksSection = () => {
                     <h3 className="text-2xl md:text-3xl font-bold text-secondary-foreground mb-4 group-hover:text-accent transition-colors duration-300">
                       {step.title}
                     </h3>
-                    <p className="text-secondary-foreground/80 italic mb-4 leading-relaxed">
-                      {step.tagline}
-                    </p>
+                    
+                    {/* Only render tagline if it exists (Updated logic) */}
+                    {step.tagline && (
+                      <p className="text-secondary-foreground/80 italic mb-4 leading-relaxed">
+                        {step.tagline}
+                      </p>
+                    )}
+                    
                     <p className="text-secondary-foreground/70 mb-6 leading-relaxed group-hover:text-secondary-foreground/90 transition-colors duration-300">
                       {step.description}
                     </p>
