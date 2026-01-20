@@ -72,7 +72,7 @@ const PricingSection = () => {
             Transparent Pricing
           </span>
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            Plans that scale with you
+            Plans that scale with your ambition
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Start free, upgrade when you're ready. No hidden fees, no surprises.
@@ -137,7 +137,7 @@ const PricingSection = () => {
           className={`text-center text-sm text-muted-foreground mt-12 transition-all duration-700 ${cardsVisible ? 'opacity-100' : 'opacity-0'}`}
           style={{ transitionDelay: cardsVisible ? '500ms' : '0ms' }}
         >
-          All plans include a 14-day free trial. No credit card required.
+          // All plans include a 14-day free trial. No credit card required.
         </p>
       </div>
     </section>

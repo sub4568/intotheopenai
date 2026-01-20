@@ -57,11 +57,19 @@ const traditionalDrawbacks = [
   "Content is static once published; improvements require a full rewrite or new campaign, increasing cost and effort.",
 ];
 
+const teamsFor = [
+  "Communications teams",
+  "Marketing teams",
+  "Strategic content teams",
+  "Brand and narrative leaders",
+];
+
 const FeaturesSection = () => {
   const { ref: headerRef, isVisible: headerVisible } = useScrollAnimation();
   const { ref: gridRef, isVisible: gridVisible } = useScrollAnimation();
   const { ref: bottomRef, isVisible: bottomVisible } = useScrollAnimation();
   const { ref: comparisonRef, isVisible: comparisonVisible } = useScrollAnimation();
+  const { ref: teamsRef, isVisible: teamsVisible } = useScrollAnimation();
 
   return (
     <section id="features" className="py-24 bg-background">
@@ -177,6 +185,36 @@ const FeaturesSection = () => {
               ))}
             </div>
           </div>
+        </div>
+
+        {/* Built for teams section */}
+        <div
+          ref={teamsRef}
+          className={`mt-24 text-center transition-all duration-700 ${teamsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+        >
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+            Built for teams who can't afford to guess
+          </h2>
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto mb-10">
+            intotheopen is designed for teams responsible for performance, reputation, and outcomes.
+          </p>
+
+          <div className="flex flex-wrap justify-center gap-4 mb-8">
+            {teamsFor.map((team, index) => (
+              <div
+                key={index}
+                className={`flex items-center gap-2 px-5 py-3 bg-card rounded-full border border-border hover:border-accent/50 hover:shadow-lg transition-all duration-300 ${teamsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
+                style={{ transitionDelay: teamsVisible ? `${index * 100}ms` : '0ms' }}
+              >
+                <span className="text-accent">→</span>
+                <span className="text-foreground font-medium">{team}</span>
+              </div>
+            ))}
+          </div>
+
+          <p className="text-sm text-muted-foreground italic">
+            Used by in-house teams and agencies delivering content at scale.
+          </p>
         </div>
       </div>
     </section>
