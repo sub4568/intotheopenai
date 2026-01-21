@@ -6,52 +6,63 @@
 
 @layer base {
   :root {
-    --background: 204 40% 97%;
-    --foreground: 210 71% 30%;
+    /* Page background - Light blue-gray #F2F7FA */
+    --background: 200 60% 97%;
+    /* Primary text - Dark gray #343434 */
+    --foreground: 0 0% 20%;
 
+    /* Card surface - Pure white #FFFFFF */
     --card: 0 0% 100%;
-    --card-foreground: 210 71% 30%;
+    --card-foreground: 0 0% 20%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 210 71% 30%;
+    --popover-foreground: 0 0% 20%;
 
-    --primary: 210 71% 30%;
-    --primary-foreground: 204 40% 97%;
+    /* Primary brand - Dark navy #164B82 */
+    --primary: 208 70% 30%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 54% 41%;
+    /* Secondary brand - Medium navy #2F679F */
+    --secondary: 208 55% 40%;
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 210 50% 90%;
-    --muted-foreground: 210 54% 41%;
+    /* Muted text - Blue-gray */
+    --muted: 208 30% 90%;
+    --muted-foreground: 208 20% 45%;
 
-    --accent: 210 50% 61%;
+    /* Soft accent - Light blue #699ACD */
+    --accent: 208 50% 60%;
     --accent-foreground: 0 0% 100%;
 
+    /* Warm accent - Peach #E4B795 */
     --peach: 26 58% 74%;
-    --peach-foreground: 210 71% 30%;
+    --peach-foreground: 208 70% 30%;
 
     --success: 142 76% 36%;
     --success-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
-    --destructive-foreground: 204 40% 97%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 210 30% 88%;
-    --input: 210 30% 88%;
-    --ring: 210 50% 61%;
+    /* Card borders */
+    --border: 208 20% 88%;
+    --input: 208 20% 88%;
+    --ring: 208 50% 60%;
 
     --radius: 0.75rem;
 
-    --gradient-hero: linear-gradient(135deg, hsl(210 50% 61%) 0%, hsl(210 71% 30%) 100%);
-    --gradient-accent: linear-gradient(135deg, hsl(210 50% 61%) 0%, hsl(210 54% 41%) 100%);
-    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(204 40% 97%) 100%);
-    --gradient-navy: linear-gradient(135deg, hsl(210 71% 30%) 0%, hsl(210 54% 41%) 100%);
+    /* Updated gradients using brand colors */
+    --gradient-hero: linear-gradient(135deg, hsl(208 50% 60%) 0%, hsl(208 70% 30%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(208 50% 60%) 0%, hsl(208 55% 40%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(200 60% 97%) 100%);
+    --gradient-navy: linear-gradient(135deg, hsl(208 70% 30%) 0%, hsl(208 55% 40%) 100%);
 
-    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.07), 0 2px 4px -2px rgb(0 0 0 / 0.05);
-    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.08), 0 4px 6px -4px rgb(0 0 0 / 0.05);
-    --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.05);
-    --shadow-glow: 0 0 40px -10px hsl(210 50% 61% / 0.3);
+    /* Professional shadows for card elevation */
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.04);
+    --shadow-md: 0 2px 8px 0 rgb(0 0 0 / 0.06);
+    --shadow-lg: 0 4px 16px 0 rgb(0 0 0 / 0.08);
+    --shadow-xl: 0 8px 24px 0 rgb(0 0 0 / 0.1);
+    --shadow-glow: 0 0 24px -4px hsl(208 50% 60% / 0.2);
 
     --sidebar-background: 204 40% 97%;
     --sidebar-foreground: 0 0% 20%;
@@ -121,20 +132,42 @@
     }
   }
 
+  /* Typography hierarchy for B2B SaaS */
   h1, h2, h3, h4, h5, h6 {
-    @apply font-semibold tracking-tight;
-    line-height: 1.2;
+    @apply tracking-tight;
     letter-spacing: -0.02em;
   }
 
   h1 {
-    line-height: 1.1;
+    @apply font-extrabold;
+    line-height: 1.05;
     letter-spacing: -0.03em;
   }
 
   h2 {
-    line-height: 1.15;
+    @apply font-bold;
+    line-height: 1.1;
     letter-spacing: -0.025em;
+  }
+
+  h3 {
+    @apply font-semibold;
+    line-height: 1.2;
+  }
+
+  h4, h5, h6 {
+    @apply font-medium;
+    line-height: 1.3;
+  }
+
+  /* Body text - calm and readable */
+  p {
+    line-height: 1.7;
+  }
+
+  /* Prose sections get better spacing */
+  .prose p {
+    line-height: 1.75;
   }
 }
 

@@ -62,70 +62,70 @@ const PricingSection = () => {
   const { ref: cardsRef, isVisible: cardsVisible } = useScrollAnimation();
 
   return (
-    <section id="pricing" className="py-24 bg-secondary/50">
+    <section id="pricing" className="py-20 md:py-24" style={{ backgroundColor: '#F2F7FA' }}>
       <div className="container mx-auto px-4">
         <div
           ref={headerRef}
-          className={`text-center mb-16 transition-all duration-700 ${headerVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+          className={`text-center mb-12 md:mb-14 transition-all duration-700 ${headerVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
         >
-          <span className="inline-block text-accent font-medium text-sm mb-4 tracking-wide uppercase">
+          <span className="inline-block font-medium text-xs mb-3 tracking-wider uppercase" style={{ color: '#699ACD' }}>
             Transparent Pricing
           </span>
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+          <h2 className="text-2xl md:text-3xl font-bold mb-3" style={{ color: '#164B82' }}>
             Plans that scale with your ambition
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-base max-w-xl mx-auto leading-relaxed" style={{ color: '#343434', opacity: 0.75 }}>
             Start free, upgrade when you're ready. No hidden fees, no surprises.
           </p>
         </div>
 
-        <div ref={cardsRef} className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        <div ref={cardsRef} className="grid grid-cols-1 md:grid-cols-3 gap-5 max-w-5xl mx-auto">
           {plans.map((plan, index) => (
             <div
               key={index}
-              className={`group relative p-8 rounded-2xl border transition-all duration-300 hover:-translate-y-3 hover:scale-[1.03] cursor-pointer flex flex-col ${
+              className={`group relative p-6 rounded-xl border transition-all duration-300 hover:-translate-y-1 flex flex-col bg-white ${
                 plan.popular
-                  ? "bg-card border-accent shadow-glow scale-105 hover:shadow-2xl"
-                  : "bg-card border-border hover:border-accent/50 hover:shadow-xl"
+                  ? "border-border shadow-lg md:scale-[1.02] hover:shadow-xl"
+                  : "border-border shadow-md hover:shadow-lg"
               } ${cardsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
-              style={{ transitionDelay: cardsVisible ? `${index * 150}ms` : '0ms' }}
+              style={{ transitionDelay: cardsVisible ? `${index * 100}ms` : '0ms' }}
             >
               {plan.popular && (
-                <div className="absolute -top-4 left-1/2 -translate-x-1/2 animate-bounce-subtle">
-                  <span className="bg-gradient-accent text-accent-foreground text-xs font-bold px-4 py-1 rounded-full shadow-glow">
+                <div className="absolute -top-3 left-1/2 -translate-x-1/2">
+                  <span className="text-xs font-semibold px-3 py-1 rounded-full" style={{ backgroundColor: '#E4B795', color: '#164B82' }}>
                     Most Popular
                   </span>
                 </div>
               )}
 
-              <div className="text-center mb-6">
-                <h3 className="text-xl font-semibold text-foreground mb-2 group-hover:text-accent transition-colors duration-300">
+              <div className="text-center mb-5">
+                <h3 className="text-lg font-semibold mb-1.5" style={{ color: '#164B82' }}>
                   {plan.name}
                 </h3>
-                <div className="flex items-baseline justify-center gap-1 group-hover:scale-110 transition-transform duration-300">
-                  <span className="text-4xl font-bold text-foreground">
+                <div className="flex items-baseline justify-center gap-1">
+                  <span className="text-3xl font-bold" style={{ color: '#164B82' }}>
                     {plan.price}
                   </span>
-                  <span className="text-muted-foreground">{plan.period}</span>
+                  <span className="text-sm" style={{ color: '#343434', opacity: 0.6 }}>{plan.period}</span>
                 </div>
-                <p className="text-sm text-muted-foreground mt-2">
+                <p className="text-sm mt-2 leading-relaxed" style={{ color: '#343434', opacity: 0.7 }}>
                   {plan.description}
                 </p>
               </div>
 
-              <ul className="space-y-3 mb-8 flex-grow">
+              <ul className="space-y-2.5 mb-6 flex-grow">
                 {plan.features.map((feature, featureIndex) => (
-                  <li key={featureIndex} className="flex items-start gap-3 group/item hover:translate-x-1 transition-transform duration-200">
-                    <Check className="w-5 h-5 text-accent shrink-0 mt-0.5 group-hover/item:scale-125 transition-transform duration-200" />
-                    <span className="text-sm text-foreground">{feature}</span>
+                  <li key={featureIndex} className="flex items-start gap-2.5">
+                    <Check className="w-4 h-4 shrink-0 mt-0.5" style={{ color: '#699ACD' }} />
+                    <span className="text-sm leading-[1.5]" style={{ color: '#343434', opacity: 0.85 }}>{feature}</span>
                   </li>
                 ))}
               </ul>
 
               <Button
                 variant={plan.variant}
-                size="lg"
-                className="w-full hover:scale-105 transition-transform duration-200 mt-auto"
+                size="default"
+                className="w-full transition-all duration-200 mt-auto"
               >
                 {plan.cta}
               </Button>
