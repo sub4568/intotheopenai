@@ -1,6 +1,5 @@
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
-import logo from "@/assets/intotheopen-logo.png";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -18,11 +17,12 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <a href="#" className="group">
-            <img 
-              src={logo} 
-              alt="intotheopen" 
-              className="h-8 w-auto group-hover:scale-105 transition-transform duration-300"
-            />
+            <span 
+              className="text-xl font-bold tracking-tight group-hover:scale-105 transition-transform duration-300 inline-block"
+              style={{ color: '#164B82' }}
+            >
+              intotheopen
+            </span>
           </a>
 
           {/* Desktop Navigation */}
