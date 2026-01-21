@@ -1,4 +1,5 @@
 import { Linkedin, Twitter, Youtube } from "lucide-react";
+import logo from "@/assets/intotheopen-logo.png";
 
 const footerLinks = {
   product: [
@@ -33,11 +34,12 @@ const Footer = () => {
         <div className="grid grid-cols-2 md:grid-cols-3 gap-8 mb-12">
           {/* Brand Column */}
           <div className="col-span-2 md:col-span-1">
-            <a href="#" className="flex items-center gap-2 mb-4 group">
-              <div className="w-8 h-8 bg-gradient-accent rounded-lg flex items-center justify-center group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
-                <span className="text-accent-foreground font-bold text-sm">ITO</span>
-              </div>
-              <span className="font-semibold text-foreground group-hover:text-accent transition-colors duration-300">intotheopen</span>
+            <a href="#" className="mb-4 inline-block group">
+              <img 
+                src={logo} 
+                alt="intotheopen" 
+                className="h-8 w-auto group-hover:scale-105 transition-transform duration-300"
+              />
             </a>
             <p className="text-sm text-muted-foreground mb-4">
               Marketing analytics that drive real results.
