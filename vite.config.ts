@@ -5,8 +5,13 @@ import { defineConfig } from "vite";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
+<<<<<<< HEAD
 
 base: mode === 'production' ? '/intotheopenai/' : '/',  server: {
+=======
+  base: mode === 'production' ? '/intotheopenai/' : '/',
+  server: {
+>>>>>>> github_deploy
     host: "::",
     port: 5174,
     hmr: {
