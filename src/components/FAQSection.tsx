@@ -50,34 +50,34 @@ const faqs = [
 
 const FAQSection = () => {
   return (
-    <section id="faq" className="py-24 bg-background">
+    <section id="faq" className="py-20 md:py-24" style={{ backgroundColor: '#F2F7FA' }}>
       <div className="container mx-auto px-4">
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <span className="inline-block text-accent font-medium text-sm mb-4 tracking-wide uppercase">
+        <div className="text-center mb-10 md:mb-12">
+          <span className="inline-block font-medium text-xs mb-3 tracking-wider uppercase" style={{ color: '#699ACD' }}>
             FAQ
           </span>
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+          <h2 className="text-2xl md:text-3xl font-bold mb-3" style={{ color: '#164B82' }}>
             Frequently asked questions
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-base max-w-xl mx-auto leading-relaxed" style={{ color: '#343434', opacity: 0.75 }}>
             Everything you need to know about intotheopen
           </p>
         </div>
 
         {/* FAQ Accordion */}
-        <div className="max-w-3xl mx-auto">
-          <Accordion type="single" collapsible className="space-y-4">
+        <div className="max-w-2xl mx-auto">
+          <Accordion type="single" collapsible className="space-y-3">
             {faqs.map((faq, index) => (
               <AccordionItem
                 key={index}
                 value={`item-${index}`}
-                className="group bg-card border border-border rounded-xl px-6 hover:border-accent/50 hover:shadow-lg hover:-translate-y-1 hover:scale-[1.01] data-[state=open]:border-accent/50 data-[state=open]:shadow-xl transition-all duration-300"
+                className="group bg-white border border-border rounded-xl px-5 shadow-md hover:shadow-lg data-[state=open]:shadow-lg transition-all duration-300"
               >
-                <AccordionTrigger className="text-left font-medium text-foreground hover:text-accent hover:no-underline py-5 group-hover:translate-x-1 transition-all duration-300">
+                <AccordionTrigger className="text-left text-sm font-medium hover:no-underline py-4 transition-all duration-300" style={{ color: '#164B82' }}>
                   {faq.question}
                 </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground pb-5 group-hover:text-foreground transition-colors duration-300">
+                <AccordionContent className="text-sm pb-4 leading-[1.65]" style={{ color: '#343434', opacity: 0.8 }}>
                   {faq.answer}
                 </AccordionContent>
               </AccordionItem>

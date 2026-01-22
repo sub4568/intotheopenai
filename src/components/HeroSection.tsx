@@ -1,18 +1,12 @@
 import { BackgroundPaths } from "@/components/ui/background-paths";
 import { Button } from "@/components/ui/button";
 import { useIsMobile } from "@/hooks/useIsMobile";
-import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 
 const HeroSection = () => {
   const [scrollY, setScrollY] = useState(0);
-  const [titleNumber, setTitleNumber] = useState(0);
   const isMobile = useIsMobile();
-  const titles = useMemo(
-    () => ["performs", "converts", "delivers", "succeeds", "resonates"],
-    []
-  );
 
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY);
@@ -20,19 +14,8 @@ const HeroSection = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  useEffect(() => {
-    const timeoutId = setTimeout(() => {
-      if (titleNumber === titles.length - 1) {
-        setTitleNumber(0);
-      } else {
-        setTitleNumber(titleNumber + 1);
-      }
-    }, 2000);
-    return () => clearTimeout(timeoutId);
-  }, [titleNumber, titles]);
-
   return (
-    <section className="relative min-h-screen pt-32 pb-20 overflow-hidden bg-background">
+    <section className="relative min-h-screen pt-32 pb-20 overflow-hidden" style={{ backgroundColor: '#F2F7FA' }}>
       <BackgroundPaths />
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div
@@ -64,41 +47,12 @@ const HeroSection = () => {
           
           {/* Left Column: Text */}
           <div className="flex-1 max-w-2xl w-full animate-fade-up">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight text-left">
-              Engineer content<br />
-              that lands,<br />
-              resonates,<br />
-              <span className="text-accent inline-flex items-center gap-2">
-                <span>and</span>
-                <span className="relative inline-block min-w-[200px] md:min-w-[280px] lg:min-w-[320px] text-left">
-                  {titles.map((title, index) => (
-                    <motion.span
-                      key={index}
-                      className="absolute left-0"
-                      initial={{ opacity: 0, y: "-100" }}
-                      transition={{ type: "spring", stiffness: 50 }}
-                      animate={
-                        titleNumber === index
-                          ? {
-                              y: 0,
-                              opacity: 1,
-                            }
-                          : {
-                              y: titleNumber > index ? -150 : 150,
-                              opacity: 0,
-                            }
-                      }
-                    >
-                      {title}
-                    </motion.span>
-                  ))}
-                  <span className="invisible">{titles[0]}</span>
-                </span>
-              </span>
+            <h1 className="text-4xl md:text-5xl lg:text-[3.5rem] font-extrabold mb-5 text-left leading-[1.08]" style={{ color: '#164B82' }}>
+              Engineer content performance before you publish.
             </h1>
 
-            <p className="text-lg text-muted-foreground mb-8 leading-relaxed opacity-0 animate-fade-up [animation-delay:200ms] [animation-fill-mode:forwards] text-left">
-              Unlock your content's full potential with our AI-driven content intelligence that predicts, validates, and optimises high-impact content before and after it goes live.
+            <p className="text-lg md:text-xl mb-8 leading-[1.6] opacity-0 animate-fade-up [animation-delay:200ms] [animation-fill-mode:forwards] text-left max-w-xl" style={{ color: '#343434', opacity: 0.8 }}>
+              Forecast impact, validate messaging, and optimise content across its entire lifecycle.
             </p>
 
             <div className="flex flex-col sm:flex-row items-start gap-4 opacity-0 animate-fade-up [animation-delay:400ms] [animation-fill-mode:forwards]">
@@ -109,7 +63,7 @@ const HeroSection = () => {
                 asChild
               >
                 <a href="https://intotheopen-144935016950.us-west1.run.app/" target="_blank" rel="noopener noreferrer">
-                  Get Early Access
+                  Request early access
                   <ArrowRight className="w-5 h-5" />
                 </a>
               </Button>
@@ -119,8 +73,8 @@ const HeroSection = () => {
                 className="hover:scale-105 transition-transform duration-200"
                 asChild
               >
-                <a href="#features">
-                  Explore Features
+                <a href="#how-it-works">
+                  See how it works
                 </a>
               </Button>
             </div>

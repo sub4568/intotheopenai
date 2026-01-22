@@ -2,23 +2,9 @@ import { Linkedin, Twitter, Instagram } from "lucide-react";
 
 const footerLinks = {
   product: [
-    { label: "Features", href: "#features" }, // Features points to #features section
-    { label: "Pricing", href: "#pricing" }, // Pricing points to #pricing section
-    // { label: "Integrations", href: "#" }, // Commented out - Integrations
-    // { label: "Changelog", href: "#" }, // Commented out - Changelog
+    { label: "Features", href: "#features" },
+    { label: "Pricing", href: "#pricing" },
   ],
-  // company: [ // Commented out - Company section
-  //   { label: "About", href: "#" },
-  //   { label: "Blog", href: "#" },
-  //   { label: "Careers", href: "#" },
-  //   { label: "Contact", href: "#" },
-  // ],
-  // resources: [ // Commented out - Resources section
-  //   { label: "Documentation", href: "#" },
-  //   { label: "Help Center", href: "#" },
-  //   { label: "API Reference", href: "#" },
-  //   { label: "Status", href: "#" },
-  // ],
   legal: [
       { label: "Privacy", href: "/privacy" },
       { label: "Terms", href: "/terms" },
@@ -28,9 +14,9 @@ const footerLinks = {
 
 const Footer = () => {
   return (
-    <footer className="py-16 bg-background border-t border-border">
+    <footer className="py-12 border-t border-border" style={{ backgroundColor: '#F2F7FA' }}>
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-8 mb-12">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-8 mb-10">
           {/* Brand Column */}
           <div className="col-span-2 md:col-span-1">
             <a href="#" className="mb-4 inline-block group">
@@ -41,17 +27,17 @@ const Footer = () => {
                 intotheopen
               </span>
             </a>
-            <p className="text-sm text-muted-foreground mb-4">
+            <p className="text-sm mb-4 leading-relaxed" style={{ color: '#343434', opacity: 0.7 }}>
               Marketing analytics that drive real results.
             </p>
             <div className="flex items-center gap-4">
-              <a href="https://x.com/intotheopen_ai?t=fJp56PsVEQuk2zOZE9FWnA" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-accent hover:scale-125 hover:-translate-y-1 transition-all duration-300">
+              <a href="https://x.com/intotheopen_ai?t=fJp56PsVEQuk2zOZE9FWnA" target="_blank" rel="noopener noreferrer" className="transition-all duration-300 hover:scale-110" style={{ color: '#2F679F' }}>
                 <Twitter className="w-5 h-5" />
               </a>
-              <a href="https://www.linkedin.com/company/intotheopen/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-accent hover:scale-125 hover:-translate-y-1 transition-all duration-300">
+              <a href="https://www.linkedin.com/company/intotheopen/" target="_blank" rel="noopener noreferrer" className="transition-all duration-300 hover:scale-110" style={{ color: '#2F679F' }}>
                 <Linkedin className="w-5 h-5" />
               </a>
-              <a href="https://www.instagram.com/intotheopen.ai?utm_source=qr" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-accent hover:scale-125 hover:-translate-y-1 transition-all duration-300">
+              <a href="https://www.instagram.com/intotheopen.ai?utm_source=qr" target="_blank" rel="noopener noreferrer" className="transition-all duration-300 hover:scale-110" style={{ color: '#2F679F' }}>
                 <Instagram className="w-5 h-5" />
               </a>
             </div>
@@ -59,11 +45,11 @@ const Footer = () => {
 
           {/* Product Links */}
           <div>
-            <h4 className="font-semibold text-foreground mb-4">Product</h4>
-            <ul className="space-y-3">
+            <h4 className="font-semibold text-sm mb-3" style={{ color: '#164B82' }}>Product</h4>
+            <ul className="space-y-2">
               {footerLinks.product.map((link) => (
                 <li key={link.label}>
-                  <a href={link.href} className="text-sm text-muted-foreground hover:text-accent hover:translate-x-1 inline-block transition-all duration-300">
+                  <a href={link.href} className="text-sm transition-all duration-300 hover:opacity-100" style={{ color: '#343434', opacity: 0.7 }}>
                     {link.label}
                   </a>
                 </li>
@@ -71,41 +57,13 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Company Links - Commented out for documentation */}
-          {/* <div>
-            <h4 className="font-semibold text-foreground mb-4">Company</h4>
-            <ul className="space-y-3">
-              {footerLinks.company.map((link) => (
-                <li key={link.label}>
-                  <a href={link.href} className="text-sm text-muted-foreground hover:text-accent hover:translate-x-1 inline-block transition-all duration-300">
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div> */}
-
-          {/* Resources Links - Commented out for documentation */}
-          {/* <div>
-            <h4 className="font-semibold text-foreground mb-4">Resources</h4>
-            <ul className="space-y-3">
-              {footerLinks.resources.map((link) => (
-                <li key={link.label}>
-                  <a href={link.href} className="text-sm text-muted-foreground hover:text-accent hover:translate-x-1 inline-block transition-all duration-300">
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div> */}
-
           {/* Legal Links */}
           <div>
-            <h4 className="font-semibold text-foreground mb-4">Legal</h4>
-            <ul className="space-y-3">
+            <h4 className="font-semibold text-sm mb-3" style={{ color: '#164B82' }}>Legal</h4>
+            <ul className="space-y-2">
               {footerLinks.legal.map((link) => (
                 <li key={link.label}>
-                  <a href={link.href} className="text-sm text-muted-foreground hover:text-accent hover:translate-x-1 inline-block transition-all duration-300">
+                  <a href={link.href} className="text-sm transition-all duration-300 hover:opacity-100" style={{ color: '#343434', opacity: 0.7 }}>
                     {link.label}
                   </a>
                 </li>
@@ -115,13 +73,13 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-8 border-t border-border flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-sm text-muted-foreground">
+        <div className="pt-6 border-t border-border flex flex-col md:flex-row items-center justify-between gap-3">
+          <p className="text-xs" style={{ color: '#343434', opacity: 0.6 }}>
             © 2026 intotheopen. All rights reserved.
           </p>
           <div className="flex items-center gap-2">
-            <span className="w-2 h-2 bg-accent rounded-full" />
-            <span className="text-sm text-muted-foreground">All systems operational</span>
+            <span className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: '#699ACD' }} />
+            <span className="text-xs" style={{ color: '#343434', opacity: 0.6 }}>All systems operational</span>
           </div>
         </div>
       </div>

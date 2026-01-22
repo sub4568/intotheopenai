@@ -35,66 +35,68 @@ const steps = [
 
 const HowItWorksSection = () => {
   return (
-    <section id="how-it-works" className="py-24" style={{ backgroundColor: '#164B82' }}>
+    <section id="how-it-works" className="py-20 md:py-24" style={{ backgroundColor: '#2F679F' }}>
       <div className="container mx-auto px-4">
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold text-primary-foreground mb-4">
+        <div className="text-center mb-12 md:mb-14">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-primary-foreground mb-3">
             From draft to performance
           </h2>
-          <p className="text-lg text-primary-foreground/70 max-w-2xl mx-auto">
+          <p className="text-base text-primary-foreground/70 max-w-xl mx-auto leading-relaxed">
             A continuous workflow that predicts, validates, and optimises content across its entire lifecycle.
           </p>
         </div>
 
         {/* Steps - Stacked Cards (Text Only) */}
-        <div className="max-w-4xl mx-auto relative">
+        <div className="max-w-3xl mx-auto relative">
           {steps.map((step, index) => (
             <div key={index} className="relative">
               <div
-                className="group bg-secondary rounded-2xl overflow-hidden border border-primary/30 hover:border-accent/50 hover:shadow-2xl hover:-translate-y-2 hover:scale-[1.02] transition-all duration-300 cursor-pointer relative mb-16 last:mb-0"
+                className="group bg-white rounded-xl overflow-hidden border border-white/10 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 relative mb-10 last:mb-0 shadow-lg"
                 style={{
                   zIndex: steps.length - index,
                 }}
               >
                 {/* Step Number Badge */}
-                <div className="absolute top-6 left-6 z-20">
-                  <div className="w-12 h-12 bg-accent rounded-full flex items-center justify-center border-2 border-primary/20 group-hover:scale-110 group-hover:border-accent transition-all duration-300">
-                    <span className="text-primary-foreground font-bold text-lg">{index + 1}</span>
+                <div className="absolute top-5 left-5 z-20">
+                  <div className="w-10 h-10 rounded-full flex items-center justify-center border-2 group-hover:scale-105 transition-all duration-300" style={{ backgroundColor: '#E4B795', borderColor: '#E4B795' }}>
+                    <span className="font-bold text-sm" style={{ color: '#164B82' }}>{index + 1}</span>
                   </div>
                 </div>
 
                 {/* Content Container - Centered Text Layout */}
-                <div className="p-8 md:p-12 pt-24 md:pt-16 flex flex-col items-center text-center justify-center min-h-[250px]">
-                  <h3 className="text-2xl md:text-3xl font-bold text-secondary-foreground mb-4 group-hover:text-accent transition-colors duration-300">
+                <div className="p-6 md:p-8 pt-20 md:pt-12 flex flex-col items-center text-center justify-center min-h-[200px]">
+                  <h3 className="text-xl md:text-2xl font-bold mb-3 leading-tight" style={{ color: '#164B82' }}>
                     {step.title}
                   </h3>
                   
                   {step.tagline && (
-                    <p className="text-secondary-foreground/80 italic mb-4 leading-relaxed">
+                    <p className="italic mb-3 text-sm leading-relaxed" style={{ color: '#699ACD' }}>
                       {step.tagline}
                     </p>
                   )}
                   
-                  <p className="text-secondary-foreground/70 mb-8 leading-relaxed group-hover:text-secondary-foreground/90 transition-colors duration-300 text-lg max-w-2xl">
+                  <p className="mb-6 leading-[1.65] text-sm md:text-base max-w-xl" style={{ color: '#343434', opacity: 0.8 }}>
                     {step.description}
                   </p>
                   
                   {step.cta === "Discover more" ? (
                     <a
                       href="#contact"
-                      className="inline-flex items-center gap-2 text-accent font-medium hover:gap-4 hover:translate-x-1 transition-all duration-300"
+                      className="inline-flex items-center gap-2 text-sm font-medium hover:gap-3 transition-all duration-300"
+                      style={{ color: '#2F679F' }}
                     >
                       Book a demo
-                      <ArrowRight className="w-4 h-4 group-hover:scale-125 transition-transform duration-300" />
+                      <ArrowRight className="w-4 h-4" />
                     </a>
                   ) : (
                     <a
                       href="#pricing"
-                      className="inline-flex items-center gap-2 text-accent font-medium hover:gap-4 hover:translate-x-1 transition-all duration-300"
+                      className="inline-flex items-center gap-2 text-sm font-medium hover:gap-3 transition-all duration-300"
+                      style={{ color: '#2F679F' }}
                     >
                       {step.cta}
-                      <ArrowRight className="w-4 h-4 group-hover:scale-125 transition-transform duration-300" />
+                      <ArrowRight className="w-4 h-4" />
                     </a>
                   )}
                 </div>
@@ -102,8 +104,8 @@ const HowItWorksSection = () => {
 
               {/* Arrow Connector (between steps) */}
               {index < steps.length - 1 && (
-                <div className="hidden md:flex absolute -bottom-8 left-1/2 -translate-x-1/2 z-10 items-center justify-center">
-                   <ArrowDown className="w-6 h-6 text-accent/50 animate-bounce" />
+                <div className="hidden md:flex absolute -bottom-5 left-1/2 -translate-x-1/2 z-10 items-center justify-center">
+                   <ArrowDown className="w-5 h-5" style={{ color: '#699ACD', opacity: 0.6 }} />
                 </div>
               )}
             </div>

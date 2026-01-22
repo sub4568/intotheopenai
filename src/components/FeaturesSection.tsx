@@ -72,66 +72,64 @@ const FeaturesSection = () => {
   const { ref: teamsRef, isVisible: teamsVisible } = useScrollAnimation();
 
   return (
-    <section id="features" className="py-24 bg-background">
+    <section id="features" className="py-20 md:py-24" style={{ backgroundColor: '#F2F7FA' }}>
       <div className="container mx-auto px-4">
         <div
           ref={headerRef}
-          className={`text-center mb-16 transition-all duration-700 ${headerVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+          className={`text-center mb-12 md:mb-14 transition-all duration-700 ${headerVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold mb-3" style={{ color: '#164B82' }}>
             Our features
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-base md:text-lg max-w-2xl mx-auto leading-relaxed" style={{ color: '#343434', opacity: 0.75 }}>
             Supercharge your content with AI-driven proactive content intelligence
           </p>
         </div>
 
-        <div ref={gridRef} className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+        <div ref={gridRef} className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-5">
           {features.map((feature, index) => (
             <div
               key={index}
-              className={`group p-6 bg-card rounded-2xl border border-border hover:border-accent/50 hover:shadow-xl hover:shadow-accent/5 hover:-translate-y-2 hover:scale-[1.02] transition-all duration-300 cursor-pointer ${gridVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+              className={`group p-6 bg-white rounded-xl border border-border shadow-md hover:shadow-lg hover:-translate-y-1 transition-all duration-300 ${gridVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
               style={{
-                transitionDelay: gridVisible ? `${index * 100}ms` : '0ms',
-                animationDelay: `${index * 0.5}s`
+                transitionDelay: gridVisible ? `${index * 80}ms` : '0ms',
               }}
             >
-              <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 group-hover:bg-accent/20 group-hover:rotate-6 transition-all duration-300">
-                <feature.icon className="w-6 h-6 text-accent group-hover:scale-110 transition-transform duration-300" />
+              <div className="w-11 h-11 rounded-lg flex items-center justify-center mb-4" style={{ backgroundColor: '#164B82' }}>
+                <feature.icon className="w-5 h-5 text-white" />
               </div>
-              <h3 className="text-xl font-semibold text-foreground mb-2">
+              <h3 className="text-lg font-semibold mb-1.5" style={{ color: '#164B82' }}>
                 {feature.title}
               </h3>
-              <p className="text-sm text-accent italic mb-3">
+              <p className="text-sm italic mb-2" style={{ color: '#699ACD' }}>
                 {feature.subtitle}
               </p>
-              <p className="text-muted-foreground text-sm leading-relaxed">
+              <p className="text-sm leading-[1.65]" style={{ color: '#343434', opacity: 0.8 }}>
                 {feature.description}
               </p>
             </div>
           ))}
         </div>
 
-        <div ref={bottomRef} className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto mb-24">
+        <div ref={bottomRef} className="grid grid-cols-1 md:grid-cols-2 gap-5 max-w-4xl mx-auto mb-20">
           {bottomFeatures.map((feature, index) => (
             <div
               key={index}
-              className={`group p-6 bg-card rounded-2xl border border-border hover:border-accent/50 hover:shadow-xl hover:shadow-accent/5 hover:-translate-y-2 hover:scale-[1.02] transition-all duration-300 cursor-pointer ${bottomVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+              className={`group p-6 bg-white rounded-xl border border-border shadow-md hover:shadow-lg hover:-translate-y-1 transition-all duration-300 ${bottomVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
               style={{
-                transitionDelay: bottomVisible ? `${index * 100}ms` : '0ms',
-                animationDelay: `${index * 0.7}s`
+                transitionDelay: bottomVisible ? `${index * 80}ms` : '0ms',
               }}
             >
-              <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 group-hover:bg-accent/20 group-hover:rotate-6 transition-all duration-300">
-                <feature.icon className="w-6 h-6 text-accent group-hover:scale-110 transition-transform duration-300" />
+              <div className="w-11 h-11 rounded-lg flex items-center justify-center mb-4" style={{ backgroundColor: '#164B82' }}>
+                <feature.icon className="w-5 h-5 text-white" />
               </div>
-              <h3 className="text-xl font-semibold text-foreground mb-2">
+              <h3 className="text-lg font-semibold mb-1.5" style={{ color: '#164B82' }}>
                 {feature.title}
               </h3>
-              <p className="text-sm text-accent italic mb-3">
+              <p className="text-sm italic mb-2" style={{ color: '#699ACD' }}>
                 {feature.subtitle}
               </p>
-              <p className="text-muted-foreground text-sm leading-relaxed">
+              <p className="text-sm leading-[1.65]" style={{ color: '#343434', opacity: 0.8 }}>
                 {feature.description}
               </p>
             </div>
@@ -140,26 +138,26 @@ const FeaturesSection = () => {
 
         <div
           ref={comparisonRef}
-          className={`text-center mb-12 transition-all duration-700 ${comparisonVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+          className={`text-center mb-10 transition-all duration-700 ${comparisonVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground">
+          <h2 className="text-2xl md:text-3xl font-bold" style={{ color: '#164B82' }}>
             Why teams choose intotheopen
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 max-w-5xl mx-auto">
           <div
-            className={`group p-8 bg-card rounded-2xl border border-border hover:border-accent/50 hover:shadow-xl hover:-translate-y-2 hover:scale-[1.02] transition-all duration-300 cursor-pointer ${comparisonVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+            className={`group p-6 md:p-7 bg-white rounded-xl border border-border shadow-md hover:shadow-lg hover:-translate-y-1 transition-all duration-300 ${comparisonVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
             style={{ transitionDelay: comparisonVisible ? '100ms' : '0ms' }}
           >
-            <h3 className="text-xl font-semibold text-foreground mb-6 text-center group-hover:text-accent transition-colors duration-300">
+            <h3 className="text-base font-semibold mb-5 text-center" style={{ color: '#164B82' }}>
               Intotheopen
             </h3>
-            <div className="space-y-4">
+            <div className="space-y-3">
               {intoTheopenBenefits.map((benefit, index) => (
-                <div key={index} className="flex items-start gap-3 group/item hover:translate-x-1 transition-transform duration-200">
-                  <Sparkles className="w-5 h-5 text-accent mt-0.5 flex-shrink-0 group-hover/item:scale-110 transition-transform duration-200" />
-                  <p className="text-muted-foreground text-sm leading-relaxed">
+                <div key={index} className="flex items-start gap-2.5">
+                  <Sparkles className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: '#699ACD' }} />
+                  <p className="text-sm leading-[1.6]" style={{ color: '#343434', opacity: 0.8 }}>
                     {benefit}
                   </p>
                 </div>
@@ -168,17 +166,17 @@ const FeaturesSection = () => {
           </div>
 
           <div
-            className={`group p-8 bg-card rounded-2xl border border-border hover:border-primary/50 hover:shadow-xl hover:-translate-y-2 hover:scale-[1.02] transition-all duration-300 cursor-pointer ${comparisonVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
-            style={{ transitionDelay: comparisonVisible ? '200ms' : '0ms' }}
+            className={`group p-6 md:p-7 bg-white rounded-xl border border-border shadow-md hover:shadow-lg hover:-translate-y-1 transition-all duration-300 ${comparisonVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+            style={{ transitionDelay: comparisonVisible ? '150ms' : '0ms' }}
           >
-            <h3 className="text-xl font-semibold text-foreground mb-6 text-center group-hover:text-primary transition-colors duration-300">
+            <h3 className="text-base font-semibold mb-5 text-center" style={{ color: '#164B82' }}>
               Traditional methods
             </h3>
-            <div className="space-y-4">
+            <div className="space-y-3">
               {traditionalDrawbacks.map((drawback, index) => (
-                <div key={index} className="flex items-start gap-3 group/item hover:translate-x-1 transition-transform duration-200">
-                  <X className="w-5 h-5 text-primary mt-0.5 flex-shrink-0 group-hover/item:scale-110 transition-transform duration-200" />
-                  <p className="text-muted-foreground text-sm leading-relaxed">
+                <div key={index} className="flex items-start gap-2.5">
+                  <X className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: '#2F679F' }} />
+                  <p className="text-sm leading-[1.6]" style={{ color: '#343434', opacity: 0.8 }}>
                     {drawback}
                   </p>
                 </div>
@@ -190,29 +188,29 @@ const FeaturesSection = () => {
         {/* Built for teams section */}
         <div
           ref={teamsRef}
-          className={`mt-24 text-center transition-all duration-700 ${teamsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+          className={`mt-20 text-center transition-all duration-700 ${teamsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+          <h2 className="text-2xl md:text-3xl font-bold mb-3" style={{ color: '#164B82' }}>
             Built for teams who can't afford to guess
           </h2>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto mb-10">
+          <p className="text-base max-w-2xl mx-auto mb-8 leading-relaxed" style={{ color: '#343434', opacity: 0.75 }}>
             intotheopen is designed for teams responsible for performance, reputation, and outcomes.
           </p>
 
-          <div className="flex flex-wrap justify-center gap-4 mb-8">
+          <div className="flex flex-wrap justify-center gap-3 mb-6">
             {teamsFor.map((team, index) => (
               <div
                 key={index}
-                className={`flex items-center gap-2 px-5 py-3 bg-card rounded-full border border-border hover:border-accent/50 hover:shadow-lg transition-all duration-300 ${teamsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
-                style={{ transitionDelay: teamsVisible ? `${index * 100}ms` : '0ms' }}
+                className={`flex items-center gap-2 px-4 py-2.5 bg-white rounded-full border border-border shadow-sm hover:shadow-md transition-all duration-300 ${teamsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
+                style={{ transitionDelay: teamsVisible ? `${index * 80}ms` : '0ms' }}
               >
-                <span className="text-accent">→</span>
-                <span className="text-foreground font-medium">{team}</span>
+                <span className="text-sm" style={{ color: '#699ACD' }}>→</span>
+                <span className="text-sm font-medium" style={{ color: '#164B82' }}>{team}</span>
               </div>
             ))}
           </div>
 
-          <p className="text-sm text-muted-foreground italic">
+          <p className="text-sm italic" style={{ color: '#343434', opacity: 0.6 }}>
             Used by in-house teams and agencies delivering content at scale.
           </p>
         </div>
