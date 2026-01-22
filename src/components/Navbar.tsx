@@ -1,4 +1,3 @@
-import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
 
@@ -17,11 +16,13 @@ const Navbar = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <a href="#" className="flex items-center gap-2 group">
-            <div className="w-8 h-8 bg-gradient-accent rounded-lg flex items-center justify-center group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
-              <span className="text-accent-foreground font-bold text-sm">ITO</span>
-            </div>
-            <span className="font-semibold text-foreground group-hover:text-accent transition-colors duration-300">intotheopen</span>
+          <a href="#" className="group">
+            <span 
+              className="text-xl font-bold tracking-tight group-hover:scale-105 transition-transform duration-300 inline-block"
+              style={{ color: '#164B82' }}
+            >
+              intotheopen
+            </span>
           </a>
 
           {/* Desktop Navigation */}
