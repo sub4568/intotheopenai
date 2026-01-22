@@ -137,8 +137,7 @@ const PricingSection = () => {
           className={`text-center text-sm text-muted-foreground mt-12 transition-all duration-700 ${cardsVisible ? 'opacity-100' : 'opacity-0'}`}
           style={{ transitionDelay: cardsVisible ? '500ms' : '0ms' }}
         >
-          // All plans include a 14-day free trial. No credit card required.
-        </p>
+         </p>
       </div>
     </section>
   );

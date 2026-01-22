@@ -1,4 +1,4 @@
-import { Linkedin, Twitter, Youtube } from "lucide-react";
+import { Linkedin, Twitter, Instagram } from "lucide-react";
 
 const footerLinks = {
   product: [
@@ -33,24 +33,26 @@ const Footer = () => {
         <div className="grid grid-cols-2 md:grid-cols-3 gap-8 mb-12">
           {/* Brand Column */}
           <div className="col-span-2 md:col-span-1">
-            <a href="#" className="flex items-center gap-2 mb-4 group">
-              <div className="w-8 h-8 bg-gradient-accent rounded-lg flex items-center justify-center group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
-                <span className="text-accent-foreground font-bold text-sm">ITO</span>
-              </div>
-              <span className="font-semibold text-foreground group-hover:text-accent transition-colors duration-300">intotheopen</span>
+            <a href="#" className="mb-4 inline-block group">
+              <span 
+                className="text-xl font-bold tracking-tight group-hover:scale-105 transition-transform duration-300 inline-block"
+                style={{ color: '#164B82' }}
+              >
+                intotheopen
+              </span>
             </a>
             <p className="text-sm text-muted-foreground mb-4">
               Marketing analytics that drive real results.
             </p>
             <div className="flex items-center gap-4">
-              <a href="#" className="text-muted-foreground hover:text-accent hover:scale-125 hover:-translate-y-1 transition-all duration-300">
+              <a href="https://x.com/intotheopen_ai?t=fJp56PsVEQuk2zOZE9FWnA" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-accent hover:scale-125 hover:-translate-y-1 transition-all duration-300">
                 <Twitter className="w-5 h-5" />
               </a>
-              <a href="#" className="text-muted-foreground hover:text-accent hover:scale-125 hover:-translate-y-1 transition-all duration-300">
+              <a href="https://www.linkedin.com/company/intotheopen/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-accent hover:scale-125 hover:-translate-y-1 transition-all duration-300">
                 <Linkedin className="w-5 h-5" />
               </a>
-              <a href="#" className="text-muted-foreground hover:text-accent hover:scale-125 hover:-translate-y-1 transition-all duration-300">
-                <Youtube className="w-5 h-5" />
+              <a href="https://www.instagram.com/intotheopen.ai?utm_source=qr" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-accent hover:scale-125 hover:-translate-y-1 transition-all duration-300">
+                <Instagram className="w-5 h-5" />
               </a>
             </div>
           </div>
