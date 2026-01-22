@@ -5,6 +5,7 @@ import { defineConfig } from "vite";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
+  const isGitHubActions = process.env.GITHUB_ACTIONS === 'true';
 <<<<<<< HEAD
 
 base: mode === 'production' ? '/intotheopenai/' : '/',  server: {
