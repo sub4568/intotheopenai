@@ -1,14 +1,15 @@
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const navLinks = [
-    { label: "Features", href: "#features" },
-    { label: "How it Works", href: "#how-it-works" },
-    { label: "Pricing", href: "#pricing" },
-    { label: "FAQ", href: "#faq" },
+    { label: "Features", href: "/#features" },
+    { label: "How it Works", href: "/#how-it-works" },
+    { label: "Pricing", href: "/#pricing" },
+    { label: "FAQ", href: "/#faq" },
   ];
 
   return (
@@ -16,14 +17,21 @@ const Navbar = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <a href="#" className="group">
+          <Link 
+            to="/" 
+            className="group"
+            onClick={() => {
+              setIsOpen(false);
+              window.scrollTo(0, 0);
+            }}
+          >
             <span 
               className="text-xl font-bold tracking-tight group-hover:scale-105 transition-transform duration-300 inline-block"
               style={{ color: '#164B82' }}
             >
               intotheopen
             </span>
-          </a>
+          </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
@@ -36,11 +44,6 @@ const Navbar = () => {
                 {link.label}
               </a>
             ))}
-          </div>
-
-          {/* CTA Buttons */}
-          <div className="hidden md:flex items-center gap-3">
-            {/* Removed login and trial buttons */}
           </div>
 
           {/* Mobile Menu Button */}
