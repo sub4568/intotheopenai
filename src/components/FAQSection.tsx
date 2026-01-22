@@ -8,32 +8,44 @@ import {
 const faqs = [
   {
     question: "What is intotheopen?",
-    answer: "intotheopen is an AI-driven proactive content intelligence platform that predicts, validates, and optimises high-impact content performance before and after it goes live, helping comms and marketing teams eliminate wasted time, effort, and budget.",
+    answer: "intotheopen is an AI-native content intelligence platform that helps teams engineer content performance before and after publication. It enables communications and marketing teams to forecast impact, validate messaging, and continuously optimise content so performance is designed in, not discovered too late.",
   },
   {
-    question: "How does intotheopen work?",
-    answer: "Our platform forecasts how content will perform, tests it against 10+ performance signals (including synthetic audiences), generates optimised variants ready to be published, and tracks performance in real time for continuous refinement to maximise ROI.",
+    question: "Who is intotheopen built for?",
+    answer: "intotheopen is built for communications and marketing teams responsible for performance, reputation, and outcomes. This includes in-house teams, strategic content teams, and agencies delivering content at scale.",
   },
   {
-    question: "Who is intotheopen for?",
-    answer: "We’re built for comms and marketing teams in agencies, brands, and enterprises who want to improve content effectiveness, reduce wasted spend, and prove ROI with data-backed insights.",
+    question: "How is intotheopen different from traditional analytics tools?",
+    answer: "Traditional analytics tools explain what happened after content is published. intotheopen provides intelligence before and after publication, helping teams predict how content will land, validate messaging upfront, and continuously refine performance once content is live.",
   },
   {
-    question: "What makes intotheopen different from traditional tools?",
-    answer: "Unlike reactive tools that only measure results after publishing, intotheopen is proactive. We show you how content will perform before it goes live, and keep improving it afterwards.",
+    question: "Is intotheopen a content creation or generative AI tool?",
+    answer: "No. intotheopen does not generate content for you. It is a content intelligence platform, designed to help teams evaluate, improve, and optimise content they create, without replacing human strategy, creativity, or voice.",
   },
   {
-    question: "How many performance indicators does intotheopen test against?",
-    answer: "Content is tested against 10+ performance signals, covering clarity, tone, engagement, audience resonance, and more. These insights are aggregated into a single optimisation engine for actionable results.",
+    question: "How does intotheopen predict content performance before publishing?",
+    answer: "intotheopen uses AI-powered predictive scoring and multi-layer validation to assess content against multiple performance signals, including synthetic audience testing. This provides an early, evidence-based view of how content is likely to perform before it goes live.",
   },
   {
-    question: "Can you directly push through intotheopen?",
-    answer: "Yes. You can publish content directly from intotheopen or use our insights to refine content published on other platforms. Either way, your content is continuously tracked and optimised.",
+    question: "What happens once content goes live?",
+    answer: "Once content is published, intotheopen continues to monitor performance in real time. It tracks how content is landing and automatically refines messaging where possible, helping teams maximise performance without full rewrites or relaunches.",
   },
   {
-    question: "How much does intotheopen cost?",
-    answer: "We offer tiered subscription plans for startups, agencies, and enterprises, starting from $649/month. Pricing scales with your team’s needs, integrations, and usage.",
-  }
+    question: "Can intotheopen fit into our existing content workflow?",
+    answer: "Yes. intotheopen is designed to integrate seamlessly into existing workflows. Teams can continue publishing on the platforms they already use, with intotheopen providing intelligence and optimisation alongside, not in place of, their current tools.",
+  },
+  {
+    question: "Does intotheopen use or store our proprietary content?",
+    answer: "Your content remains yours. intotheopen does not use proprietary customer content to train shared models, and content is handled in line with strict data security and confidentiality standards.",
+  },
+  {
+    question: "Is there a free plan or early access available?",
+    answer: "Yes. intotheopen currently offers early access for selected teams. You can request early access via the website to explore the platform and provide feedback as it evolves.",
+  },
+  {
+    question: "How long does it take to start seeing value?",
+    answer: "Value is delivered immediately. Teams gain actionable insight as soon as content is analysed, with benefits increasing over time as content performance is continuously refined and optimised.",
+  },
 ];
 
 const FAQSection = () => {
