@@ -6,8 +6,6 @@ import { defineConfig } from "vite";
 
 export default defineConfig(({ mode }) => {
   const isGitHubActions = process.env.GITHUB_ACTIONS === 'true';
->>>>>>> feature/nifemi
-
   return {
     base: '/',
     server: {
