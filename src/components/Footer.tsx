@@ -1,4 +1,4 @@
-import { Linkedin, Twitter, Youtube } from "lucide-react";
+import { Linkedin, Twitter, Instagram } from "lucide-react";
 
 const footerLinks = {
   product: [
@@ -45,14 +45,14 @@ const Footer = () => {
               Marketing analytics that drive real results.
             </p>
             <div className="flex items-center gap-4">
-              <a href="#" className="text-muted-foreground hover:text-accent hover:scale-125 hover:-translate-y-1 transition-all duration-300">
+              <a href="https://x.com/intotheopen_ai?t=fJp56PsVEQuk2zOZE9FWnA" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-accent hover:scale-125 hover:-translate-y-1 transition-all duration-300">
                 <Twitter className="w-5 h-5" />
               </a>
-              <a href="#" className="text-muted-foreground hover:text-accent hover:scale-125 hover:-translate-y-1 transition-all duration-300">
+              <a href="https://www.linkedin.com/company/intotheopen/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-accent hover:scale-125 hover:-translate-y-1 transition-all duration-300">
                 <Linkedin className="w-5 h-5" />
               </a>
-              <a href="#" className="text-muted-foreground hover:text-accent hover:scale-125 hover:-translate-y-1 transition-all duration-300">
-                <Youtube className="w-5 h-5" />
+              <a href="https://www.instagram.com/intotheopen.ai?utm_source=qr" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-accent hover:scale-125 hover:-translate-y-1 transition-all duration-300">
+                <Instagram className="w-5 h-5" />
               </a>
             </div>
           </div>
