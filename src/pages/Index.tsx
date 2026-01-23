@@ -1,12 +1,10 @@
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import ProblemSection from "@/components/ProblemSection";
-import ThirdPageSection from "@/components/ThirdPageSection";
 import FeaturesSection from "@/components/FeaturesSection";
 import HowItWorksSection from "@/components/HowItWorksSection";
 import PricingSection from "@/components/PricingSection";
 import EngineerCTASection from "@/components/EngineerCTASection";
-import EighthPageSection from "@/components/EighthPageSection";
 import ContactSection from "@/components/ContactSection";
 import FAQSection from "@/components/FAQSection";
 import Footer from "@/components/Footer";
@@ -24,17 +22,15 @@ const Index = () => {
         <SectionDivider />
         <ProblemSection />
         <SectionDivider />
-        <ThirdPageSection />
+        <FeaturesSection />
         <SectionDivider />
         <HowItWorksSection />
-        <SectionDivider />
-        <FeaturesSection />
         <SectionDivider />
         <PricingSection />
         <SectionDivider />
         <EngineerCTASection />
         <SectionDivider />
-        <EighthPageSection />
+        <ContactSection />
         <SectionDivider />
         <FAQSection />
       </main>
