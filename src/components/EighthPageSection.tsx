@@ -36,7 +36,7 @@ const EighthPageSection = () => {
             <Button
               variant="outline"
               size="lg"
-              className="border-white text-white hover:bg-white/10 hover:scale-105 transition-all duration-200"
+              className="border-white border-2 text-white bg-transparent hover:bg-white hover:text-[#164B82] hover:scale-105 transition-all duration-200"
               asChild
             >
               <a href="#hero">
