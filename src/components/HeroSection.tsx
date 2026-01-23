@@ -48,7 +48,7 @@ const HeroSection = () => {
           {/* Left Column: Text */}
           <div className="flex-1 max-w-2xl w-full animate-fade-up">
             <h1 className="text-4xl md:text-5xl lg:text-[3.5rem] font-extrabold mb-5 text-left leading-[1.08]" style={{ color: '#164B82' }}>
-              Engineer content performance before you publish
+              Engineer content performance before you publish.
             </h1>
 
             <p className="text-lg md:text-xl mb-8 leading-[1.6] opacity-0 animate-fade-up [animation-delay:200ms] [animation-fill-mode:forwards] text-left max-w-xl" style={{ color: '#343434', opacity: 0.8 }}>
