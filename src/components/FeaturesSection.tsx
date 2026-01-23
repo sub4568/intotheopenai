@@ -140,47 +140,73 @@ const FeaturesSection = () => {
           ref={comparisonRef}
           className={`text-center mb-10 transition-all duration-700 ${comparisonVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
         >
-          <h2 className="text-2xl md:text-3xl font-bold" style={{ color: '#164B82' }}>
+          <h2 className="text-2xl md:text-3xl font-bold mb-8" style={{ color: '#164B82' }}>
             Why teams choose intotheopen
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
           <div
-            className={`group p-6 md:p-7 bg-white rounded-xl border border-border shadow-md hover:shadow-lg hover:-translate-y-1 transition-all duration-300 ${comparisonVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+            className={`group p-8 bg-white rounded-xl border border-border shadow-md hover:shadow-lg hover:-translate-y-1 transition-all duration-300 ${comparisonVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
             style={{ transitionDelay: comparisonVisible ? '100ms' : '0ms' }}
           >
-            <h3 className="text-base font-semibold mb-5 text-center" style={{ color: '#164B82' }}>
-              Intotheopen
+            <h3 className="text-lg font-bold mb-6 text-left" style={{ color: '#164B82' }}>
+              intotheopen
             </h3>
-            <div className="space-y-3">
-              {intoTheopenBenefits.map((benefit, index) => (
-                <div key={index} className="flex items-start gap-2.5">
-                  <Sparkles className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: '#699ACD' }} />
-                  <p className="text-sm leading-[1.6]" style={{ color: '#343434', opacity: 0.8 }}>
-                    {benefit}
-                  </p>
-                </div>
-              ))}
+            <div className="space-y-4">
+              <div className="flex items-start gap-3">
+                <span className="text-lg" style={{ color: '#699ACD' }}>→</span>
+                <p className="text-sm leading-[1.6]" style={{ color: '#343434', opacity: 0.85 }}>
+                  Predicts content performance before launch
+                </p>
+              </div>
+              <div className="flex items-start gap-3">
+                <span className="text-lg" style={{ color: '#699ACD' }}>→</span>
+                <p className="text-sm leading-[1.6]" style={{ color: '#343434', opacity: 0.85 }}>
+                  Reduces wasted spend on underperforming campaigns
+                </p>
+              </div>
+              <div className="flex items-start gap-3">
+                <span className="text-lg" style={{ color: '#699ACD' }}>→</span>
+                <p className="text-sm leading-[1.6]" style={{ color: '#343434', opacity: 0.85 }}>
+                  Delivers insight in seconds, not weeks
+                </p>
+              </div>
+              <div className="flex items-start gap-3">
+                <span className="text-lg" style={{ color: '#699ACD' }}>→</span>
+                <p className="text-sm leading-[1.6]" style={{ color: '#343434', opacity: 0.85 }}>
+                  Improves live content without rewrites or relaunches
+                </p>
+              </div>
             </div>
           </div>
 
           <div
-            className={`group p-6 md:p-7 bg-white rounded-xl border border-border shadow-md hover:shadow-lg hover:-translate-y-1 transition-all duration-300 ${comparisonVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+            className={`group p-8 bg-white rounded-xl border border-border shadow-md hover:shadow-lg hover:-translate-y-1 transition-all duration-300 ${comparisonVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
             style={{ transitionDelay: comparisonVisible ? '150ms' : '0ms' }}
           >
-            <h3 className="text-base font-semibold mb-5 text-center" style={{ color: '#164B82' }}>
-              Traditional methods
+            <h3 className="text-lg font-bold mb-6 text-left" style={{ color: '#164B82' }}>
+              Traditional tools
             </h3>
-            <div className="space-y-3">
-              {traditionalDrawbacks.map((drawback, index) => (
-                <div key={index} className="flex items-start gap-2.5">
-                  <X className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: '#2F679F' }} />
-                  <p className="text-sm leading-[1.6]" style={{ color: '#343434', opacity: 0.8 }}>
-                    {drawback}
-                  </p>
-                </div>
-              ))}
+            <div className="space-y-4">
+              <div className="flex items-start gap-3">
+                <X className="w-5 h-5 mt-0.5 flex-shrink-0" style={{ color: '#2F679F' }} />
+                <p className="text-sm leading-[1.6]" style={{ color: '#343434', opacity: 0.85 }}>
+                  Success is only measured after launch through A/B tests and analytics, wasting budget on underperforming content.
+                </p>
+              </div>
+              <div className="flex items-start gap-3">
+                <X className="w-5 h-5 mt-0.5 flex-shrink-0" style={{ color: '#2F679F' }} />
+                <p className="text-sm leading-[1.6]" style={{ color: '#343434', opacity: 0.85 }}>
+                  Relies on slow, costly focus groups, surveys, or endless internal reviews; feedback takes days, weeks, or months.
+                </p>
+              </div>
+              <div className="flex items-start gap-3">
+                <X className="w-5 h-5 mt-0.5 flex-shrink-0" style={{ color: '#2F679F' }} />
+                <p className="text-sm leading-[1.6]" style={{ color: '#343434', opacity: 0.85 }}>
+                  Content is static once published; improvements require a full rewrite or new campaign, increasing cost and effort.
+                </p>
+              </div>
             </div>
           </div>
         </div>

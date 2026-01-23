@@ -22,7 +22,7 @@ const steps = [
   {
     title: "Publish anywhere",
     tagline: "",
-    description: "Intotheopen fits into your existing workflow. Publish on the platforms you already use.",
+    description: "intotheopen fits into your existing workflow. Publish on the platforms you already use.",
     cta: "Get started",
   },
   {
