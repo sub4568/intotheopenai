@@ -16,13 +16,12 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section className="relative min-h-screen pt-32 pb-20 overflow-hidden" style={{ backgroundColor: '#F2F7FA' }}>
+    <section className="relative min-h-screen pt-32 pb-20 overflow-hidden bg-page-light">
       <BackgroundPaths />
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div
-          className="absolute top-20 left-10 w-72 h-72 rounded-full blur-3xl animate-float-slow"
+          className="absolute top-20 left-10 w-72 h-72 rounded-full blur-3xl animate-float-slow bg-primary/5"
           style={{ 
-            backgroundColor: 'rgba(22, 75, 130, 0.05)',
             transform: isMobile ? 'none' : `translateY(${scrollY * 0.05}px)` 
           }}
         />
@@ -48,11 +47,11 @@ const HeroSection = () => {
           
           {/* Left Column: Text */}
           <div className="flex-1 max-w-2xl w-full animate-fade-up">
-            <h1 className="text-4xl md:text-5xl lg:text-[3.5rem] font-extrabold mb-5 text-left leading-[1.08]" style={{ color: '#164B82' }}>
+            <h1 className="text-4xl md:text-5xl lg:text-[3.5rem] font-extrabold mb-5 text-left leading-[1.08] text-primary-navy">
               Engineer content performance before you publish.
             </h1>
 
-            <p className="text-lg md:text-xl mb-8 leading-[1.6] opacity-0 animate-fade-up [animation-delay:200ms] [animation-fill-mode:forwards] text-left max-w-xl" style={{ color: '#343434', opacity: 0.8 }}>
+            <p className="text-lg md:text-xl mb-8 leading-[1.6] opacity-0 animate-fade-up [animation-delay:200ms] [animation-fill-mode:forwards] text-left max-w-xl text-muted-lighter">
               Forecast impact, validate messaging, and optimise content across its entire lifecycle.
             </p>
 
@@ -60,22 +59,23 @@ const HeroSection = () => {
               <Button 
                 variant="hero" 
                 size="xl" 
-                className="hover:scale-105 transition-transform duration-200"
+                className="group hover:scale-105 transition-all duration-200 hover:shadow-xl"
                 asChild
               >
                 <a href="https://intotheopen-144935016950.us-west1.run.app/" target="_blank" rel="noopener noreferrer">
                   Request early access
-                  <ArrowRight className="w-5 h-5" />
+                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </a>
               </Button>
               <Button 
                 variant="hero-outline" 
                 size="xl" 
-                className="hover:scale-105 transition-transform duration-200"
+                className="group hover:scale-105 transition-all duration-200 hover:shadow-lg"
                 asChild
               >
                 <a href="#how-it-works">
                   See how it works
+                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </a>
               </Button>
             </div>

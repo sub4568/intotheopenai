@@ -5,9 +5,7 @@ import ThirdPageSection from "@/components/ThirdPageSection";
 import FeaturesSection from "@/components/FeaturesSection";
 import HowItWorksSection from "@/components/HowItWorksSection";
 import PricingSection from "@/components/PricingSection";
-import EngineerCTASection from "@/components/EngineerCTASection";
 import EighthPageSection from "@/components/EighthPageSection";
-import ContactSection from "@/components/ContactSection";
 import FAQSection from "@/components/FAQSection";
 import Footer from "@/components/Footer";
 import { BackToTop } from "@/components/BackToTop";
@@ -31,8 +29,6 @@ const Index = () => {
         <FeaturesSection />
         <SectionDivider />
         <PricingSection />
-        <SectionDivider />
-        <EngineerCTASection />
         <SectionDivider />
         <EighthPageSection />
         <SectionDivider />

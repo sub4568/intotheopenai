@@ -5,6 +5,7 @@ import { supabase } from "@/lib/supabase";
 import { useState } from "react";
 import { toast } from "sonner";
 import { z } from "zod";
+import { ArrowRight } from "lucide-react";
 
 const contactSchema = z.object({
   name: z.string().trim().min(1, "Name is required").max(100, "Name must be less than 100 characters"),
@@ -51,22 +52,22 @@ const ContactSection = () => {
   };
 
   return (
-    <section id="contact" className="py-28 bg-primary">
+    <section id="contact" className="py-28 bg-primary-navy">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
-          <div className="mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-primary-foreground mb-4">
+          <div className="mb-12 animate-fade-up">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               Smarter content starts here.
             </h2>
-            <p className="text-lg text-primary-foreground/70">
+            <p className="text-lg text-white/70">
               Reach our team for product or partnership inquiries.
             </p>
           </div>
 
           <div className="max-w-2xl mx-auto">
             <form onSubmit={handleSubmit} className="space-y-6 animate-slide-in-left">
-              <div>
-                <label htmlFor="name" className="block text-sm font-medium text-primary-foreground mb-2">
+              <div className="group">
+                <label htmlFor="name" className="block text-sm font-medium text-white mb-2 group-focus-within:text-accent transition-colors">
                   Your name
                 </label>
                 <Input
@@ -74,13 +75,13 @@ const ContactSection = () => {
                   type="text"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
-                  className="bg-primary-foreground/5 border-primary-foreground/20 text-primary-foreground placeholder:text-primary-foreground/40 focus:border-accent"
+                  className="bg-white/5 border-white/20 text-white placeholder:text-white/40 focus:border-accent focus:ring-2 focus:ring-accent/50 transition-all duration-300"
                   required
                 />
               </div>
 
-              <div>
-                <label htmlFor="email" className="block text-sm font-medium text-primary-foreground mb-2">
+              <div className="group">
+                <label htmlFor="email" className="block text-sm font-medium text-white mb-2 group-focus-within:text-accent transition-colors">
                   Email Address
                 </label>
                 <Input
@@ -88,13 +89,13 @@ const ContactSection = () => {
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="bg-primary-foreground/5 border-primary-foreground/20 text-primary-foreground placeholder:text-primary-foreground/40 focus:border-accent"
+                  className="bg-white/5 border-white/20 text-white placeholder:text-white/40 focus:border-accent focus:ring-2 focus:ring-accent/50 transition-all duration-300"
                   required
                 />
               </div>
 
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium text-primary-foreground mb-2">
+              <div className="group">
+                <label htmlFor="message" className="block text-sm font-medium text-white mb-2 group-focus-within:text-accent transition-colors">
                   Message
                 </label>
                 <Textarea
@@ -102,7 +103,7 @@ const ContactSection = () => {
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
                   placeholder="Please type your message here"
-                  className="bg-primary-foreground/5 border-primary-foreground/20 text-primary-foreground placeholder:text-primary-foreground/40 focus:border-accent min-h-[160px] resize-y"
+                  className="bg-white/5 border-white/20 text-white placeholder:text-white/40 focus:border-accent focus:ring-2 focus:ring-accent/50 min-h-[160px] resize-y transition-all duration-300"
                 />
               </div>
 
@@ -111,8 +112,10 @@ const ContactSection = () => {
                 variant="hero"
                 size="lg"
                 disabled={isSubmitting}
+                className="group hover:scale-105 transition-all duration-200"
               >
                 {isSubmitting ? "Submitting..." : "Book a Demo Call"}
+                {!isSubmitting && <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />}
               </Button>
             </form>
 

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -118,7 +118,9 @@
 
   body {
     @apply bg-background text-foreground font-sans antialiased;
-    font-family: 'DM Sans', system-ui, sans-serif;
+    font-family: 'Inter', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   html {
@@ -132,7 +134,7 @@
     }
   }
 
-  /* Typography hierarchy for B2B SaaS */
+  /* Typography hierarchy for B2B SaaS - Optimized for Inter */
   h1, h2, h3, h4, h5, h6 {
     @apply tracking-tight;
     letter-spacing: -0.02em;
@@ -141,18 +143,19 @@
   h1 {
     @apply font-extrabold;
     line-height: 1.05;
-    letter-spacing: -0.03em;
+    letter-spacing: -0.04em; /* Tighter for Inter at large sizes */
   }
 
   h2 {
     @apply font-bold;
     line-height: 1.1;
-    letter-spacing: -0.025em;
+    letter-spacing: -0.03em;
   }
 
   h3 {
     @apply font-semibold;
     line-height: 1.2;
+    letter-spacing: -0.02em;
   }
 
   h4, h5, h6 {
@@ -169,6 +172,24 @@
   .prose p {
     line-height: 1.75;
   }
+
+  /* Custom color utilities for consistency */
+  .text-primary-navy { color: #164B82; }
+  .text-secondary-navy { color: #2F679F; }
+  .text-soft-blue { color: #699ACD; }
+  .text-warm-peach { color: #E4B795; }
+  .text-muted-gray { 
+    color: #343434; 
+    opacity: 0.75; 
+  }
+  .text-muted-lighter { 
+    color: #343434; 
+    opacity: 0.85; 
+  }
+  
+  .bg-primary-navy { background-color: #164B82; }
+  .bg-page-light { background-color: #F2F7FA; }
+  .bg-surface-white { background-color: #FFFFFF; }
 }
 
 @layer utilities {
@@ -244,6 +265,14 @@
 
   .animate-bounce-subtle {
     animation: bounceSubtle 2s ease-in-out infinite;
+  }
+
+  .animate-shake {
+    animation: shake 0.4s ease-in-out;
+  }
+
+  .animate-ripple {
+    animation: ripple 0.6s ease-out;
   }
 }
 
@@ -331,6 +360,23 @@
 @keyframes bounceSubtle {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-5px); }
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-4px); }
+  20%, 40%, 60%, 80% { transform: translateX(4px); }
+}
+
+@keyframes ripple {
+  0% { 
+    transform: scale(0); 
+    opacity: 0.6; 
+  }
+  100% { 
+    transform: scale(4); 
+    opacity: 0; 
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

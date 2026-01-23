@@ -72,7 +72,7 @@ const FeaturesSection = () => {
   const { ref: teamsRef, isVisible: teamsVisible } = useScrollAnimation();
 
   return (
-    <section id="features" className="py-20 md:py-24" style={{ backgroundColor: '#F2F7FA' }}>
+    <section id="features" className="py-20 md:py-24 bg-page-light">
       <div className="container mx-auto px-4">
         <div
           ref={headerRef}
@@ -140,24 +140,24 @@ const FeaturesSection = () => {
           ref={comparisonRef}
           className={`text-center mb-10 transition-all duration-700 ${comparisonVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
         >
-          <h2 className="text-2xl md:text-3xl font-bold" style={{ color: '#164B82' }}>
+          <h2 className="text-2xl md:text-3xl font-bold text-primary-navy">
             Why teams choose intotheopen
           </h2>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5 max-w-5xl mx-auto">
           <div
-            className={`group p-6 md:p-7 bg-white rounded-xl border border-border shadow-md hover:shadow-lg hover:-translate-y-1 transition-all duration-300 ${comparisonVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+            className={`group p-6 md:p-7 bg-white rounded-xl border border-border shadow-md hover:shadow-glow hover:-translate-y-2 hover:border-accent transition-all duration-300 ${comparisonVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
             style={{ transitionDelay: comparisonVisible ? '100ms' : '0ms' }}
           >
-            <h3 className="text-base font-semibold mb-5 text-center" style={{ color: '#164B82' }}>
-              Intotheopen
+            <h3 className="text-base font-semibold mb-5 text-center text-primary-navy group-hover:text-accent transition-colors">
+              intotheopen
             </h3>
             <div className="space-y-3">
               {intoTheopenBenefits.map((benefit, index) => (
-                <div key={index} className="flex items-start gap-2.5">
-                  <Sparkles className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: '#699ACD' }} />
-                  <p className="text-sm leading-[1.6]" style={{ color: '#343434', opacity: 0.8 }}>
+                <div key={index} className="flex items-start gap-2.5 group/item">
+                  <Sparkles className="w-4 h-4 mt-0.5 flex-shrink-0 text-soft-blue group-hover/item:scale-110 transition-transform" />
+                  <p className="text-sm leading-[1.6] text-muted-lighter">
                     {benefit}
                   </p>
                 </div>
@@ -169,14 +169,14 @@ const FeaturesSection = () => {
             className={`group p-6 md:p-7 bg-white rounded-xl border border-border shadow-md hover:shadow-lg hover:-translate-y-1 transition-all duration-300 ${comparisonVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
             style={{ transitionDelay: comparisonVisible ? '150ms' : '0ms' }}
           >
-            <h3 className="text-base font-semibold mb-5 text-center" style={{ color: '#164B82' }}>
+            <h3 className="text-base font-semibold mb-5 text-center text-primary-navy">
               Traditional methods
             </h3>
             <div className="space-y-3">
               {traditionalDrawbacks.map((drawback, index) => (
-                <div key={index} className="flex items-start gap-2.5">
-                  <X className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: '#2F679F' }} />
-                  <p className="text-sm leading-[1.6]" style={{ color: '#343434', opacity: 0.8 }}>
+                <div key={index} className="flex items-start gap-2.5 group/item">
+                  <X className="w-4 h-4 mt-0.5 flex-shrink-0 text-secondary-navy group-hover/item:scale-110 transition-transform" />
+                  <p className="text-sm leading-[1.6] text-muted-lighter">
                     {drawback}
                   </p>
                 </div>
@@ -185,15 +185,25 @@ const FeaturesSection = () => {
           </div>
         </div>
 
+        {/* Tagline after comparison */}
+        <div
+          className={`mt-12 text-center transition-all duration-700 ${comparisonVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+          style={{ transitionDelay: comparisonVisible ? '300ms' : '0ms' }}
+        >
+          <p className="text-base md:text-lg text-primary-navy font-medium max-w-2xl mx-auto">
+            Traditional tools explain failure after the fact. intotheopen helps teams design success.
+          </p>
+        </div>
+
         {/* Built for teams section */}
         <div
           ref={teamsRef}
           className={`mt-20 text-center transition-all duration-700 ${teamsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
         >
-          <h2 className="text-2xl md:text-3xl font-bold mb-3" style={{ color: '#164B82' }}>
+          <h2 className="text-2xl md:text-3xl font-bold mb-3 text-primary-navy">
             Built for teams who can't afford to guess
           </h2>
-          <p className="text-base max-w-2xl mx-auto mb-8 leading-relaxed" style={{ color: '#343434', opacity: 0.75 }}>
+          <p className="text-base max-w-2xl mx-auto mb-8 leading-relaxed text-muted-gray">
             intotheopen is designed for teams responsible for performance, reputation, and outcomes.
           </p>
 
@@ -201,16 +211,16 @@ const FeaturesSection = () => {
             {teamsFor.map((team, index) => (
               <div
                 key={index}
-                className={`flex items-center gap-2 px-4 py-2.5 bg-white rounded-full border border-border shadow-sm hover:shadow-md transition-all duration-300 ${teamsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
+                className={`group/badge flex items-center gap-2 px-4 py-2.5 bg-white rounded-full border border-border shadow-sm hover:shadow-lg hover:-translate-y-1 hover:border-accent transition-all duration-300 ${teamsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
                 style={{ transitionDelay: teamsVisible ? `${index * 80}ms` : '0ms' }}
               >
-                <span className="text-sm" style={{ color: '#699ACD' }}>→</span>
-                <span className="text-sm font-medium" style={{ color: '#164B82' }}>{team}</span>
+                <span className="text-sm text-soft-blue group-hover/badge:scale-110 transition-transform">→</span>
+                <span className="text-sm font-medium text-primary-navy group-hover/badge:text-accent transition-colors">{team}</span>
               </div>
             ))}
           </div>
 
-          <p className="text-sm italic" style={{ color: '#343434', opacity: 0.6 }}>
+          <p className="text-sm italic text-muted-gray opacity-60">
             Used by in-house teams and agencies delivering content at scale.
           </p>
         </div>
