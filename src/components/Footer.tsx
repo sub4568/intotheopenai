@@ -28,7 +28,7 @@ const Footer = () => {
               </span>
             </a>
             <p className="text-sm mb-4 leading-relaxed" style={{ color: '#343434', opacity: 0.7 }}>
-              Marketing analytics that drive real results.
+              Content intelligence for predictable performance
             </p>
             <div className="flex items-center gap-4">
               <a href="https://x.com/intotheopen_ai?t=fJp56PsVEQuk2zOZE9FWnA" target="_blank" rel="noopener noreferrer" className="transition-all duration-300 hover:scale-110" style={{ color: '#2F679F' }}>
