@@ -82,7 +82,9 @@ const HowItWorksSection = () => {
                   
                   {step.cta === "Discover more" ? (
                     <a
-                      href="#contact"
+                      href="https://intotheopen-144935016950.us-west1.run.app/"
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="inline-flex items-center gap-2 text-sm font-medium hover:gap-3 transition-all duration-300"
                       style={{ color: '#2F679F' }}
                     >

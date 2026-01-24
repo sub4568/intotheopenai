@@ -39,7 +39,7 @@ const EighthPageSection = () => {
               className="border-white border-2 text-white bg-transparent hover:bg-white hover:text-[#164B82] hover:scale-105 transition-all duration-200"
               asChild
             >
-              <a href="#hero">
+              <a href="#">
                 Back to the top
                 <ArrowRight className="w-4 h-4 ml-2" />
               </a>
