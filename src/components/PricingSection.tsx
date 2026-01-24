@@ -128,7 +128,7 @@ const PricingSection = () => {
                 className="w-full transition-all duration-200 mt-auto group-hover:scale-105"
                 asChild
               >
-                <a href="https://intotheopen-144935016950.us-west1.run.app/" target="_blank" rel="noopener noreferrer">
+                <a href="#contact">
                   {plan.cta}
                 </a>
               </Button>
