@@ -13,7 +13,7 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-lg border-b border-border">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-white backdrop-blur-lg border-b border-border shadow-sm">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
@@ -27,12 +27,17 @@ const Navbar = () => {
           >
             <img 
               src="/image.png" 
-              alt="intotheopen" 
-              className="h-8 w-auto group-hover:opacity-80 transition-opacity duration-300"
+              alt="intotheopen logo" 
+              className="h-8 w-auto group-hover:opacity-90 transition-opacity duration-300"
             />
-            <span className="text-xl font-bold tracking-tight text-primary-navy group-hover:text-accent transition-colors duration-300">
-              intotheopen
-            </span>
+            <div className="relative bg-white">
+              <img 
+                src="/into.png" 
+                alt="intotheopen" 
+                className="h-8 w-auto group-hover:opacity-90 transition-opacity duration-300"
+                style={{ mixBlendMode: 'multiply' }}
+              />
+            </div>
           </Link>
 
           {/* Desktop Navigation */}

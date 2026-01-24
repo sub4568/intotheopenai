@@ -122,26 +122,16 @@ const PricingSection = () => {
                 ))}
               </ul>
 
-              {plan.cta === "Contact Us" ? (
-                <Button
-                  variant={plan.variant}
-                  size="default"
-                  className="w-full transition-all duration-200 mt-auto group-hover:scale-105"
-                >
+              <Button
+                variant={plan.variant}
+                size="default"
+                className="w-full transition-all duration-200 mt-auto group-hover:scale-105"
+                asChild
+              >
+                <a href="https://intotheopen-144935016950.us-west1.run.app/" target="_blank" rel="noopener noreferrer">
                   {plan.cta}
-                </Button>
-              ) : (
-                <Button
-                  variant={plan.variant}
-                  size="default"
-                  className="w-full transition-all duration-200 mt-auto group-hover:scale-105"
-                  asChild
-                >
-                  <a href="https://intotheopen-144935016950.us-west1.run.app/" target="_blank" rel="noopener noreferrer">
-                    {plan.cta}
-                  </a>
-                </Button>
-              )}
+                </a>
+              </Button>
             </div>
           ))}
         </div>

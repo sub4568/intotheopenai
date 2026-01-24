@@ -14,7 +14,7 @@ const footerLinks = {
 
 const Footer = () => {
   return (
-    <footer className="py-12 border-t border-border bg-page-light">
+    <footer className="py-12 border-t border-border bg-white">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-2 md:grid-cols-3 gap-8 mb-10">
           {/* Brand Column */}
@@ -22,12 +22,17 @@ const Footer = () => {
             <a href="#" className="mb-4 inline-flex items-center gap-3 group">
               <img 
                 src="/image.png" 
-                alt="intotheopen" 
-                className="h-8 w-auto group-hover:opacity-80 transition-opacity duration-300"
+                alt="intotheopen logo" 
+                className="h-8 w-auto group-hover:opacity-90 transition-opacity duration-300"
               />
-              <span className="text-xl font-bold tracking-tight text-primary-navy group-hover:text-accent transition-colors duration-300">
-                intotheopen
-              </span>
+              <div className="relative bg-white">
+                <img 
+                  src="/into.png" 
+                  alt="intotheopen" 
+                  className="h-8 w-auto group-hover:opacity-90 transition-opacity duration-300"
+                  style={{ mixBlendMode: 'multiply' }}
+                />
+              </div>
             </a>
             <p className="text-sm mb-4 leading-relaxed text-muted-gray">
               Content intelligence for predictable performance
