@@ -19,17 +19,12 @@ const Navbar = () => {
           {/* Logo */}
           <Link 
             to="/" 
-            className="group flex items-center gap-3"
+            className="group flex items-center"
             onClick={() => {
               setIsOpen(false);
               window.scrollTo(0, 0);
             }}
           >
-            <img 
-              src="/image.png" 
-              alt="intotheopen logo" 
-              className="h-8 w-auto group-hover:opacity-90 transition-opacity duration-300"
-            />
             <div className="relative bg-white">
               <img 
                 src="/into.png" 

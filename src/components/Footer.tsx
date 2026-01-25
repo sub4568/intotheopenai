@@ -1,4 +1,4 @@
-import { Linkedin, Twitter, Instagram } from "lucide-react";
+import { Instagram, Linkedin, Twitter } from "lucide-react";
 
 const footerLinks = {
   product: [
@@ -17,14 +17,9 @@ const Footer = () => {
     <footer className="py-12 border-t border-border bg-white">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-2 md:grid-cols-3 gap-8 mb-10">
-          {/* Brand Column */}
+         {/* Brand Column */}
           <div className="col-span-2 md:col-span-1">
-            <a href="#" className="mb-4 inline-flex items-center gap-3 group">
-              <img 
-                src="/image.png" 
-                alt="intotheopen logo" 
-                className="h-8 w-auto group-hover:opacity-90 transition-opacity duration-300"
-              />
+            <a href="#" className="mb-4 inline-flex items-center group">
               <div className="relative bg-white">
                 <img 
                   src="/into.png" 
