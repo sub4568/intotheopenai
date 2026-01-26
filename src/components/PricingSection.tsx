@@ -91,7 +91,7 @@ const PricingSection = () => {
               style={{ transitionDelay: cardsVisible ? `${index * 100}ms` : '0ms' }}
             >
               {plan.popular && (
-                <div className="absolute -top-3 left-1/2 -translate-x-1/2 animate-pulse-subtle">
+                <div className="absolute top-4 left-1/2 -translate-x-1/2 -translate-y-1 animate-pulse-subtle">
                   <span className="text-xs font-semibold px-3 py-1 rounded-full bg-warm-peach text-primary-navy">
                     Most Popular
                   </span>
