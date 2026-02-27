@@ -1,17 +1,18 @@
-import Navbar from "@/components/Navbar";
-import HeroSection from "@/components/HeroSection";
-import ProblemSection from "@/components/ProblemSection";
-import ThirdPageSection from "@/components/ThirdPageSection";
-import FeaturesSection from "@/components/FeaturesSection";
-import HowItWorksSection from "@/components/HowItWorksSection";
-import PricingSection from "@/components/PricingSection";
+import { BackToTop } from "@/components/BackToTop";
 import ContactSection from "@/components/ContactSection";
 import EighthPageSection from "@/components/EighthPageSection";
 import FAQSection from "@/components/FAQSection";
+import FeaturesSection from "@/components/FeaturesSection";
 import Footer from "@/components/Footer";
-import { BackToTop } from "@/components/BackToTop";
+import HeroSection from "@/components/HeroSection";
+import HowItWorksSection from "@/components/HowItWorksSection";
+import Navbar from "@/components/Navbar";
+import PricingSection from "@/components/PricingSection";
+import ProblemSection from "@/components/ProblemSection";
+import RecognisedBy from "@/components/RecognisedBy";
 import { ScrollProgress } from "@/components/ScrollProgress";
 import { SectionDivider } from "@/components/SectionDivider";
+import ThirdPageSection from "@/components/ThirdPageSection";
 
 const Index = () => {
   return (
@@ -35,6 +36,7 @@ const Index = () => {
         <SectionDivider />
         <EighthPageSection />
         <SectionDivider />
+        <RecognisedBy/>
         <FAQSection />
       </main>
       <Footer />
