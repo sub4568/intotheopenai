@@ -1,11 +1,10 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { supabase } from "@/lib/supabase";
+import { ArrowRight } from "lucide-react";
 import { useState } from "react";
 import { toast } from "sonner";
 import { z } from "zod";
-import { ArrowRight } from "lucide-react";
 
 const contactSchema = z.object({
   name: z.string().trim().min(1, "Name is required").max(100, "Name must be less than 100 characters"),
@@ -30,14 +29,21 @@ const ContactSection = () => {
 
     setIsSubmitting(true);
     
-    try {
-      const { error } = await supabase.from("waitlist").insert({
-        name: validation.data.name,
-        email: validation.data.email,
-        message: validation.data.message || null,
-      });
+    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxEa3MBo2yugsLkgZRkSQswHtvM6XGO7-zkkRLdBrxCGIazi6bws_54ID4pRVLiSwCT/exec";
 
-      if (error) throw error;
+    try {
+      await fetch(SCRIPT_URL, {
+        method: "POST",
+        mode: "no-cors",
+        headers: {
+          "Content-Type": "text/plain;charset=utf-8",
+        },
+        body: JSON.stringify({
+          name: validation.data.name,
+          email: validation.data.email,
+          message: validation.data.message || "N/A",
+        }),
+      });
 
       toast.success("Thank you! We'll be in touch soon.");
       setName("");
@@ -53,7 +59,6 @@ const ContactSection = () => {
 
   return (
     <section id="contact" className="py-24 md:py-32 relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #699ACD 0%, #5B8DBF 100%)' }}>
-      {/* Decorative background elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-20 left-10 w-72 h-72 rounded-full blur-3xl opacity-20 bg-white animate-float-slow" />
         <div className="absolute bottom-20 right-10 w-96 h-96 rounded-full blur-3xl opacity-15 bg-white animate-float-medium" />
@@ -61,7 +66,6 @@ const ContactSection = () => {
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto">
-          {/* Header */}
           <div className="text-center mb-12 animate-fade-up">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 leading-tight">
               Let's build smarter content together
@@ -71,7 +75,6 @@ const ContactSection = () => {
             </p>
           </div>
 
-          {/* Form Card */}
           <div className="max-w-2xl mx-auto">
             <div className="bg-white rounded-2xl shadow-2xl p-8 md:p-10 animate-slide-in-left hover:shadow-3xl transition-shadow duration-500">
               <form onSubmit={handleSubmit} className="space-y-6">
