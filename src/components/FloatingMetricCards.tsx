@@ -22,7 +22,7 @@ const FloatingMetricCards = () => {
       
       {/* Top Row - Card 1: Performance Score */}
       <motion.div
-        className="absolute top-0 right-0 bg-white/95 backdrop-blur-sm rounded-3xl shadow-lg border border-orange-100/50 p-7 w-72 cursor-pointer hover:-translate-y-2 transition-all duration-300"
+        className="absolute top-0 right-0 bg-white rounded-3xl shadow-lg border border-blue-100/50 p-7 w-72 cursor-pointer hover:-translate-y-2 transition-all duration-300"
         variants={cardVariants}
         initial="hidden"
         animate="visible"
@@ -34,8 +34,8 @@ const FloatingMetricCards = () => {
       >
         <div className="flex items-center justify-between mb-4">
           <span className="text-xs font-semibold tracking-wide uppercase text-muted-foreground/80">Performance Score</span>
-          <div className="p-2 rounded-xl bg-orange-100">
-            <TrendingUp className="w-4 h-4 text-orange-600" />
+          <div className="p-2 rounded-xl bg-blue-100">
+            <TrendingUp className="w-4 h-4 text-[#2F679F]" />
           </div>
         </div>
         <div className="flex items-baseline gap-2 mb-4">
@@ -45,19 +45,19 @@ const FloatingMetricCards = () => {
         <div className="flex items-center gap-2">
           <div className="flex-1 h-2.5 bg-gray-100 rounded-full overflow-hidden shadow-inner">
             <motion.div 
-              className="h-full rounded-full bg-[#f97316]"
+              className="h-full rounded-full bg-[#699ACD]"
               initial={{ width: "0%" }}
               animate={{ width: "87%" }}
               transition={{ duration: 1.8, delay: 1, ease: "easeOut" }}
             />
           </div>
         </div>
-        <p className="text-xs mt-3 font-medium text-orange-600/80">↑ Above industry average</p>
+        <p className="text-xs mt-3 font-medium text-[#2F679F]">↑ Above industry average</p>
       </motion.div>
 
       {/* Top-Middle Row - Card 2: Predicted Engagement */}
       <motion.div
-        className="absolute top-20 left-0 bg-white/95 backdrop-blur-sm rounded-3xl shadow-lg border border-amber-100/50 p-7 w-80 cursor-pointer hover:-translate-y-2 transition-all duration-300"
+        className="absolute top-20 left-0 bg-white rounded-3xl shadow-lg border border-blue-100/50 p-7 w-80 cursor-pointer hover:-translate-y-2 transition-all duration-300"
         variants={cardVariants}
         initial="hidden"
         animate="visible"
@@ -69,8 +69,8 @@ const FloatingMetricCards = () => {
       >
         <div className="flex items-center justify-between mb-4">
           <span className="text-xs font-semibold tracking-wide uppercase text-muted-foreground/80">Predicted Engagement</span>
-          <div className="p-2 rounded-xl bg-orange-100">
-            <Zap className="w-4 h-4 text-amber-600" />
+          <div className="p-2 rounded-xl bg-blue-100">
+            <Zap className="w-4 h-4 text-[#2F679F]" />
           </div>
         </div>
         <div className="flex items-center gap-3 mb-3">
@@ -82,7 +82,7 @@ const FloatingMetricCards = () => {
           >
             +42%
           </motion.span>
-          <div className="px-3 py-1.5 rounded-full text-xs font-bold bg-[#f97316] text-white shadow-md">
+          <div className="px-3 py-1.5 rounded-full text-xs font-bold bg-[#1e4fc2] text-white shadow-md">
             High Impact
           </div>
         </div>
@@ -91,7 +91,7 @@ const FloatingMetricCards = () => {
 
       {/* Middle Row - Card 3: Content Quality */}
       <motion.div
-        className="absolute top-[280px] right-8 bg-white/95 backdrop-blur-sm rounded-3xl shadow-lg border border-orange-100/50 p-7 w-72 cursor-pointer hover:-translate-y-2 transition-all duration-300"
+        className="absolute top-[280px] right-8 bg-white rounded-3xl shadow-lg border border-blue-100/50 p-7 w-72 cursor-pointer hover:-translate-y-2 transition-all duration-300"
         variants={cardVariants}
         initial="hidden"
         animate="visible"
@@ -103,13 +103,13 @@ const FloatingMetricCards = () => {
       >
         <div className="flex items-center justify-between mb-4">
           <span className="text-xs font-semibold tracking-wide uppercase text-muted-foreground/80">Content Quality</span>
-          <div className="p-2 rounded-xl bg-orange-100">
-            <Sparkles className="w-4 h-4 text-orange-500" />
+          <div className="p-2 rounded-xl bg-blue-100">
+            <Sparkles className="w-4 h-4 text-[#2F679F]" />
           </div>
         </div>
         <div className="flex items-center gap-3 mb-4">
           <div className="text-5xl font-black text-primary-navy">A+</div>
-          <div className="px-3 py-1.5 rounded-full text-xs font-bold bg-[#f97316] text-white shadow-md">
+          <div className="px-3 py-1.5 rounded-full text-xs font-bold bg-[#1e4fc2] text-white shadow-md">
             Excellent
           </div>
         </div>
@@ -147,7 +147,7 @@ const FloatingMetricCards = () => {
 
       {/* Bottom-Left - Card 4: Real-time Analysis */}
       <motion.div
-        className="absolute bottom-32 left-12 bg-white/95 backdrop-blur-sm rounded-3xl shadow-lg border border-blue-100/50 p-6 w-64 cursor-pointer hover:-translate-y-2 transition-all duration-300"
+        className="absolute bottom-32 left-12 bg-white rounded-3xl shadow-lg border border-blue-100/50 p-6 w-64 cursor-pointer hover:-translate-y-2 transition-all duration-300"
         variants={cardVariants}
         initial="hidden"
         animate="visible"
@@ -165,14 +165,14 @@ const FloatingMetricCards = () => {
         </div>
         <div className="text-4xl font-black mb-2 text-primary-navy">2.4s</div>
         <div className="flex items-center gap-2">
-          <div className="h-1 w-1 rounded-full bg-amber-400 animate-pulse" />
+          <div className="h-1 w-1 rounded-full bg-[#699ACD] animate-pulse" />
           <p className="text-xs font-medium text-muted-foreground/70">15+ validations checked</p>
         </div>
       </motion.div>
 
       {/* Bottom Row - Card 5: Audience Match */}
       <motion.div
-        className="absolute bottom-0 right-20 bg-white/95 backdrop-blur-sm rounded-3xl shadow-lg border border-amber-100/50 p-7 w-72 cursor-pointer hover:-translate-y-2 transition-all duration-300"
+        className="absolute bottom-0 right-20 bg-white rounded-3xl shadow-lg border border-blue-100/50 p-7 w-72 cursor-pointer hover:-translate-y-2 transition-all duration-300"
         variants={cardVariants}
         initial="hidden"
         animate="visible"
@@ -184,28 +184,28 @@ const FloatingMetricCards = () => {
       >
         <div className="flex items-center justify-between mb-5">
           <span className="text-xs font-semibold tracking-wide uppercase text-muted-foreground/80">Audience Match</span>
-          <div className="p-2 rounded-xl bg-orange-100">
-            <Target className="w-4 h-4 text-orange-600" />
+          <div className="p-2 rounded-xl bg-blue-100">
+            <Target className="w-4 h-4 text-[#2F679F]" />
           </div>
         </div>
         <div className="space-y-3">
           <div className="flex items-center justify-between py-2">
             <span className="text-sm font-medium text-muted-foreground/70">Target personas</span>
-            <CheckCircle2 className="w-5 h-5 text-amber-500" />
+            <CheckCircle2 className="w-5 h-5 text-[#699ACD]" />
           </div>
           <div className="flex items-center justify-between py-2">
             <span className="text-sm font-medium text-muted-foreground/70">Tone alignment</span>
-            <CheckCircle2 className="w-5 h-5 text-amber-500" />
+            <CheckCircle2 className="w-5 h-5 text-[#699ACD]" />
           </div>
           <div className="flex items-center justify-between py-2">
             <span className="text-sm font-medium text-muted-foreground/70">Message clarity</span>
-            <CheckCircle2 className="w-5 h-5 text-amber-500" />
+            <CheckCircle2 className="w-5 h-5 text-[#699ACD]" />
           </div>
         </div>
-        <div className="mt-5 pt-4 border-t border-orange-100">
+        <div className="mt-5 pt-4 border-t border-blue-100">
           <div className="flex items-center gap-2">
             <div className="h-2 w-2 rounded-full bg-[#f97316] animate-pulse" />
-            <span className="text-sm font-bold text-orange-600">Ready to publish</span>
+            <span className="text-sm font-bold text-[#2F679F]">Ready to publish</span>
           </div>
         </div>
       </motion.div>

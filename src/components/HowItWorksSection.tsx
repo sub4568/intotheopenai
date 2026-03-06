@@ -1,4 +1,5 @@
 import { FileText, CheckCircle, Sparkles, Send, BarChart3 } from "lucide-react";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const steps = [
   {
@@ -29,10 +30,16 @@ const steps = [
 ];
 
 const HowItWorksSection = () => {
+  const { ref: headerRef, isVisible: headerVisible } = useScrollAnimation();
+  const { ref: stepsRef, isVisible: stepsVisible } = useScrollAnimation();
+
   return (
     <section id="how-it-works" className="py-28 md:py-32 bg-[#f9f8f6]">
       <div className="max-w-[1200px] mx-auto px-6">
-        <div className="text-center mb-20">
+        <div 
+          ref={headerRef}
+          className={`text-center mb-20 transition-all duration-700 ${headerVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+        >
           <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold mb-5 text-primary-navy leading-[1.1]">
             From draft to performance
           </h2>
@@ -42,7 +49,7 @@ const HowItWorksSection = () => {
         </div>
 
         {/* Horizontal Stepper */}
-        <div className="relative">
+        <div ref={stepsRef} className="relative">
           {/* Connection Line */}
           <div className="hidden md:block absolute top-12 left-0 right-0 h-0.5 bg-[#1e4fc2]/20" style={{ left: '10%', right: '10%' }} />
           
@@ -50,7 +57,8 @@ const HowItWorksSection = () => {
             {steps.map((step, index) => (
               <div
                 key={index}
-                className="relative flex flex-col items-center text-center group"
+                className={`relative flex flex-col items-center text-center group transition-all duration-700 ${stepsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}
+                style={{ transitionDelay: stepsVisible ? `${index * 100}ms` : '0ms' }}
               >
                 {/* Icon Circle */}
                 <div className="relative z-10 w-24 h-24 rounded-full border-2 border-[#1e4fc2]/30 bg-[#1e4fc2]/5 flex items-center justify-center mb-6 group-hover:border-[#1e4fc2] group-hover:bg-[#1e4fc2]/10 transition-all duration-300">

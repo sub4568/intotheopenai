@@ -18,6 +18,22 @@ const HeroSection = () => {
   return (
     <section className="relative min-h-screen pt-36 pb-24 overflow-hidden bg-page-light">
       <BackgroundPaths />
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div
+          className="absolute top-20 left-10 w-96 h-96 rounded-full blur-3xl animate-float-slow"
+          style={{ 
+            backgroundColor: 'rgba(249, 115, 22, 0.08)',
+            transform: isMobile ? 'none' : `translateY(${scrollY * 0.05}px)` 
+          }}
+        />
+        <div
+          className="absolute bottom-20 right-10 w-[500px] h-[500px] rounded-full blur-3xl animate-float-medium"
+          style={{ 
+            backgroundColor: 'rgba(251, 191, 36, 0.06)',
+            transform: isMobile ? 'none' : `translateY(${scrollY * -0.03}px)` 
+          }}
+        />
+      </div>
       
       <div className="max-w-[1200px] mx-auto px-6 relative z-10">
         <div className="flex flex-col lg:flex-row items-center gap-16 min-h-[80vh]">
