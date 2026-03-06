@@ -31,6 +31,12 @@ const ContactSection = () => {
     setIsSubmitting(true);
     
     try {
+      if (!supabase) {
+        toast.error("Contact form is not configured. Please add Supabase keys.");
+        console.log("Form data:", validation.data);
+        return;
+      }
+
       const { error } = await supabase.from("waitlist").insert({
         name: validation.data.name,
         email: validation.data.email,

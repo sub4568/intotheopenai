@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 50" fill="none">
+  <path d="M18 15 L25 35 L32 15" stroke="#2DD4BF" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M22 15 L25 25 L28 15" stroke="#2DD4BF" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="42" y="34" font-family="Arial, sans-serif" font-weight="500" font-size="24" fill="#4A5568" letter-spacing="1">vestd</text>
+</svg>

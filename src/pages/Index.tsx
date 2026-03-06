@@ -11,6 +11,7 @@ import FAQSection from "@/components/FAQSection";
 import Footer from "@/components/Footer";
 import { BackToTop } from "@/components/BackToTop";
 import { ScrollProgress } from "@/components/ScrollProgress";
+import RecognizedBy from "@/components/RecognizedBy";
 import { SectionDivider } from "@/components/SectionDivider";
 
 const Index = () => {
@@ -20,6 +21,7 @@ const Index = () => {
       <Navbar />
       <main>
         <HeroSection />
+        <RecognizedBy />
         <SectionDivider />
         <ProblemSection />
         <SectionDivider />

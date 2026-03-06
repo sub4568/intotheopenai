@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 50" fill="none">
+  <rect x="0" y="0" width="220" height="50" rx="6" fill="#f8f9fa" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="20" y="28" font-family="Arial Black, Arial, sans-serif" font-weight="900" font-size="18" fill="#76b900" letter-spacing="1">NVIDIA</text>
+  <text x="110" y="22" font-family="Arial, sans-serif" font-weight="600" font-size="9" fill="#4a5568" letter-spacing="0.5">INCEPTION</text>
+  <text x="110" y="35" font-family="Arial, sans-serif" font-weight="400" font-size="9" fill="#4a5568" letter-spacing="0.5">PROGRAM</text>
+</svg>
