@@ -1,117 +1,83 @@
-import { ArrowDown, ArrowRight } from "lucide-react";
+import { FileText, CheckCircle, Sparkles, Send, BarChart3 } from "lucide-react";
 
 const steps = [
   {
-    title: "Predict performance before you publish",
-    tagline: "",
-    description: "Forecast how content will land using AI-powered predictive scoring, so only content built to perform goes live.",
-    cta: "Discover more",
+    icon: FileText,
+    title: "Draft",
+    description: "Create content",
   },
   {
-    title: "Validate at scale, instantly",
-    tagline: "",
-    description: "Understand your content’s likely impact in seconds by validating against 15+ performance evaluations, including synthetic audience testing.",
-    cta: "Discover more",
+    icon: CheckCircle,
+    title: "Validate",
+    description: "Test in seconds",
   },
   {
-    title: "Optimise messaging with evidence",
-    tagline: "",
-    description: "Generate and compare multiple optimised variants, each scored for predicted performance, making decisions clearer and faster.",
-    cta: "Get started",
+    icon: Sparkles,
+    title: "Optimize",
+    description: "AI-powered variants",
   },
   {
-    title: "Publish anywhere",
-    tagline: "",
-    description: "Intotheopen fits into your existing workflow. Publish on the platforms you already use.",
-    cta: "Get started",
+    icon: Send,
+    title: "Publish",
+    description: "Launch anywhere",
   },
   {
-    title: "Track and refine in real time",
-    tagline: "",
-    description: "Once live, performance is continuously monitored and messaging refined automatically to maximise performance.",
-    cta: "Get started",
+    icon: BarChart3,
+    title: "Refine",
+    description: "Auto-improve live",
   },
 ];
 
 const HowItWorksSection = () => {
   return (
-    <section id="how-it-works" className="py-20 md:py-24" style={{ backgroundColor: '#2F679F' }}>
-      <div className="container mx-auto px-4">
-        {/* Section Header */}
-        <div className="text-center mb-12 md:mb-14">
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-primary-foreground mb-3">
+    <section id="how-it-works" className="py-28 md:py-32 bg-[#f9f8f6]">
+      <div className="max-w-[1200px] mx-auto px-6">
+        <div className="text-center mb-20">
+          <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold mb-5 text-primary-navy leading-[1.1]">
             From draft to performance
           </h2>
-          <p className="text-base text-primary-foreground/70 max-w-xl mx-auto leading-relaxed">
-            A continuous workflow that predicts, validates, and optimises content across its entire lifecycle.
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            A continuous workflow that engineers content success
           </p>
         </div>
 
-        {/* Steps - Stacked Cards (Text Only) */}
-        <div className="max-w-3xl mx-auto relative">
-          {steps.map((step, index) => (
-            <div key={index} className="relative">
+        {/* Horizontal Stepper */}
+        <div className="relative">
+          {/* Connection Line */}
+          <div className="hidden md:block absolute top-12 left-0 right-0 h-0.5 bg-[#1e4fc2]/20" style={{ left: '10%', right: '10%' }} />
+          
+          <div className="grid grid-cols-1 md:grid-cols-5 gap-8 md:gap-4">
+            {steps.map((step, index) => (
               <div
-                className="group bg-white rounded-xl overflow-hidden border border-white/10 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 relative mb-10 last:mb-0 shadow-lg"
-                style={{
-                  zIndex: steps.length - index,
-                }}
+                key={index}
+                className="relative flex flex-col items-center text-center group"
               >
-                {/* Step Number Badge */}
-                <div className="absolute top-5 left-5 z-20">
-                  <div className="w-10 h-10 rounded-full flex items-center justify-center border-2 group-hover:scale-105 transition-all duration-300" style={{ backgroundColor: '#E4B795', borderColor: '#E4B795' }}>
-                    <span className="font-bold text-sm" style={{ color: '#164B82' }}>{index + 1}</span>
+                {/* Icon Circle */}
+                <div className="relative z-10 w-24 h-24 rounded-full border-2 border-[#1e4fc2]/30 bg-[#1e4fc2]/5 flex items-center justify-center mb-6 group-hover:border-[#1e4fc2] group-hover:bg-[#1e4fc2]/10 transition-all duration-300">
+                  <step.icon className="w-10 h-10 text-[#93b4ff] group-hover:text-[#1e4fc2] relative z-10" strokeWidth={2} />
+                  <div className="absolute -top-2 -right-2 w-8 h-8 rounded-full bg-[#164B82] flex items-center justify-center text-white font-bold text-sm border-2 border-[#1e4fc2]">
+                    {index + 1}
                   </div>
                 </div>
-
-                {/* Content Container - Centered Text Layout */}
-                <div className="p-6 md:p-8 pt-20 md:pt-12 flex flex-col items-center text-center justify-center min-h-[200px]">
-                  <h3 className="text-xl md:text-2xl font-bold mb-3 leading-tight" style={{ color: '#164B82' }}>
-                    {step.title}
-                  </h3>
-                  
-                  {step.tagline && (
-                    <p className="italic mb-3 text-sm leading-relaxed" style={{ color: '#699ACD' }}>
-                      {step.tagline}
-                    </p>
-                  )}
-                  
-                  <p className="mb-6 leading-[1.65] text-sm md:text-base max-w-xl" style={{ color: '#343434', opacity: 0.8 }}>
-                    {step.description}
-                  </p>
-                  
-                  {step.cta === "Discover more" ? (
-                    <a
-                      href="https://intotheopen-144935016950.us-west1.run.app/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 text-sm font-medium hover:gap-3 transition-all duration-300"
-                      style={{ color: '#2F679F' }}
-                    >
-                      Book a demo
-                      <ArrowRight className="w-4 h-4" />
-                    </a>
-                  ) : (
-                    <a
-                      href="#pricing"
-                      className="inline-flex items-center gap-2 text-sm font-medium hover:gap-3 transition-all duration-300"
-                      style={{ color: '#2F679F' }}
-                    >
-                      {step.cta}
-                      <ArrowRight className="w-4 h-4" />
-                    </a>
-                  )}
-                </div>
+                
+                {/* Text */}
+                <h3 className="text-xl font-bold text-primary-navy mb-2">
+                  {step.title}
+                </h3>
+                <p className="text-sm text-gray-600">
+                  {step.description}
+                </p>
               </div>
+            ))}
+          </div>
+        </div>
 
-              {/* Arrow Connector (between steps) */}
-              {index < steps.length - 1 && (
-                <div className="hidden md:flex absolute -bottom-5 left-1/2 -translate-x-1/2 z-10 items-center justify-center">
-                   <ArrowDown className="w-5 h-5" style={{ color: '#699ACD', opacity: 0.6 }} />
-                </div>
-              )}
-            </div>
-          ))}
+        {/* Bottom CTA */}
+        <div className="mt-20 text-center">
+          <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-white border border-gray-200 shadow-sm hover:shadow-md hover:border-[#1e4fc2]/30 transition-all duration-300">
+            <span className="text-sm font-semibold text-gray-600">End-to-end content intelligence</span>
+            <div className="w-2 h-2 rounded-full bg-[#1e4fc2] animate-pulse" />
+          </div>
         </div>
       </div>
     </section>

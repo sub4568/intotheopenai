@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -118,7 +119,7 @@
 
   body {
     @apply bg-background text-foreground font-sans antialiased;
-    font-family: 'Inter', system-ui, sans-serif;
+    font-family: 'DM Sans', system-ui, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
@@ -134,22 +135,23 @@
     }
   }
 
-  /* Typography hierarchy for B2B SaaS - Optimized for Inter */
   h1, h2, h3, h4, h5, h6 {
     @apply tracking-tight;
     letter-spacing: -0.02em;
   }
 
   h1 {
+    font-family: 'Sora', 'DM Sans', system-ui, sans-serif;
     @apply font-extrabold;
     line-height: 1.05;
-    letter-spacing: -0.04em; /* Tighter for Inter at large sizes */
+    letter-spacing: -0.03em;
   }
 
   h2 {
+    font-family: 'Sora', 'DM Sans', system-ui, sans-serif;
     @apply font-bold;
     line-height: 1.1;
-    letter-spacing: -0.03em;
+    letter-spacing: -0.025em;
   }
 
   h3 {
@@ -379,6 +381,17 @@
   }
 }
 
+@keyframes cardSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px) translateX(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) translateX(0);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -399,4 +412,20 @@
   .group:hover {
     will-change: transform;
   }
+}
+
+.bg-grain {
+  background-image: 
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' /%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
+}
+
+.bg-gradient-mesh {
+  background: 
+    radial-gradient(at 27% 37%, rgba(251, 191, 36, 0.08) 0px, transparent 50%),
+    radial-gradient(at 97% 21%, rgba(249, 115, 22, 0.06) 0px, transparent 50%),
+    radial-gradient(at 52% 99%, rgba(105, 154, 205, 0.05) 0px, transparent 50%),
+    radial-gradient(at 10% 29%, rgba(251, 191, 36, 0.04) 0px, transparent 50%),
+    radial-gradient(at 97% 96%, rgba(105, 154, 205, 0.04) 0px, transparent 50%),
+    radial-gradient(at 33% 50%, rgba(249, 115, 22, 0.05) 0px, transparent 50%),
+    radial-gradient(at 79% 53%, rgba(251, 191, 36, 0.03) 0px, transparent 50%);
 }

@@ -50,34 +50,26 @@ const faqs = [
 
 const FAQSection = () => {
   return (
-    <section id="faq" className="py-20 md:py-24" style={{ backgroundColor: '#F2F7FA' }}>
-      <div className="container mx-auto px-4">
-        {/* Section Header */}
-        <div className="text-center mb-10 md:mb-12">
-          <span className="inline-block font-medium text-xs mb-3 tracking-wider uppercase" style={{ color: '#699ACD' }}>
-            FAQ
-          </span>
-          <h2 className="text-2xl md:text-3xl font-bold mb-3" style={{ color: '#164B82' }}>
-            Frequently asked questions
+    <section id="faq" className="py-28 md:py-32 bg-[#f9f8f6]">
+      <div className="max-w-[1200px] mx-auto px-6">
+        <div className="text-center mb-16">
+          <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold mb-5 text-primary-navy leading-[1.1]">
+            Questions? We've got answers
           </h2>
-          <p className="text-base max-w-xl mx-auto leading-relaxed" style={{ color: '#343434', opacity: 0.75 }}>
-            Everything you need to know about intotheopen
-          </p>
         </div>
 
-        {/* FAQ Accordion */}
-        <div className="max-w-2xl mx-auto">
-          <Accordion type="single" collapsible className="space-y-3">
+        <div className="max-w-3xl mx-auto">
+          <Accordion type="single" collapsible className="space-y-4">
             {faqs.map((faq, index) => (
               <AccordionItem
                 key={index}
                 value={`item-${index}`}
-                className="group bg-white border border-border rounded-xl px-5 shadow-md hover:shadow-lg data-[state=open]:shadow-lg transition-all duration-300"
+                className="group bg-white border border-gray-200 rounded-xl px-6 shadow-sm hover:shadow-md data-[state=open]:shadow-md data-[state=open]:border-[#699ACD]/30 transition-all duration-300"
               >
-                <AccordionTrigger className="text-left text-sm font-medium hover:no-underline py-4 transition-all duration-300" style={{ color: '#164B82' }}>
+                <AccordionTrigger className="text-left text-base font-bold hover:no-underline py-5 text-primary-navy">
                   {faq.question}
                 </AccordionTrigger>
-                <AccordionContent className="text-sm pb-4 leading-[1.65]" style={{ color: '#343434', opacity: 0.8 }}>
+                <AccordionContent className="text-base pb-5 leading-relaxed text-gray-600">
                   {faq.answer}
                 </AccordionContent>
               </AccordionItem>

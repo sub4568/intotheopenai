@@ -10,18 +10,18 @@ const logos = [
 
 const RecognizedBy = () => {
   return (
-    <section className="py-12 md:py-16 bg-page-light">
-      <div className="container mx-auto px-4 max-w-5xl">
-        <p className="text-xs font-semibold tracking-[0.2em] uppercase text-center text-muted-foreground/60 mb-8">
+    <section className="py-16 bg-white border-b border-gray-100">
+      <div className="max-w-[1200px] mx-auto px-6">
+        <p className="text-xs font-bold tracking-[0.2em] uppercase text-center text-gray-400 mb-10">
           Recognised by
         </p>
-        <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-6 md:gap-x-14">
+        <div className="flex flex-wrap items-center justify-center gap-x-12 gap-y-8">
           {logos.map((logo) => (
             <img
               key={logo.name}
               src={logo.src}
               alt={logo.name}
-              className="h-9 md:h-11 w-auto object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+              className="h-8 w-auto object-contain grayscale opacity-40 hover:grayscale-0 hover:opacity-80 transition-all duration-300"
             />
           ))}
         </div>

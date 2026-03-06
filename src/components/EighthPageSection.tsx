@@ -6,45 +6,31 @@ const EighthPageSection = () => {
   const { ref, isVisible } = useScrollAnimation();
 
   return (
-    <section className="py-20 md:py-24" style={{ backgroundColor: '#164B82' }}>
-      <div className="container mx-auto px-4">
+    <section className="py-28 md:py-32 bg-[#0f2942] relative overflow-hidden">
+      
+      <div className="max-w-[1200px] mx-auto px-6 relative z-10">
         <div
           ref={ref}
-          className={`max-w-3xl mx-auto text-center transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+          className={`text-center transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
         >
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-[1.15] text-white">
-            Start engineering content performance today
+          <h2 className="font-display text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-[1.1] text-white">
+            Ship content that works
           </h2>
 
-          <p className="text-lg md:text-xl mb-10 max-w-2xl mx-auto leading-relaxed text-white opacity-90">
-            Move beyond guesswork. Forecast impact, validate messaging, and optimise content performance before and 
-            after you publish, all in one platform.
+          <p className="text-xl text-white/60 mb-12 max-w-2xl mx-auto">
+            Stop wasting budget on content that fails. Start engineering performance.
           </p>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Button
-              variant="default"
-              size="lg"
-              className="bg-white hover:bg-gray-100 text-[#164B82] hover:scale-105 transition-all duration-200"
-              asChild
-            >
-              <a href="https://intotheopen-144935016950.us-west1.run.app/" target="_blank" rel="noopener noreferrer">
-                Request early access
-                <ArrowRight className="w-4 h-4 ml-2" />
-              </a>
-            </Button>
-            <Button
-              variant="outline"
-              size="lg"
-              className="border-white border-2 text-white bg-transparent hover:bg-white hover:text-[#164B82] hover:scale-105 transition-all duration-200"
-              asChild
-            >
-              <a href="#">
-                Back to the top
-                <ArrowRight className="w-4 h-4 ml-2" />
-              </a>
-            </Button>
-          </div>
+          <Button
+            size="xl"
+            className="h-16 px-10 text-lg bg-[#1e4fc2] hover:bg-[#164B82] text-white font-bold shadow-lg hover:shadow-[0_0_0_1px_#1e4fc2] transition-all duration-300 group"
+            asChild
+          >
+            <a href="https://intotheopen-144935016950.us-west1.run.app/" target="_blank" rel="noopener noreferrer">
+              Request Early Access
+              <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
+            </a>
+          </Button>
         </div>
       </div>
     </section>

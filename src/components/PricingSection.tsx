@@ -62,37 +62,34 @@ const PricingSection = () => {
   const { ref: cardsRef, isVisible: cardsVisible } = useScrollAnimation();
 
   return (
-    <section id="pricing" className="py-20 md:py-24 bg-page-light">
-      <div className="container mx-auto px-4">
+    <section id="pricing" className="py-28 md:py-32 bg-white">
+      <div className="max-w-[1200px] mx-auto px-6">
         <div
           ref={headerRef}
           className={`text-center mb-12 md:mb-14 transition-all duration-700 ${headerVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
         >
-          <span className="inline-block font-medium text-xs mb-3 tracking-wider uppercase text-soft-blue">
-            Transparent Pricing
-          </span>
-          <h2 className="text-2xl md:text-3xl font-bold mb-3 text-primary-navy">
-            Plans that scale with your ambition
+          <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold mb-5 text-primary-navy leading-[1.1]">
+            Transparent pricing for every team
           </h2>
-          <p className="text-base max-w-xl mx-auto leading-relaxed text-muted-gray">
-            Start free, upgrade when you're ready. No hidden fees, no surprises.
+          <p className="text-lg text-gray-600">
+            Start today, scale when ready
           </p>
         </div>
 
-        <div ref={cardsRef} className="grid grid-cols-1 md:grid-cols-3 gap-5 max-w-5xl mx-auto">
+        <div ref={cardsRef} className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {plans.map((plan, index) => (
             <div
               key={index}
-              className={`group relative p-6 rounded-xl border transition-all duration-300 hover:-translate-y-2 hover:shadow-glow hover:border-accent flex flex-col bg-white ${
+              className={`group relative p-8 rounded-xl border transition-all duration-300 hover:border-[#1e4fc2] hover:shadow-[0_0_0_1px_#1e4fc2] flex flex-col bg-white ${
                 plan.popular
-                  ? "border-border shadow-lg md:scale-[1.02]"
-                  : "border-border shadow-md"
+                  ? "border-[#1e4fc2]/30 shadow-lg"
+                  : "border-gray-200 shadow-sm"
               } ${cardsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
               style={{ transitionDelay: cardsVisible ? `${index * 100}ms` : '0ms' }}
             >
               {plan.popular && (
-                <div className="absolute top-4 left-1/2 -translate-x-1/2 animate-pulse-subtle">
-                  <span className="text-xs font-semibold px-3 py-1 rounded-full bg-warm-peach text-primary-navy">
+                <div className="absolute -top-3 left-1/2 -translate-x-1/2">
+                  <span className="text-xs font-bold px-3 py-1.5 rounded-full bg-[#1e4fc2] text-white shadow-md">
                     Most Popular
                   </span>
                 </div>
@@ -113,11 +110,11 @@ const PricingSection = () => {
                 </p>
               </div>
 
-              <ul className="space-y-2.5 mb-6 flex-grow">
+              <ul className="space-y-3 mb-8 flex-grow">
                 {plan.features.map((feature, featureIndex) => (
-                  <li key={featureIndex} className="flex items-start gap-2.5 group/feature">
-                    <Check className="w-4 h-4 shrink-0 mt-0.5 text-soft-blue group-hover/feature:scale-110 transition-transform" />
-                    <span className="text-sm leading-[1.5] text-muted-lighter">{feature}</span>
+                  <li key={featureIndex} className="flex items-start gap-3">
+                    <Check className="w-4 h-4 shrink-0 mt-1 text-[#1e4fc2]" strokeWidth={2.5} />
+                    <span className="text-sm leading-relaxed text-gray-600">{feature}</span>
                   </li>
                 ))}
               </ul>

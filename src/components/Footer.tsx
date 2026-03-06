@@ -14,8 +14,8 @@ const footerLinks = {
 
 const Footer = () => {
   return (
-    <footer className="py-12 border-t border-border bg-white">
-      <div className="container mx-auto px-4">
+    <footer className="py-16 border-t border-gray-200 bg-[#f9f8f6]">
+      <div className="max-w-[1200px] mx-auto px-6">
         <div className="grid grid-cols-2 md:grid-cols-3 gap-8 mb-10">
          {/* Brand Column */}
           <div className="col-span-2 md:col-span-1">
@@ -29,7 +29,7 @@ const Footer = () => {
                 />
               </div>
             </a>
-            <p className="text-sm mb-4 leading-relaxed text-muted-gray">
+            <p className="text-sm mb-6 leading-relaxed text-gray-600 font-medium">
               Content intelligence for predictable performance
             </p>
             <div className="flex items-center gap-4">

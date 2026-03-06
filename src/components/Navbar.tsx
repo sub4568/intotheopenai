@@ -13,8 +13,8 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white backdrop-blur-lg border-b border-border shadow-sm">
-      <div className="container mx-auto px-4">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-lg border-b border-gray-200 shadow-sm">
+      <div className="max-w-[1200px] mx-auto px-6">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link 
@@ -36,16 +36,24 @@ const Navbar = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-7">
+          <div className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
               <a
                 key={link.label}
                 href={link.href}
-                className="relative text-sm text-muted-foreground/80 font-medium hover:text-foreground transition-all duration-200 after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-accent after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-200"
+                className="text-sm text-gray-600 font-semibold hover:text-primary-navy transition-colors duration-200"
               >
                 {link.label}
               </a>
             ))}
+            <a
+              href="https://intotheopen-144935016950.us-west1.run.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-5 py-2.5 bg-[#164B82] hover:bg-[#2F679F] text-white text-sm font-bold rounded-lg shadow-md hover:shadow-lg transition-all duration-200"
+            >
+              Get Access
+            </a>
           </div>
 
           {/* Mobile Menu Button */}

@@ -12,10 +12,7 @@ const CTASection = () => {
   ];
 
   return (
-    <section className="py-20 md:py-24 bg-gradient-navy relative overflow-hidden group">
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-accent/10 rounded-full blur-3xl animate-pulse-subtle" />
-      </div>
+    <section className="py-20 md:py-24 bg-[#164B82] relative overflow-hidden group">
 
       <div ref={ref} className="container mx-auto px-4 relative z-10">
         <div

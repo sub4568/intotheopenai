@@ -1,46 +1,68 @@
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import { HoverBorderGradient } from "@/components/ui/hover-border-gradient";
+import { AlertCircle, TrendingDown, DollarSign } from "lucide-react";
+
+const stats = [
+  {
+    icon: AlertCircle,
+    stat: "73%",
+    label: "of content gets zero engagement",
+  },
+  {
+    icon: TrendingDown,
+    stat: "$400k+",
+    label: "wasted annually on failed content",
+  },
+  {
+    icon: DollarSign,
+    stat: "6 weeks",
+    label: "average time to realize content failed",
+  },
+];
 
 const ProblemSection = () => {
   const { ref, isVisible } = useScrollAnimation();
 
   return (
-    <section className="py-20 md:py-24 bg-page-light">
-      <div className="container mx-auto px-4">
+    <section className="py-28 md:py-32 bg-[#0f2942] relative overflow-hidden">
+      
+      <div className="max-w-[1200px] mx-auto px-6 relative z-10">
         <div
           ref={ref}
-          className={`max-w-3xl mx-auto text-center transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+          className={`text-center mb-16 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
         >
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-8 leading-[1.15] text-primary-navy">
-            Most content fails, not because it's bad,<br className="hidden md:block" /> but because it's untested
+          <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-[1.1] text-white">
+            Most content fails before it launches
           </h2>
+          <p className="text-lg md:text-xl text-white/60 max-w-2xl mx-auto">
+            Teams spend millions on content without knowing if it will work.
+          </p>
+        </div>
 
-          <div className="space-y-6 mb-10">
-            <p className="text-base md:text-lg max-w-xl mx-auto leading-relaxed text-muted-gray">
-              Teams invest time, budget, and creativity into content without knowing:
-            </p>
-            
-            <div className="space-y-2.5 max-w-md mx-auto">
-              <p className="text-base md:text-lg font-medium text-primary-navy">→ Will this resonate?</p>
-              <p className="text-base md:text-lg font-medium text-primary-navy">→ Will this perform?</p>
-              <p className="text-base md:text-lg font-medium text-primary-navy">→ Is this worth publishing?</p>
-            </div>
-
-            <p className="text-base md:text-lg max-w-xl mx-auto leading-relaxed text-muted-gray">
-              By the time performance data arrives, the budget is already spent.
-            </p>
-          </div>
-
-          <div className="mt-12 max-w-xl mx-auto flex justify-center">
-            <HoverBorderGradient
-              containerClassName="rounded-xl"
-              as="div"
-              className="bg-white text-foreground px-6 py-6 rounded-[inherit] w-full shadow-md border border-border hover:shadow-glow transition-shadow duration-300"
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {stats.map((item, index) => (
+            <div
+              key={index}
+              className={`group relative p-8 rounded-xl border border-white/10 hover:border-[#1e4fc2] transition-all duration-300 hover:shadow-[0_0_0_1px_#1e4fc2] ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}
+              style={{ transitionDelay: isVisible ? `${index * 150}ms` : '0ms' }}
             >
-              <p className="text-base md:text-lg italic text-center leading-relaxed text-primary-navy">
-                Traditional analytics explain failure after launch. intotheopen helps you avoid it.
-              </p>
-            </HoverBorderGradient>
+              <div className="flex flex-col items-center text-center">
+                <item.icon className="w-6 h-6 text-[#93b4ff] mb-6 group-hover:text-white transition-colors duration-300" strokeWidth={2} />
+                <div className="text-5xl md:text-6xl font-display font-bold text-white mb-3">
+                  {item.stat}
+                </div>
+                <p className="text-base text-white/60 font-medium leading-snug">
+                  {item.label}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="mt-16 flex justify-center">
+          <div className="relative pl-6 border-l-4 border-[#1e4fc2] py-2 max-w-3xl">
+            <p className="text-xl md:text-2xl font-bold text-white leading-tight">
+              Traditional analytics explain failure after launch. intotheopen helps you avoid it.
+            </p>
           </div>
         </div>
       </div>
