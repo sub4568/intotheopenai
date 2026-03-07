@@ -13,6 +13,9 @@ function FloatingPaths({ position }: { position: number }) {
         width: 0.5 + i * 0.03,
     }));
 
+    // Select a few paths for boats to travel on
+    const boatPaths = [5, 15, 25];
+
     return (
         <div className="absolute inset-0 pointer-events-none">
             <svg
@@ -31,16 +34,109 @@ function FloatingPaths({ position }: { position: number }) {
                         initial={{ pathLength: 0.3, opacity: 0.3 }}
                         animate={{
                             pathLength: 1,
-                            opacity: [0.2, 0.4, 0.2],
+                            opacity: [0.2, 0.5, 0.2],
                             pathOffset: [0, 1, 0],
                         }}
                         transition={{
-                            duration: 20 + Math.random() * 10,
+                            duration: 15 + Math.random() * 8,
                             repeat: Number.POSITIVE_INFINITY,
                             ease: "linear",
                         }}
                     />
                 ))}
+                
+                {/* Animated boats traveling along select paths */}
+                {boatPaths.map((pathIndex) => {
+                    const path = paths[pathIndex];
+                    const duration = 12 + pathIndex * 2;
+                    const delay = pathIndex * 4;
+                    
+                    return (
+                        <motion.g
+                            key={`boat-${pathIndex}`}
+                            initial={{ offsetDistance: "0%" }}
+                            animate={{ offsetDistance: "100%" }}
+                            transition={{
+                                duration: duration,
+                                repeat: Infinity,
+                                ease: "linear",
+                                delay: delay,
+                            }}
+                            style={{
+                                offsetPath: `path('${path.d}')`,
+                                offsetRotate: "auto 90deg",
+                            }}
+                        >
+                            {/* Simple boat/ship icon */}
+                            <g transform="scale(1.2)">
+                                {/* Boat hull */}
+                                <motion.path
+                                    d="M-8,-3 L8,-3 L6,3 L-6,3 Z"
+                                    fill="currentColor"
+                                    className="text-[#1e4fc2]"
+                                    animate={{
+                                        opacity: [0.5, 0.9, 0.5],
+                                    }}
+                                    transition={{
+                                        duration: 2,
+                                        repeat: Infinity,
+                                        ease: "easeInOut",
+                                    }}
+                                />
+                                {/* Boat sail/mast */}
+                                <motion.path
+                                    d="M0,-6 L3,-3 L-3,-3 Z"
+                                    fill="currentColor"
+                                    className="text-[#699ACD]"
+                                    animate={{
+                                        opacity: [0.6, 1, 0.6],
+                                    }}
+                                    transition={{
+                                        duration: 2,
+                                        repeat: Infinity,
+                                        ease: "easeInOut",
+                                        delay: 0.3,
+                                    }}
+                                />
+                                {/* Wake/trail effect - front */}
+                                <motion.circle
+                                    cx="6"
+                                    cy="0"
+                                    r="2"
+                                    fill="currentColor"
+                                    className="text-[#93b4ff]"
+                                    animate={{
+                                        opacity: [0.4, 0, 0],
+                                        scale: [0.3, 1.5, 2.5],
+                                    }}
+                                    transition={{
+                                        duration: 1.2,
+                                        repeat: Infinity,
+                                        ease: "easeOut",
+                                    }}
+                                />
+                                {/* Wake/trail effect - back */}
+                                <motion.circle
+                                    cx="-6"
+                                    cy="0"
+                                    r="2"
+                                    fill="currentColor"
+                                    className="text-[#93b4ff]"
+                                    animate={{
+                                        opacity: [0.3, 0, 0],
+                                        scale: [0.5, 1.8, 3],
+                                    }}
+                                    transition={{
+                                        duration: 1.2,
+                                        repeat: Infinity,
+                                        ease: "easeOut",
+                                        delay: 0.6,
+                                    }}
+                                />
+                            </g>
+                        </motion.g>
+                    );
+                })}
             </svg>
         </div>
     );
