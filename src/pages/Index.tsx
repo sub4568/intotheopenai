@@ -1,17 +1,17 @@
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
-import ProblemSection from "@/components/ProblemSection";
-import ThirdPageSection from "@/components/ThirdPageSection";
+
 import FeaturesSection from "@/components/FeaturesSection";
 import HowItWorksSection from "@/components/HowItWorksSection";
 import PricingSection from "@/components/PricingSection";
 import ContactSection from "@/components/ContactSection";
-import EighthPageSection from "@/components/EighthPageSection";
+
 import FAQSection from "@/components/FAQSection";
 import Footer from "@/components/Footer";
 import { BackToTop } from "@/components/BackToTop";
 import { ScrollProgress } from "@/components/ScrollProgress";
 import RecognizedBy from "@/components/RecognizedBy";
+import ProductPreview from "@/components/ProductPreview";
 import { SectionDivider } from "@/components/SectionDivider";
 
 const Index = () => {
@@ -21,11 +21,8 @@ const Index = () => {
       <Navbar />
       <main>
         <HeroSection />
+        <ProductPreview />
         <RecognizedBy />
-        <SectionDivider />
-        <ProblemSection />
-        <SectionDivider />
-        <ThirdPageSection />
         <SectionDivider />
         <HowItWorksSection />
         <SectionDivider />
@@ -34,8 +31,6 @@ const Index = () => {
         <PricingSection />
         <SectionDivider />
         <ContactSection />
-        <SectionDivider />
-        <EighthPageSection />
         <SectionDivider />
         <FAQSection />
       </main>

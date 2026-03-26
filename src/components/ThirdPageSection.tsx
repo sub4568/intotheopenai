@@ -31,7 +31,7 @@ const ThirdPageSection = () => {
         >
           {/* Left Column: Headline */}
           <div>
-            <h2 className="font-display text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.1] text-primary-navy">
+            <h2 className="font-display text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.1] text-black">
               Stop guessing. Start knowing.
             </h2>
           </div>
@@ -44,11 +44,11 @@ const ThirdPageSection = () => {
                 className={`flex gap-5 group transition-all duration-500 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'}`}
                 style={{ transitionDelay: isVisible ? `${index * 150}ms` : '0ms' }}
               >
-                <div className="flex-shrink-0 w-14 h-14 rounded-xl border border-[#1e4fc2]/20 bg-[#1e4fc2]/5 flex items-center justify-center group-hover:border-[#1e4fc2] group-hover:bg-[#1e4fc2]/10 transition-all duration-300">
-                  <benefit.icon className="w-7 h-7 text-[#93b4ff] group-hover:text-[#1e4fc2]" strokeWidth={2} />
+                <div className="flex-shrink-0 w-14 h-14 rounded-xl border border-black/20 bg-black/5 flex items-center justify-center group-hover:border-black group-hover:bg-black/10 transition-all duration-300">
+                  <benefit.icon className="w-7 h-7 text-[#888] group-hover:text-black" strokeWidth={2} />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-primary-navy mb-2 leading-tight">
+                  <h3 className="text-xl font-bold text-black mb-2 leading-tight">
                     {benefit.title}
                   </h3>
                   <p className="text-base text-gray-600 leading-relaxed">

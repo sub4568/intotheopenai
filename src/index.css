@@ -19,20 +19,20 @@
     --popover: 0 0% 100%;
     --popover-foreground: 0 0% 20%;
 
-    /* Primary brand - Dark navy #164B82 */
-    --primary: 208 70% 30%;
+    /* Primary brand - Black */
+    --primary: 0 0% 7%;
     --primary-foreground: 0 0% 100%;
 
-    /* Secondary brand - Medium navy #2F679F */
-    --secondary: 208 55% 40%;
+    /* Secondary brand */
+    --secondary: 0 0% 20%;
     --secondary-foreground: 0 0% 100%;
 
-    /* Muted text - Blue-gray */
-    --muted: 208 30% 90%;
-    --muted-foreground: 208 20% 45%;
+    /* Muted text */
+    --muted: 0 0% 90%;
+    --muted-foreground: 0 0% 35%;
 
-    /* Soft accent - Light blue #699ACD */
-    --accent: 208 50% 60%;
+    /* Accent */
+    --accent: 0 0% 33%;
     --accent-foreground: 0 0% 100%;
 
     /* Warm accent - Peach #E4B795 */
@@ -53,10 +53,10 @@
     --radius: 0.75rem;
 
     /* Updated gradients using brand colors */
-    --gradient-hero: linear-gradient(135deg, hsl(208 50% 60%) 0%, hsl(208 70% 30%) 100%);
-    --gradient-accent: linear-gradient(135deg, hsl(208 50% 60%) 0%, hsl(208 55% 40%) 100%);
-    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(200 60% 97%) 100%);
-    --gradient-navy: linear-gradient(135deg, hsl(208 70% 30%) 0%, hsl(208 55% 40%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(0 0% 20%) 0%, hsl(0 0% 7%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(0 0% 20%) 0%, hsl(0 0% 13%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(0 0% 97%) 100%);
+    --gradient-navy: linear-gradient(135deg, hsl(0 0% 7%) 0%, hsl(0 0% 13%) 100%);
 
     /* Professional shadows for card elevation */
     --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.04);
@@ -176,20 +176,20 @@
   }
 
   /* Custom color utilities for consistency */
-  .text-primary-navy { color: #164B82; }
-  .text-secondary-navy { color: #2F679F; }
-  .text-soft-blue { color: #699ACD; }
+  .text-primary-navy { color: #111; }
+  .text-secondary-navy { color: #333; }
+  .text-soft-blue { color: #555; }
   .text-warm-peach { color: #E4B795; }
-  .text-muted-gray { 
-    color: #343434; 
-    opacity: 0.75; 
+  .text-muted-gray {
+    color: #343434;
+    opacity: 0.75;
   }
-  .text-muted-lighter { 
-    color: #343434; 
-    opacity: 0.85; 
+  .text-muted-lighter {
+    color: #343434;
+    opacity: 0.85;
   }
-  
-  .bg-primary-navy { background-color: #164B82; }
+
+  .bg-primary-navy { background-color: #111; }
   .bg-page-light { background-color: #F2F7FA; }
   .bg-surface-white { background-color: #FFFFFF; }
 }

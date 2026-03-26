@@ -68,7 +68,7 @@ const PricingSection = () => {
           ref={headerRef}
           className={`text-center mb-12 md:mb-14 transition-all duration-700 ${headerVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
         >
-          <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold mb-5 text-primary-navy leading-[1.1]">
+          <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold mb-5 text-black leading-[1.1]">
             Transparent pricing for every team
           </h2>
           <p className="text-lg text-gray-600">
@@ -80,27 +80,27 @@ const PricingSection = () => {
           {plans.map((plan, index) => (
             <div
               key={index}
-              className={`group relative p-8 rounded-xl border transition-all duration-300 hover:border-[#1e4fc2] hover:shadow-[0_0_0_1px_#1e4fc2] flex flex-col bg-white ${
+              className={`group relative p-8 rounded-xl border transition-all duration-300 hover:border-black hover:shadow-[0_0_0_1px_#111] flex flex-col bg-white ${
                 plan.popular
-                  ? "border-[#1e4fc2]/30 shadow-lg"
+                  ? "border-black/30 shadow-lg"
                   : "border-gray-200 shadow-sm"
               } ${cardsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
               style={{ transitionDelay: cardsVisible ? `${index * 100}ms` : '0ms' }}
             >
               {plan.popular && (
                 <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                  <span className="text-xs font-bold px-3 py-1.5 rounded-full bg-[#1e4fc2] text-white shadow-md">
+                  <span className="text-xs font-bold px-3 py-1.5 rounded-full bg-[#111] text-white shadow-md">
                     Most Popular
                   </span>
                 </div>
               )}
 
               <div className="text-center mb-5">
-                <h3 className="text-lg font-semibold mb-1.5 text-primary-navy group-hover:text-accent transition-colors">
+                <h3 className="text-lg font-semibold mb-1.5 text-black group-hover:text-accent transition-colors">
                   {plan.name}
                 </h3>
                 <div className="flex items-baseline justify-center gap-1">
-                  <span className="text-3xl font-bold text-primary-navy">
+                  <span className="text-3xl font-bold text-black">
                     {plan.price}
                   </span>
                   <span className="text-sm text-muted-foreground">{plan.period}</span>
@@ -113,7 +113,7 @@ const PricingSection = () => {
               <ul className="space-y-3 mb-8 flex-grow">
                 {plan.features.map((feature, featureIndex) => (
                   <li key={featureIndex} className="flex items-start gap-3">
-                    <Check className="w-4 h-4 shrink-0 mt-1 text-[#1e4fc2]" strokeWidth={2.5} />
+                    <Check className="w-4 h-4 shrink-0 mt-1 text-[#111]" strokeWidth={2.5} />
                     <span className="text-sm leading-relaxed text-gray-600">{feature}</span>
                   </li>
                 ))}

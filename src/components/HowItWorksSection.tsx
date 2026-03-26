@@ -1,94 +1,307 @@
-import { FileText, CheckCircle, Sparkles, Send, BarChart3 } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+
+const DraftScreen = () => (
+  <div className="w-full h-full bg-white rounded-xl p-5">
+    <div className="flex items-center gap-2 mb-4">
+      <div className="w-6 h-6 rounded-md bg-black flex items-center justify-center">
+        <span className="text-white text-[8px] font-bold">IO</span>
+      </div>
+      <div className="text-xs font-semibold text-black">Content Editor</div>
+      <div className="ml-auto flex gap-1.5">
+        <div className="px-2 py-0.5 rounded text-[9px] bg-gray-100 text-gray-500">Blog</div>
+        <div className="px-2 py-0.5 rounded text-[9px] bg-gray-100 text-gray-500">LinkedIn</div>
+        <div className="px-2 py-0.5 rounded text-[9px] bg-black text-white">Ad Copy</div>
+      </div>
+    </div>
+    <div className="border border-gray-100 rounded-lg p-4 mb-3">
+      <div className="space-y-2">
+        <div className="h-2 bg-gray-200 rounded-full w-full" />
+        <div className="h-2 bg-gray-200 rounded-full w-11/12" />
+        <div className="h-2 bg-gray-200 rounded-full w-4/5" />
+        <div className="h-2 bg-gray-100 rounded-full w-3/5" />
+      </div>
+      <div className="mt-4 flex items-center gap-2">
+        <div className="h-2 bg-gray-300 rounded-full w-20" />
+        <div className="text-[9px] text-gray-400">|</div>
+        <div className="h-2 bg-gray-200 rounded-full w-16" />
+      </div>
+    </div>
+    <div className="flex items-center justify-between">
+      <div className="flex gap-1.5">
+        <div className="w-5 h-5 rounded bg-gray-100" />
+        <div className="w-5 h-5 rounded bg-gray-100" />
+        <div className="w-5 h-5 rounded bg-gray-100" />
+      </div>
+      <div className="flex items-center gap-1.5">
+        <div className="text-[9px] text-gray-400">248 words</div>
+        <div className="w-1 h-1 rounded-full bg-gray-300" />
+        <div className="text-[9px] text-gray-400">Draft</div>
+      </div>
+    </div>
+  </div>
+);
+
+const ValidateScreen = () => (
+  <div className="w-full h-full bg-white rounded-xl p-5">
+    <div className="flex items-center justify-between mb-4">
+      <div className="text-xs font-semibold text-black">Content Validation</div>
+      <div className="flex items-center gap-1">
+        <div className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
+        <span className="text-[9px] text-emerald-600 font-medium">All checks passed</span>
+      </div>
+    </div>
+    <div className="flex items-baseline gap-1.5 mb-4">
+      <span className="text-3xl font-bold text-black">87</span>
+      <span className="text-sm text-gray-400">/100</span>
+    </div>
+    <div className="h-2 bg-gray-100 rounded-full overflow-hidden mb-5">
+      <div className="h-full bg-black/20 rounded-full" style={{ width: "87%" }} />
+    </div>
+    <div className="space-y-3">
+      <div className="flex items-center justify-between">
+        <span className="text-[11px] text-gray-500">Clarity</span>
+        <div className="flex items-center gap-2">
+          <div className="w-20 h-1.5 bg-gray-100 rounded-full overflow-hidden">
+            <div className="h-full bg-black/15 rounded-full" style={{ width: "95%" }} />
+          </div>
+          <span className="text-[10px] font-medium text-black w-7 text-right">95%</span>
+        </div>
+      </div>
+      <div className="flex items-center justify-between">
+        <span className="text-[11px] text-gray-500">Tone match</span>
+        <div className="flex items-center gap-2">
+          <div className="w-20 h-1.5 bg-gray-100 rounded-full overflow-hidden">
+            <div className="h-full bg-black/15 rounded-full" style={{ width: "88%" }} />
+          </div>
+          <span className="text-[10px] font-medium text-black w-7 text-right">88%</span>
+        </div>
+      </div>
+      <div className="flex items-center justify-between">
+        <span className="text-[11px] text-gray-500">Audience fit</span>
+        <div className="flex items-center gap-2">
+          <div className="w-20 h-1.5 bg-gray-100 rounded-full overflow-hidden">
+            <div className="h-full bg-black/15 rounded-full" style={{ width: "92%" }} />
+          </div>
+          <span className="text-[10px] font-medium text-black w-7 text-right">92%</span>
+        </div>
+      </div>
+      <div className="flex items-center justify-between">
+        <span className="text-[11px] text-gray-500">Engagement</span>
+        <div className="flex items-center gap-2">
+          <div className="w-20 h-1.5 bg-gray-100 rounded-full overflow-hidden">
+            <div className="h-full bg-black/15 rounded-full" style={{ width: "78%" }} />
+          </div>
+          <span className="text-[10px] font-medium text-black w-7 text-right">78%</span>
+        </div>
+      </div>
+    </div>
+  </div>
+);
+
+const OptimizeScreen = () => (
+  <div className="w-full h-full bg-white rounded-xl p-5">
+    <div className="flex items-center justify-between mb-4">
+      <div className="text-xs font-semibold text-black">AI Variants</div>
+      <div className="px-2 py-0.5 rounded text-[9px] bg-black text-white">3 generated</div>
+    </div>
+    <div className="space-y-2.5">
+      <div className="p-3 rounded-lg border border-gray-100">
+        <div className="flex items-center justify-between mb-1.5">
+          <div className="text-[10px] font-medium text-gray-400">Variant A</div>
+          <span className="text-[10px] font-medium text-emerald-600">+18%</span>
+        </div>
+        <div className="h-1.5 bg-gray-200 rounded-full w-full" />
+        <div className="h-1.5 bg-gray-200 rounded-full w-4/5 mt-1" />
+      </div>
+      <div className="p-3 rounded-lg border-2 border-black/20 bg-black/[0.02]">
+        <div className="flex items-center justify-between mb-1.5">
+          <div className="flex items-center gap-1.5">
+            <div className="text-[10px] font-medium text-black">Variant B</div>
+            <div className="px-1 py-0.5 rounded text-[7px] bg-emerald-100 text-emerald-700 font-bold">BEST</div>
+          </div>
+          <span className="text-[10px] font-bold text-black">+42%</span>
+        </div>
+        <div className="h-1.5 bg-gray-300 rounded-full w-full" />
+        <div className="h-1.5 bg-gray-300 rounded-full w-3/4 mt-1" />
+      </div>
+      <div className="p-3 rounded-lg border border-gray-100">
+        <div className="flex items-center justify-between mb-1.5">
+          <div className="text-[10px] font-medium text-gray-400">Variant C</div>
+          <span className="text-[10px] font-medium text-emerald-600">+24%</span>
+        </div>
+        <div className="h-1.5 bg-gray-200 rounded-full w-full" />
+        <div className="h-1.5 bg-gray-200 rounded-full w-2/3 mt-1" />
+      </div>
+    </div>
+  </div>
+);
+
+const PublishScreen = () => (
+  <div className="w-full h-full bg-white rounded-xl p-5">
+    <div className="flex items-center justify-between mb-4">
+      <div className="text-xs font-semibold text-black">Multi-channel Deploy</div>
+      <div className="text-[9px] text-gray-400">3 channels</div>
+    </div>
+    <div className="space-y-3">
+      <div className="flex items-center gap-3 p-2.5 rounded-lg border border-gray-100">
+        <div className="w-7 h-7 rounded-md bg-[#0A66C2]/10 flex items-center justify-center">
+          <span className="text-[9px] font-bold text-[#0A66C2]">in</span>
+        </div>
+        <div className="flex-1">
+          <div className="text-[10px] font-medium text-black">LinkedIn</div>
+          <div className="text-[8px] text-gray-400">Scheduled 9:00 AM</div>
+        </div>
+        <div className="w-2 h-2 rounded-full bg-emerald-500" />
+      </div>
+      <div className="flex items-center gap-3 p-2.5 rounded-lg border border-gray-100">
+        <div className="w-7 h-7 rounded-md bg-black/5 flex items-center justify-center">
+          <span className="text-[9px] font-bold text-black">X</span>
+        </div>
+        <div className="flex-1">
+          <div className="text-[10px] font-medium text-black">X / Twitter</div>
+          <div className="text-[8px] text-gray-400">Scheduled 9:15 AM</div>
+        </div>
+        <div className="w-2 h-2 rounded-full bg-emerald-500" />
+      </div>
+      <div className="flex items-center gap-3 p-2.5 rounded-lg border border-gray-100">
+        <div className="w-7 h-7 rounded-md bg-black/5 flex items-center justify-center">
+          <span className="text-[9px] font-bold text-black">@</span>
+        </div>
+        <div className="flex-1">
+          <div className="text-[10px] font-medium text-black">Email Campaign</div>
+          <div className="text-[8px] text-gray-400">Draft ready</div>
+        </div>
+        <div className="w-2 h-2 rounded-full bg-yellow-400" />
+      </div>
+    </div>
+    <div className="mt-3 px-3 py-2 rounded-lg bg-black text-white text-[10px] font-medium text-center">
+      Deploy All
+    </div>
+  </div>
+);
+
+const RefineScreen = () => (
+  <div className="w-full h-full bg-white rounded-xl p-5">
+    <div className="flex items-center justify-between mb-4">
+      <div className="text-xs font-semibold text-black">Live Performance</div>
+      <div className="flex items-center gap-1">
+        <div className="w-1.5 h-1.5 rounded-full bg-black animate-pulse" />
+        <span className="text-[9px] text-gray-500">Live</span>
+      </div>
+    </div>
+    <div className="flex items-end gap-[3px] h-16 mb-3">
+      {[25, 30, 28, 35, 32, 40, 38, 45, 42, 50, 48, 55, 52, 60, 58, 65, 62, 70, 68, 75].map((h, i) => (
+        <div key={i} className="flex-1 bg-black/10 rounded-t-sm" style={{ height: `${h}%` }} />
+      ))}
+    </div>
+    <div className="flex items-center justify-between mb-3">
+      <span className="text-[9px] text-gray-400">30-day trend</span>
+      <span className="text-xs font-bold text-emerald-600">+37%</span>
+    </div>
+    <div className="grid grid-cols-3 gap-2">
+      <div className="p-2 rounded-md bg-gray-50 text-center">
+        <div className="text-sm font-bold text-black">24.5k</div>
+        <div className="text-[8px] text-gray-400">Reach</div>
+      </div>
+      <div className="p-2 rounded-md bg-gray-50 text-center">
+        <div className="text-sm font-bold text-black">8.2%</div>
+        <div className="text-[8px] text-gray-400">CTR</div>
+      </div>
+      <div className="p-2 rounded-md bg-gray-50 text-center">
+        <div className="text-sm font-bold text-black">1.4k</div>
+        <div className="text-[8px] text-gray-400">Shares</div>
+      </div>
+    </div>
+  </div>
+);
 
 const steps = [
   {
-    icon: FileText,
+    screen: DraftScreen,
     title: "Draft",
-    description: "Create content",
+    subtitle: "Create content that's built to perform",
+    description: "Write in our intelligent editor that understands your audience, brand voice, and goals. Tag channels and let the system prepare your content for validation.",
   },
   {
-    icon: CheckCircle,
+    screen: ValidateScreen,
     title: "Validate",
-    description: "Test in seconds",
+    subtitle: "Test in seconds, not weeks",
+    description: "Get instant AI-powered scoring across clarity, tone, audience fit, and predicted engagement. No more guessing — know what works before you spend.",
   },
   {
-    icon: Sparkles,
+    screen: OptimizeScreen,
     title: "Optimize",
-    description: "AI-powered variants",
+    subtitle: "AI-generated variants that outperform",
+    description: "Automatically generate high-performing variants of your content. The system identifies the best-performing version based on predicted engagement lift.",
   },
   {
-    icon: Send,
+    screen: PublishScreen,
     title: "Publish",
-    description: "Launch anywhere",
+    subtitle: "Deploy everywhere at once",
+    description: "Push optimized content to LinkedIn, X, email, and more — all from one place. Schedule, sequence, and coordinate across every channel.",
   },
   {
-    icon: BarChart3,
+    screen: RefineScreen,
     title: "Refine",
-    description: "Auto-improve live",
+    subtitle: "Content that improves itself",
+    description: "Track live performance metrics and let the system auto-optimize. Your content gets smarter over time with continuous feedback loops.",
   },
 ];
 
 const HowItWorksSection = () => {
   const { ref: headerRef, isVisible: headerVisible } = useScrollAnimation();
-  const { ref: stepsRef, isVisible: stepsVisible } = useScrollAnimation();
 
   return (
     <section id="how-it-works" className="py-28 md:py-32 bg-[#f9f8f6]">
-      <div className="max-w-[1200px] mx-auto px-6">
-        <div 
+      <div className="max-w-[1100px] mx-auto px-6">
+        <div
           ref={headerRef}
-          className={`text-center mb-20 transition-all duration-700 ${headerVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+          className={`text-center mb-24 transition-all duration-700 ${headerVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
         >
-          <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold mb-5 text-primary-navy leading-[1.1]">
+          <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold mb-5 text-black leading-[1.1]">
             From draft to performance
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className="text-lg text-gray-500 max-w-2xl mx-auto">
             A continuous workflow that engineers content success
           </p>
         </div>
 
-        {/* Horizontal Stepper */}
-        <div ref={stepsRef} className="relative">
-          {/* Connection Line */}
-          <div className="hidden md:block absolute top-12 left-0 right-0 h-0.5 bg-[#1e4fc2]/20" style={{ left: '10%', right: '10%' }} />
-          
-          <div className="grid grid-cols-1 md:grid-cols-5 gap-8 md:gap-4">
-            {steps.map((step, index) => (
-              <div
-                key={index}
-                className={`relative flex flex-col items-center text-center group transition-all duration-700 ${stepsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}
-                style={{ transitionDelay: stepsVisible ? `${index * 100}ms` : '0ms' }}
-              >
-                {/* Icon Circle */}
-                <div className="relative z-10 w-24 h-24 rounded-full border-2 border-[#1e4fc2]/30 bg-[#1e4fc2]/5 flex items-center justify-center mb-6 group-hover:border-[#1e4fc2] group-hover:bg-[#1e4fc2]/10 transition-all duration-300">
-                  <step.icon className="w-10 h-10 text-[#93b4ff] group-hover:text-[#1e4fc2] relative z-10" strokeWidth={2} />
-                  <div className="absolute -top-2 -right-2 w-8 h-8 rounded-full bg-[#164B82] flex items-center justify-center text-white font-bold text-sm border-2 border-[#1e4fc2]">
-                    {index + 1}
-                  </div>
-                </div>
-                
-                {/* Text */}
-                <h3 className="text-xl font-bold text-primary-navy mb-2">
-                  {step.title}
-                </h3>
-                <p className="text-sm text-gray-600">
-                  {step.description}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Bottom CTA */}
-        <div className="mt-20 text-center">
-          <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-white border border-gray-200 shadow-sm hover:shadow-md hover:border-[#1e4fc2]/30 transition-all duration-300">
-            <span className="text-sm font-semibold text-gray-600">End-to-end content intelligence</span>
-            <div className="w-2 h-2 rounded-full bg-[#1e4fc2] animate-pulse" />
-          </div>
+        <div className="space-y-24">
+          {steps.map((step, index) => {
+            const isEven = index % 2 === 0;
+            return <StepRow key={index} step={step} index={index} isEven={isEven} />;
+          })}
         </div>
       </div>
     </section>
+  );
+};
+
+const StepRow = ({ step, index, isEven }: { step: typeof steps[0]; index: number; isEven: boolean }) => {
+  const { ref, isVisible } = useScrollAnimation();
+
+  return (
+    <div
+      ref={ref}
+      className={`flex flex-col ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'} items-center gap-12 md:gap-16 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}
+    >
+      <div className="flex-1 w-full max-w-md">
+        <div className="rounded-2xl border border-gray-200 shadow-sm overflow-hidden">
+          <step.screen />
+        </div>
+      </div>
+
+      <div className="flex-1 max-w-lg">
+        <div className="flex items-center gap-3 mb-4">
+          <div className="w-8 h-8 rounded-full bg-black flex items-center justify-center text-white font-bold text-sm">
+            {index + 1}
+          </div>
+          <h3 className="text-2xl md:text-3xl font-bold text-black">{step.title}</h3>
+        </div>
+        <p className="text-lg font-medium text-black mb-3">{step.subtitle}</p>
+        <p className="text-base text-gray-500 leading-relaxed">{step.description}</p>
+      </div>
+    </div>
   );
 };
 

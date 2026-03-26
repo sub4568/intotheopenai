@@ -60,7 +60,7 @@ const FAQSection = () => {
           ref={headerRef}
           className={`text-center mb-16 transition-all duration-700 ${headerVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
         >
-          <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold mb-5 text-primary-navy leading-[1.1]">
+          <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold mb-5 text-black leading-[1.1]">
             Questions? We've got answers
           </h2>
         </div>
@@ -74,9 +74,9 @@ const FAQSection = () => {
               <AccordionItem
                 key={index}
                 value={`item-${index}`}
-                className="group bg-white border border-gray-200 rounded-xl px-6 shadow-sm hover:shadow-md data-[state=open]:shadow-md data-[state=open]:border-[#699ACD]/30 transition-all duration-300"
+                className="group bg-white border border-gray-200 rounded-xl px-6 shadow-sm hover:shadow-md data-[state=open]:shadow-md data-[state=open]:border-black/30 transition-all duration-300"
               >
-                <AccordionTrigger className="text-left text-base font-bold hover:no-underline py-5 text-primary-navy">
+                <AccordionTrigger className="text-left text-base font-bold hover:no-underline py-5 text-black">
                   {faq.question}
                 </AccordionTrigger>
                 <AccordionContent className="text-base pb-5 leading-relaxed text-gray-600">

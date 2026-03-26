@@ -23,7 +23,7 @@ const ProblemSection = () => {
   const { ref, isVisible } = useScrollAnimation();
 
   return (
-    <section className="py-28 md:py-32 bg-[#0f2942] relative overflow-hidden">
+    <section className="py-28 md:py-32 bg-[#111] relative overflow-hidden">
       
       <div className="max-w-[1200px] mx-auto px-6 relative z-10">
         <div
@@ -42,11 +42,11 @@ const ProblemSection = () => {
           {stats.map((item, index) => (
             <div
               key={index}
-              className={`group relative p-8 rounded-xl border border-white/10 hover:border-[#1e4fc2] transition-all duration-300 hover:shadow-[0_0_0_1px_#1e4fc2] ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}
+              className={`group relative p-8 rounded-xl border border-white/10 hover:border-black transition-all duration-300 hover:shadow-[0_0_0_1px_#111] ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}
               style={{ transitionDelay: isVisible ? `${index * 150}ms` : '0ms' }}
             >
               <div className="flex flex-col items-center text-center">
-                <item.icon className="w-6 h-6 text-[#93b4ff] mb-6 group-hover:text-white transition-colors duration-300" strokeWidth={2} />
+                <item.icon className="w-6 h-6 text-[#888] mb-6 group-hover:text-white transition-colors duration-300" strokeWidth={2} />
                 <div className="text-5xl md:text-6xl font-display font-bold text-white mb-3">
                   {item.stat}
                 </div>
@@ -59,7 +59,7 @@ const ProblemSection = () => {
         </div>
 
         <div className="mt-16 flex justify-center">
-          <div className="relative pl-6 border-l-4 border-[#1e4fc2] py-2 max-w-3xl">
+          <div className="relative pl-6 border-l-4 border-black py-2 max-w-3xl">
             <p className="text-xl md:text-2xl font-bold text-white leading-tight">
               Traditional analytics explain failure after launch. intotheopen helps you avoid it.
             </p>

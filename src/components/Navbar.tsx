@@ -41,7 +41,7 @@ const Navbar = () => {
               <a
                 key={link.label}
                 href={link.href}
-                className="text-sm text-gray-600 font-semibold hover:text-primary-navy transition-colors duration-200"
+                className="text-sm text-gray-600 font-semibold hover:text-black transition-colors duration-200"
               >
                 {link.label}
               </a>
@@ -50,7 +50,7 @@ const Navbar = () => {
               href="https://intotheopen-144935016950.us-west1.run.app/"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-5 py-2.5 bg-[#164B82] hover:bg-[#2F679F] text-white text-sm font-bold rounded-lg shadow-md hover:shadow-lg transition-all duration-200"
+              className="px-5 py-2.5 bg-[#111] hover:bg-[#222] text-white text-sm font-bold rounded-lg shadow-md hover:shadow-lg transition-all duration-200"
             >
               Get Access
             </a>

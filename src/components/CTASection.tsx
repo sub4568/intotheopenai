@@ -12,7 +12,7 @@ const CTASection = () => {
   ];
 
   return (
-    <section className="py-20 md:py-24 bg-[#164B82] relative overflow-hidden group">
+    <section className="py-20 md:py-24 bg-[#111] relative overflow-hidden group">
 
       <div ref={ref} className="container mx-auto px-4 relative z-10">
         <div

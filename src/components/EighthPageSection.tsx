@@ -6,7 +6,7 @@ const EighthPageSection = () => {
   const { ref, isVisible } = useScrollAnimation();
 
   return (
-    <section className="py-28 md:py-32 bg-[#0f2942] relative overflow-hidden">
+    <section className="py-28 md:py-32 bg-[#111] relative overflow-hidden">
       
       <div className="max-w-[1200px] mx-auto px-6 relative z-10">
         <div
@@ -23,7 +23,7 @@ const EighthPageSection = () => {
 
           <Button
             size="xl"
-            className="h-16 px-10 text-lg bg-[#1e4fc2] hover:bg-[#164B82] text-white font-bold shadow-lg hover:shadow-[0_0_0_1px_#1e4fc2] transition-all duration-300 group"
+            className="h-16 px-10 text-lg bg-[#111] hover:bg-[#222] text-white font-bold shadow-lg hover:shadow-[0_0_0_1px_#111] transition-all duration-300 group"
             asChild
           >
             <a href="https://intotheopen-144935016950.us-west1.run.app/" target="_blank" rel="noopener noreferrer">

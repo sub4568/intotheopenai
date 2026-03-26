@@ -62,7 +62,7 @@ const ContactSection = () => {
           ref={headerRef}
           className={`text-center mb-16 transition-all duration-700 ${headerVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
         >
-          <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-primary-navy mb-5 leading-[1.1]">
+          <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-black mb-5 leading-[1.1]">
             Ready to engineer better content?
           </h2>
           <p className="text-lg text-gray-600">
@@ -80,7 +80,7 @@ const ContactSection = () => {
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="flex-1 h-14 px-6 text-base bg-gray-50 border-2 border-gray-200 focus:border-[#699ACD] focus:ring-2 focus:ring-[#699ACD]/20 rounded-xl"
+              className="flex-1 h-14 px-6 text-base bg-gray-50 border-2 border-gray-200 focus:border-black focus:ring-2 focus:ring-black/20 rounded-xl"
               placeholder="you@company.com"
               required
             />
@@ -88,7 +88,7 @@ const ContactSection = () => {
               type="submit"
               size="lg"
               disabled={isSubmitting}
-              className="h-14 px-8 bg-[#164B82] hover:bg-[#2F679F] text-white font-bold text-base rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
+              className="h-14 px-8 bg-[#111] hover:bg-[#222] text-white font-bold text-base rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
             >
               {isSubmitting ? "Sending..." : "Request Access"}
               {!isSubmitting && <ArrowRight className="w-5 h-5 ml-2" />}
@@ -102,37 +102,37 @@ const ContactSection = () => {
           className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-3xl mx-auto"
         >
           <div className={`flex items-center gap-3 justify-center group transition-all duration-700 ${trustVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-            <div className="w-10 h-10 rounded-full bg-[#699ACD]/10 flex items-center justify-center group-hover:bg-[#699ACD]/20 transition-colors">
-              <svg className="w-5 h-5 text-[#2F679F]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div className="w-10 h-10 rounded-full bg-black/10 flex items-center justify-center group-hover:bg-black/20 transition-colors">
+              <svg className="w-5 h-5 text-[#333]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
             </div>
             <div className="text-left">
-              <p className="text-sm font-bold text-primary-navy">24-hour response</p>
+              <p className="text-sm font-bold text-black">24-hour response</p>
               <p className="text-xs text-gray-500">Fast replies guaranteed</p>
             </div>
           </div>
 
           <div className={`flex items-center gap-3 justify-center group transition-all duration-700 ${trustVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: trustVisible ? '100ms' : '0ms' }}>
-            <div className="w-10 h-10 rounded-full bg-[#699ACD]/10 flex items-center justify-center group-hover:bg-[#699ACD]/20 transition-colors">
-              <svg className="w-5 h-5 text-[#2F679F]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div className="w-10 h-10 rounded-full bg-black/10 flex items-center justify-center group-hover:bg-black/20 transition-colors">
+              <svg className="w-5 h-5 text-[#333]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
               </svg>
             </div>
             <div className="text-left">
-              <p className="text-sm font-bold text-primary-navy">No credit card</p>
+              <p className="text-sm font-bold text-black">No credit card</p>
               <p className="text-xs text-gray-500">Risk-free demo access</p>
             </div>
           </div>
 
           <div className={`flex items-center gap-3 justify-center group transition-all duration-700 ${trustVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: trustVisible ? '200ms' : '0ms' }}>
-            <div className="w-10 h-10 rounded-full bg-[#699ACD]/10 flex items-center justify-center group-hover:bg-[#699ACD]/20 transition-colors">
-              <svg className="w-5 h-5 text-[#2F679F]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div className="w-10 h-10 rounded-full bg-black/10 flex items-center justify-center group-hover:bg-black/20 transition-colors">
+              <svg className="w-5 h-5 text-[#333]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
               </svg>
             </div>
             <div className="text-left">
-              <p className="text-sm font-bold text-primary-navy">Join 50+ teams</p>
+              <p className="text-sm font-bold text-black">Join 50+ teams</p>
               <p className="text-xs text-gray-500">Already shipping better</p>
             </div>
           </div>

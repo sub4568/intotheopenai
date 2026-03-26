@@ -73,7 +73,7 @@ function FloatingPaths({ position }: { position: number }) {
                                 <motion.path
                                     d="M-8,-3 L8,-3 L6,3 L-6,3 Z"
                                     fill="currentColor"
-                                    className="text-[#1e4fc2]"
+                                    className="text-[#111]"
                                     animate={{
                                         opacity: [0.5, 0.9, 0.5],
                                     }}
@@ -87,7 +87,7 @@ function FloatingPaths({ position }: { position: number }) {
                                 <motion.path
                                     d="M0,-6 L3,-3 L-3,-3 Z"
                                     fill="currentColor"
-                                    className="text-[#699ACD]"
+                                    className="text-[#555]"
                                     animate={{
                                         opacity: [0.6, 1, 0.6],
                                     }}
@@ -104,7 +104,7 @@ function FloatingPaths({ position }: { position: number }) {
                                     cy="0"
                                     r="2"
                                     fill="currentColor"
-                                    className="text-[#93b4ff]"
+                                    className="text-[#888]"
                                     animate={{
                                         opacity: [0.4, 0, 0],
                                         scale: [0.3, 1.5, 2.5],
@@ -121,7 +121,7 @@ function FloatingPaths({ position }: { position: number }) {
                                     cy="0"
                                     r="2"
                                     fill="currentColor"
-                                    className="text-[#93b4ff]"
+                                    className="text-[#888]"
                                     animate={{
                                         opacity: [0.3, 0, 0],
                                         scale: [0.5, 1.8, 3],
