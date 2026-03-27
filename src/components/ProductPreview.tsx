@@ -19,18 +19,18 @@ const ProductPreview = () => {
   }, []);
 
   return (
-    <section className="relative bg-page-light pt-4 pb-20">
-      <div className="max-w-[1200px] mx-auto px-6" ref={ref}>
+    <section className="relative bg-page-light pt-6 pb-16">
+      <div className="max-w-[1100px] mx-auto px-6" ref={ref}>
         <div
-          className={`transition-all duration-700 ease-out ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+          className={`transition-all duration-1000 ease-out ${
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
           }`}
         >
-          <div className="relative mx-auto overflow-hidden rounded-[24px]" style={{ maxHeight: "480px" }}>
+          <div className="relative mx-auto overflow-hidden rounded-[20px]" style={{ maxHeight: "480px" }}>
             <div
-              className="rounded-[24px] overflow-hidden bg-black p-3"
+              className="rounded-[20px] overflow-hidden bg-[#1a1a1a] p-2.5"
               style={{
-                boxShadow: "0 12px 50px rgba(0,0,0,0.15)",
+                boxShadow: "0 25px 80px rgba(0,0,0,0.12), 0 8px 30px rgba(0,0,0,0.08)",
               }}
             >
               <div className="rounded-xl overflow-hidden bg-[#fafafa]">

@@ -10,11 +10,11 @@ const HeroSection = () => {
 
           <div className="w-full animate-fade-up text-center">
             <h1 className="font-display text-2xl md:text-3xl font-semibold mb-3 leading-[1.2] text-black tracking-tight">
-              Engineer content performance before you publish.
+              AI content intelligence for communications and marketing teams.
             </h1>
 
-            <p className="text-sm md:text-base mb-6 leading-relaxed opacity-0 animate-fade-up [animation-delay:200ms] [animation-fill-mode:forwards] max-w-sm mx-auto text-gray-400">
-              Forecast impact, validate messaging, and optimize across the entire lifecycle.
+            <p className="text-sm md:text-base mb-6 leading-relaxed opacity-0 animate-fade-up [animation-delay:200ms] [animation-fill-mode:forwards] max-w-md mx-auto text-gray-400">
+              Predict, test, and optimise content performance before and after publication, powered by our proprietary AI content performance OS.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3 opacity-0 animate-fade-up [animation-delay:400ms] [animation-fill-mode:forwards]">
