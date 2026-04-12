@@ -33,13 +33,13 @@ const Footer = () => {
               Content intelligence for predictable performance
             </p>
             <div className="flex items-center gap-4">
-              <a href="https://x.com/intotheopen_ai?t=fJp56PsVEQuk2zOZE9FWnA" target="_blank" rel="noopener noreferrer" className="transition-all duration-300 hover:scale-125 hover:-translate-y-1 text-secondary-navy">
+              <a href="https://x.com/intotheopen_ai?t=fJp56PsVEQuk2zOZE9FWnA" target="_blank" rel="noopener noreferrer" className="transition-all duration-300 hover:scale-125 hover:-translate-y-1 text-gray-500 hover:text-black">
                 <Twitter className="w-5 h-5" />
               </a>
-              <a href="https://www.linkedin.com/company/intotheopen/" target="_blank" rel="noopener noreferrer" className="transition-all duration-300 hover:scale-125 hover:-translate-y-1 text-secondary-navy">
+              <a href="https://www.linkedin.com/company/intotheopen/" target="_blank" rel="noopener noreferrer" className="transition-all duration-300 hover:scale-125 hover:-translate-y-1 text-gray-500 hover:text-black">
                 <Linkedin className="w-5 h-5" />
               </a>
-              <a href="https://www.instagram.com/intotheopen.ai?utm_source=qr" target="_blank" rel="noopener noreferrer" className="transition-all duration-300 hover:scale-125 hover:-translate-y-1 text-secondary-navy">
+              <a href="https://www.instagram.com/intotheopen.ai?utm_source=qr" target="_blank" rel="noopener noreferrer" className="transition-all duration-300 hover:scale-125 hover:-translate-y-1 text-gray-500 hover:text-black">
                 <Instagram className="w-5 h-5" />
               </a>
             </div>
@@ -80,7 +80,7 @@ const Footer = () => {
             © 2026 intotheopen. All rights reserved.
           </p>
           <div className="flex items-center gap-2">
-            <span className="w-1.5 h-1.5 rounded-full bg-soft-blue animate-pulse" />
+            <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
             <span className="text-xs text-muted-gray opacity-60">All systems operational</span>
           </div>
         </div>

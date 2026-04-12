@@ -1,67 +1,85 @@
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import { AlertCircle, TrendingDown, DollarSign } from "lucide-react";
+
+const DollarIcon = () => (
+  <svg width="44" height="44" viewBox="0 0 44 44" fill="none">
+    <rect width="44" height="44" rx="11" fill="#f4f4f4" />
+    <path d="M22 11v1.5m0 19V33M16 19c0-2.21 2.686-4 6-4s6 1.79 6 4-2.686 4-6 4-6 1.79-6 4 2.686 4 6 4 6-1.79 6-4" stroke="#111" strokeOpacity="0.4" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
+  </svg>
+);
+
+const ChartIcon = () => (
+  <svg width="44" height="44" viewBox="0 0 44 44" fill="none">
+    <rect width="44" height="44" rx="11" fill="#f4f4f4" />
+    <path d="M12 32l5.5-6.5 4.5 3.5 5-7.5 4 3.5" stroke="#111" strokeOpacity="0.4" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
+    <path d="M12 32h20" stroke="#111" strokeOpacity="0.4" strokeWidth="1.6" strokeLinecap="round"/>
+  </svg>
+);
+
+const MultiplierIcon = () => (
+  <svg width="44" height="44" viewBox="0 0 44 44" fill="none">
+    <rect width="44" height="44" rx="11" fill="#f4f4f4" />
+    <path d="M17 22h10M22 17l5 5-5 5" stroke="#111" strokeOpacity="0.4" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
+    <circle cx="22" cy="22" r="8" stroke="#111" strokeOpacity="0.2" strokeWidth="1.3"/>
+  </svg>
+);
 
 const stats = [
-  {
-    icon: AlertCircle,
-    stat: "73%",
-    label: "of content gets zero engagement",
-  },
-  {
-    icon: TrendingDown,
-    stat: "$400k+",
-    label: "wasted annually on failed content",
-  },
-  {
-    icon: DollarSign,
-    stat: "6 weeks",
-    label: "average time to realize content failed",
-  },
+  { Icon: DollarIcon, stat: "$90B", label: "Lost to underperforming\ncontent annually" },
+  { Icon: ChartIcon, stat: "70%", label: "Of marketing content\nfails to deliver ROI" },
+  { Icon: MultiplierIcon, stat: "3–10×", label: "ROI left on the table per\nunderperforming campaign" },
 ];
 
 const ProblemSection = () => {
   const { ref, isVisible } = useScrollAnimation();
 
   return (
-    <section className="py-28 md:py-32 bg-[#111] relative overflow-hidden">
-      
-      <div className="max-w-[1200px] mx-auto px-6 relative z-10">
+    <section className="py-20 md:py-24 bg-[#f9f8f6]">
+      <div className="max-w-[1100px] mx-auto px-6">
         <div
           ref={ref}
-          className={`text-center mb-16 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+          className={`transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
         >
-          <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-[1.1] text-white">
-            Most content fails before it launches
-          </h2>
-          <p className="text-lg md:text-xl text-white/60 max-w-2xl mx-auto">
-            Teams spend millions on content without knowing if it will work.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {stats.map((item, index) => (
-            <div
-              key={index}
-              className={`group relative p-8 rounded-xl border border-white/10 hover:border-black transition-all duration-300 hover:shadow-[0_0_0_1px_#111] ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}
-              style={{ transitionDelay: isVisible ? `${index * 150}ms` : '0ms' }}
-            >
-              <div className="flex flex-col items-center text-center">
-                <item.icon className="w-6 h-6 text-[#888] mb-6 group-hover:text-white transition-colors duration-300" strokeWidth={2} />
-                <div className="text-5xl md:text-6xl font-display font-bold text-white mb-3">
-                  {item.stat}
-                </div>
-                <p className="text-base text-white/60 font-medium leading-snug">
-                  {item.label}
-                </p>
-              </div>
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+            <div>
+              <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-black/30 mb-3">Why this matters</p>
+              <h2 className="font-display text-3xl md:text-4xl font-bold text-black leading-[1.1] max-w-xl">
+                Content performance is still unpredictable, and agencies are paying the price.
+              </h2>
             </div>
-          ))}
-        </div>
+            <p className="text-sm text-gray-500 max-w-xs leading-relaxed flex-shrink-0">
+              Data exists, but it arrives too late. By the time you have a clear picture, the decision has already been made.
+            </p>
+          </div>
 
-        <div className="mt-16 flex justify-center">
-          <div className="relative pl-6 border-l-4 border-black py-2 max-w-3xl">
-            <p className="text-xl md:text-2xl font-bold text-white leading-tight">
-              Traditional analytics explain failure after launch. intotheopen helps you avoid it.
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-gray-200 rounded-2xl overflow-hidden">
+            {stats.map((item, index) => (
+              <div
+                key={item.stat}
+                className="bg-white px-8 py-10 flex flex-col gap-4"
+                style={{
+                  transitionDelay: isVisible ? `${index * 100}ms` : "0ms",
+                  opacity: isVisible ? 1 : 0,
+                  transform: isVisible ? "translateY(0)" : "translateY(12px)",
+                  transition: "opacity 0.6s ease, transform 0.6s ease",
+                }}
+              >
+                <item.Icon />
+                <div>
+                  <div className="text-5xl font-display font-bold text-black tracking-tight leading-none mb-2">
+                    {item.stat}
+                  </div>
+                  <p className="text-xs text-gray-400 font-semibold uppercase tracking-widest whitespace-pre-line leading-relaxed">
+                    {item.label}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-8">
+            <p className="text-sm text-gray-500 leading-relaxed">
+              intotheopen exists because this problem is solvable —{" "}
+              <span className="text-black font-semibold">and it starts before you publish.</span>
             </p>
           </div>
         </div>
@@ -71,4 +89,3 @@ const ProblemSection = () => {
 };
 
 export default ProblemSection;
-

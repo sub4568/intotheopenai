@@ -1,42 +1,39 @@
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const DraftScreen = () => (
-  <div className="w-full h-full bg-white rounded-xl p-5">
-    <div className="flex items-center gap-2 mb-4">
+  <div className="w-full h-full bg-white rounded-xl p-5 flex flex-col">
+    <div className="flex items-center gap-2 mb-3 pb-3 border-b border-gray-100">
       <div className="w-6 h-6 rounded-md bg-black flex items-center justify-center">
         <span className="text-white text-[8px] font-bold">IO</span>
       </div>
-      <div className="text-xs font-semibold text-black">Content Editor</div>
+      <div className="text-xs font-semibold text-black">Content Submission</div>
       <div className="ml-auto flex gap-1.5">
-        <div className="px-2 py-0.5 rounded text-[9px] bg-gray-100 text-gray-500">Blog</div>
-        <div className="px-2 py-0.5 rounded text-[9px] bg-gray-100 text-gray-500">LinkedIn</div>
-        <div className="px-2 py-0.5 rounded text-[9px] bg-black text-white">Ad Copy</div>
+        <div className="px-2 py-0.5 rounded-md text-[8px] font-medium bg-gray-100 text-gray-500">LinkedIn</div>
+        <div className="px-2 py-0.5 rounded-md text-[8px] font-medium bg-black text-white">Ad Copy</div>
       </div>
     </div>
-    <div className="border border-gray-100 rounded-lg p-4 mb-3">
-      <div className="space-y-2">
-        <div className="h-2 bg-gray-200 rounded-full w-full" />
-        <div className="h-2 bg-gray-200 rounded-full w-11/12" />
-        <div className="h-2 bg-gray-200 rounded-full w-4/5" />
-        <div className="h-2 bg-gray-100 rounded-full w-3/5" />
+    <div className="flex-1 rounded-lg bg-gray-50 border border-gray-100 p-3 mb-3 relative">
+      <div className="text-[9px] font-medium text-gray-700 mb-2 leading-relaxed">
+        "AI governance is moving faster than most boards can track. Here's what every fintech leadership team needs to know before Q2…"
       </div>
-      <div className="mt-4 flex items-center gap-2">
-        <div className="h-2 bg-gray-300 rounded-full w-20" />
-        <div className="text-[9px] text-gray-400">|</div>
-        <div className="h-2 bg-gray-200 rounded-full w-16" />
+      <div className="space-y-1.5">
+        <div className="h-1.5 bg-gray-200 rounded-full w-full" />
+        <div className="h-1.5 bg-gray-200 rounded-full w-10/12" />
+        <div className="h-1.5 bg-gray-200 rounded-full w-9/12" />
+        <div className="h-1.5 bg-gray-100 rounded-full w-5/12" />
+      </div>
+      <div className="absolute bottom-2 right-2 flex items-center gap-1">
+        <div className="w-1.5 h-1.5 rounded-full bg-black animate-pulse" />
+        <span className="text-[7px] text-gray-400">typing…</span>
       </div>
     </div>
     <div className="flex items-center justify-between">
-      <div className="flex gap-1.5">
-        <div className="w-5 h-5 rounded bg-gray-100" />
-        <div className="w-5 h-5 rounded bg-gray-100" />
-        <div className="w-5 h-5 rounded bg-gray-100" />
+      <div className="flex items-center gap-2">
+        <span className="text-[9px] text-gray-400">248 words</span>
+        <div className="w-px h-3 bg-gray-200" />
+        <span className="text-[9px] text-gray-400">Fintech · Leadership</span>
       </div>
-      <div className="flex items-center gap-1.5">
-        <div className="text-[9px] text-gray-400">248 words</div>
-        <div className="w-1 h-1 rounded-full bg-gray-300" />
-        <div className="text-[9px] text-gray-400">Draft</div>
-      </div>
+      <div className="px-2.5 py-1 rounded-md bg-black text-white text-[8px] font-semibold">Submit for scoring →</div>
     </div>
   </div>
 );
@@ -283,17 +280,23 @@ const StepRow = ({ step, index, isEven }: { step: typeof steps[0]; index: number
   return (
     <div
       ref={ref}
-      className={`flex flex-col ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'} items-center gap-12 md:gap-16 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}
+      className={`flex flex-col ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'} items-center gap-12 md:gap-16`}
     >
-      <div className="flex-1 w-full max-w-md">
+      <div
+        className="flex-1 w-full max-w-md transition-all duration-700 ease-out"
+        style={{ opacity: isVisible ? 1 : 0, transform: isVisible ? 'translateY(0)' : 'translateY(28px)', transitionDelay: '0ms' }}
+      >
         <div className="rounded-2xl border border-gray-200 shadow-sm overflow-hidden">
           <step.screen />
         </div>
       </div>
 
-      <div className="flex-1 max-w-lg">
+      <div
+        className="flex-1 max-w-lg transition-all duration-700 ease-out"
+        style={{ opacity: isVisible ? 1 : 0, transform: isVisible ? 'translateY(0)' : 'translateY(20px)', transitionDelay: '100ms' }}
+      >
         <div className="flex items-center gap-3 mb-4">
-          <div className="w-8 h-8 rounded-full bg-black flex items-center justify-center text-white font-bold text-sm">
+          <div className="w-8 h-8 rounded-full bg-black flex items-center justify-center text-white font-bold text-sm flex-shrink-0">
             {index + 1}
           </div>
           <h3 className="text-2xl md:text-3xl font-bold text-black">{step.title}</h3>

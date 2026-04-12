@@ -81,8 +81,10 @@ const FAQSection = () => {
                 Everything you need to know about the platform. Can't find what you're looking for? Reach out to our team.
               </p>
               <a
-                href="#contact"
-                className="inline-flex items-center gap-2 text-sm font-medium text-black hover:gap-3 transition-all"
+                href="https://intotheopen-144935016950.us-west1.run.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-sm font-medium text-black hover:gap-3 transition-all duration-200"
               >
                 Talk to us <ArrowRight className="w-4 h-4" />
               </a>
