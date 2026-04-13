@@ -255,6 +255,7 @@ const HowItWorksSection = () => {
           ref={headerRef}
           className={`text-center mb-24 transition-all duration-700 ${headerVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
         >
+          <span className="inline-flex items-center px-3 py-1 rounded-full text-[11px] font-semibold uppercase tracking-[0.15em] bg-black/[0.05] text-black/40 mb-5">How it works</span>
           <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold mb-5 text-black leading-[1.1]">
             From draft to performance
           </h2>
@@ -276,6 +277,9 @@ const HowItWorksSection = () => {
 
 const StepRow = ({ step, index, isEven }: { step: typeof steps[0]; index: number; isEven: boolean }) => {
   const { ref, isVisible } = useScrollAnimation();
+  const cardEnter = isEven
+    ? 'rotate3d(0.3, 1, 0.05, 16deg) translateX(-50px) translateY(20px) scale(0.93)'
+    : 'rotate3d(0.3, -1, 0.05, 16deg) translateX(50px) translateY(20px) scale(0.93)';
 
   return (
     <div
@@ -283,8 +287,13 @@ const StepRow = ({ step, index, isEven }: { step: typeof steps[0]; index: number
       className={`flex flex-col ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'} items-center gap-12 md:gap-16`}
     >
       <div
-        className="flex-1 w-full max-w-md transition-all duration-700 ease-out"
-        style={{ opacity: isVisible ? 1 : 0, transform: isVisible ? 'translateY(0)' : 'translateY(28px)', transitionDelay: '0ms' }}
+        className="flex-1 w-full max-w-md"
+        style={{
+          opacity: isVisible ? 1 : 0,
+          transform: isVisible ? 'rotate3d(0,0,0,0deg) translateX(0) translateY(0) scale(1)' : cardEnter,
+          transition: isVisible ? 'opacity 0.75s ease, transform 0.75s cubic-bezier(0.22, 1, 0.36, 1)' : 'none',
+          willChange: 'transform',
+        }}
       >
         <div className="rounded-2xl border border-gray-200 shadow-sm overflow-hidden">
           <step.screen />
@@ -292,8 +301,13 @@ const StepRow = ({ step, index, isEven }: { step: typeof steps[0]; index: number
       </div>
 
       <div
-        className="flex-1 max-w-lg transition-all duration-700 ease-out"
-        style={{ opacity: isVisible ? 1 : 0, transform: isVisible ? 'translateY(0)' : 'translateY(20px)', transitionDelay: '100ms' }}
+        className="flex-1 max-w-lg"
+        style={{
+          opacity: isVisible ? 1 : 0,
+          transform: isVisible ? 'translateX(0) translateY(0)' : isEven ? 'translateX(32px) translateY(16px)' : 'translateX(-32px) translateY(16px)',
+          transition: 'opacity 0.65s ease, transform 0.65s ease',
+          transitionDelay: '140ms',
+        }}
       >
         <div className="flex items-center gap-3 mb-4">
           <div className="w-8 h-8 rounded-full bg-black flex items-center justify-center text-white font-bold text-sm flex-shrink-0">

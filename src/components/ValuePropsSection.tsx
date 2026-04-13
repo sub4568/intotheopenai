@@ -185,23 +185,36 @@ const propsList: Prop[] = [
 
 const SideBySideRow = ({ prop, reverse }: { prop: Prop; reverse?: boolean }) => {
   const { ref, isVisible } = useScrollAnimation();
+  const cardAngle = reverse ? 'rotate3d(0.5, -1, 0.1, 14deg) translateX(40px) translateY(24px) scale(0.94)' : 'rotate3d(0.5, 1, 0.1, 14deg) translateX(-40px) translateY(24px) scale(0.94)';
   return (
     <div className={`${prop.bg} border-b border-gray-100`}>
       <div className="max-w-[1100px] mx-auto px-6 py-20 md:py-28">
         <div ref={ref} className={`flex flex-col ${reverse ? "md:flex-row-reverse" : "md:flex-row"} items-center gap-12 md:gap-24`}>
           <div
             className="flex-1 transition-all duration-700 ease-out"
-            style={{ opacity: isVisible ? 1 : 0, transform: isVisible ? 'translateY(0)' : 'translateY(24px)' }}
+            style={{
+              opacity: isVisible ? 1 : 0,
+              transform: isVisible ? 'translateY(0)' : 'translateY(36px)',
+              transitionDuration: '600ms',
+            }}
           >
-            <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-black/30 mb-5 block">{prop.tag}</span>
+            <span className="inline-flex items-center px-3 py-1 rounded-full text-[11px] font-semibold uppercase tracking-[0.15em] bg-black/[0.05] text-black/40 mb-5">{prop.tag}</span>
             <h2 className="font-display text-3xl md:text-4xl font-bold text-black leading-[1.12] mb-5 max-w-[380px]">
               {prop.headline}
             </h2>
             <p className="text-base text-gray-500 leading-relaxed max-w-[340px]">{prop.body}</p>
           </div>
           <div
-            className="flex-1 w-full max-w-[420px] transition-all duration-700 ease-out"
-            style={{ opacity: isVisible ? 1 : 0, transform: isVisible ? 'translateY(0)' : 'translateY(32px)', transitionDelay: '120ms', height: 300 }}
+            className="flex-1 w-full max-w-[420px]"
+            style={{
+              opacity: isVisible ? 1 : 0,
+              transform: isVisible ? 'rotate3d(0,0,0,0deg) translateX(0) translateY(0) scale(1)' : cardAngle,
+              transition: isVisible ? 'opacity 0.7s ease, transform 0.7s cubic-bezier(0.22, 1, 0.36, 1)' : 'none',
+              transitionDelay: '120ms',
+              height: 300,
+              perspective: '1000px',
+              willChange: 'transform',
+            }}
           >
             <prop.Visual />
           </div>
@@ -218,18 +231,30 @@ const CenteredHeroRow = ({ prop }: { prop: Prop }) => {
       <div className="max-w-[1100px] mx-auto px-6 pt-20 md:pt-28 pb-0">
         <div ref={ref}>
           <div
-            className="text-center mb-12 transition-all duration-700 ease-out"
-            style={{ opacity: isVisible ? 1 : 0, transform: isVisible ? 'translateY(0)' : 'translateY(20px)' }}
+            className="text-center mb-12"
+            style={{
+              opacity: isVisible ? 1 : 0,
+              transform: isVisible ? 'translateY(0)' : 'translateY(36px)',
+              transition: 'opacity 0.6s ease, transform 0.6s ease',
+            }}
           >
-            <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-black/30 mb-4 block">{prop.tag}</span>
+            <span className="inline-flex items-center px-3 py-1 rounded-full text-[11px] font-semibold uppercase tracking-[0.15em] bg-black/[0.05] text-black/40 mb-4">{prop.tag}</span>
             <h2 className="font-display text-3xl md:text-5xl font-bold text-black leading-[1.1] mb-5 max-w-2xl mx-auto">
               {prop.headline}
             </h2>
             <p className="text-base text-gray-500 leading-relaxed max-w-lg mx-auto">{prop.body}</p>
           </div>
           <div
-            className="w-full max-w-2xl mx-auto transition-all duration-700 ease-out"
-            style={{ opacity: isVisible ? 1 : 0, transform: isVisible ? 'translateY(0)' : 'translateY(32px)', transitionDelay: '150ms', height: 320 }}
+            className="w-full max-w-2xl mx-auto"
+            style={{
+              opacity: isVisible ? 1 : 0,
+              transform: isVisible ? 'rotateX(0deg) translateY(0) scale(1)' : 'rotateX(12deg) translateY(48px) scale(0.96)',
+              transition: isVisible ? 'opacity 0.75s ease, transform 0.75s cubic-bezier(0.22, 1, 0.36, 1)' : 'none',
+              transitionDelay: '150ms',
+              height: 320,
+              perspective: '1200px',
+              willChange: 'transform',
+            }}
           >
             <prop.Visual />
           </div>
@@ -239,8 +264,32 @@ const CenteredHeroRow = ({ prop }: { prop: Prop }) => {
   );
 };
 
+const SectionHeader = () => {
+  const { ref, isVisible } = useScrollAnimation();
+  return (
+    <div className="bg-white border-b border-gray-100">
+      <div className="max-w-[1100px] mx-auto px-6 py-20 md:py-24">
+        <div
+          ref={ref}
+          className="transition-all duration-700 ease-out"
+          style={{ opacity: isVisible ? 1 : 0, transform: isVisible ? 'translateY(0)' : 'translateY(20px)' }}
+        >
+          <span className="inline-flex items-center px-3 py-1 rounded-full text-[11px] font-semibold uppercase tracking-[0.15em] bg-black/[0.05] text-black/40 mb-5">What it does</span>
+          <h2 className="font-display text-4xl md:text-5xl font-bold text-black leading-[1.1] mb-5 max-w-2xl">
+            Built for every stage of the content lifecycle.
+          </h2>
+          <p className="text-lg text-gray-500 max-w-xl leading-relaxed">
+            From predictive scoring to post-publication optimisation — a closed loop that makes every content decision smarter than the last.
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 const ValuePropsSection = () => (
   <section id="features" className="border-t border-gray-100">
+    <SectionHeader />
     {propsList.map((prop) => {
       if (prop.layout === "centered-hero") return <CenteredHeroRow key={prop.tag} prop={prop} />;
       if (prop.layout === "side-by-side-reverse") return <SideBySideRow key={prop.tag} prop={prop} reverse />;

@@ -5,6 +5,7 @@ import RecognizedBy from "@/components/RecognizedBy";
 import ValuePropsSection from "@/components/ValuePropsSection";
 import HowItWorksSection from "@/components/HowItWorksSection";
 import ProblemSection from "@/components/ProblemSection";
+import AgentNetworkSection from "@/components/AgentNetworkSection";
 import IntegrationsSection from "@/components/IntegrationsSection";
 import PricingSection from "@/components/PricingSection";
 import FinalCTASection from "@/components/FinalCTASection";
@@ -25,6 +26,7 @@ const Index = () => {
         <ValuePropsSection />
         <HowItWorksSection />
         <ProblemSection />
+        <AgentNetworkSection />
         <IntegrationsSection />
         <PricingSection />
         <FinalCTASection />

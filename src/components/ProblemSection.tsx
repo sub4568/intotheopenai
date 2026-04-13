@@ -41,7 +41,7 @@ const ProblemSection = () => {
         >
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
             <div>
-              <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-black/30 mb-3">Why this matters</p>
+              <span className="inline-flex items-center px-3 py-1 rounded-full text-[11px] font-semibold uppercase tracking-[0.15em] bg-black/[0.05] text-black/40 mb-4">Why this matters</span>
               <h2 className="font-display text-3xl md:text-4xl font-bold text-black leading-[1.1] max-w-xl">
                 Content performance is still unpredictable, and agencies are paying the price.
               </h2>
@@ -78,8 +78,8 @@ const ProblemSection = () => {
 
           <div className="mt-8">
             <p className="text-sm text-gray-500 leading-relaxed">
-              intotheopen exists because this problem is solvable —{" "}
-              <span className="text-black font-semibold">and it starts before you publish.</span>
+              intotheopen exists because this problem is solvable.{" "}
+              <span className="text-black font-semibold">And it starts before you publish.</span>
             </p>
           </div>
         </div>

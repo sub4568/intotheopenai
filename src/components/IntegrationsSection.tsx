@@ -179,20 +179,33 @@ const ExportsRow = () => {
     <div ref={ref} className="py-16 md:py-20 border-b border-gray-100">
       <div className="flex flex-col md:flex-row items-center gap-12 md:gap-20">
         <div
-          className="flex-1 transition-all duration-700 ease-out"
-          style={{ opacity: isVisible ? 1 : 0, transform: isVisible ? 'translateY(0)' : 'translateY(20px)' }}
+          style={{
+            flex: 1,
+            opacity: isVisible ? 1 : 0,
+            transform: isVisible ? 'translateX(0) translateY(0)' : 'translateX(-28px) translateY(16px)',
+            transition: 'opacity 0.6s ease, transform 0.6s ease',
+          }}
         >
-          <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-black/30 mb-4">Seamless exports</p>
+          <span className="inline-flex items-center px-3 py-1 rounded-full text-[11px] font-semibold uppercase tracking-[0.15em] bg-black/[0.05] text-black/40 mb-4">Seamless exports</span>
           <h3 className="font-display text-2xl md:text-3xl font-bold text-black leading-[1.2] mb-4">
             Share a performance receipt with every campaign.
           </h3>
           <p className="text-base text-gray-500 leading-relaxed">
-            After your content completes multi-agent validation, download a stylised performance receipt — a clean summary of every evaluation run. Share with your team internally, your client externally, or both.
+            After your content completes multi-agent validation, download a stylised performance receipt — a clean summary of every evaluation run. Share with your team internally or your client externally.
           </p>
         </div>
         <div
-          className="flex-1 w-full max-w-[380px] transition-all duration-700 ease-out"
-          style={{ opacity: isVisible ? 1 : 0, transform: isVisible ? 'translateY(0)' : 'translateY(32px)', transitionDelay: '120ms', height: 260 }}
+          style={{
+            flex: 1,
+            width: '100%',
+            maxWidth: 380,
+            height: 260,
+            opacity: isVisible ? 1 : 0,
+            transform: isVisible ? 'rotate3d(0,0,0,0deg) translateX(0) translateY(0) scale(1)' : 'rotate3d(0.4, 1, 0.1, 15deg) translateX(44px) translateY(28px) scale(0.93)',
+            transition: isVisible ? 'opacity 0.75s ease, transform 0.75s cubic-bezier(0.22, 1, 0.36, 1)' : 'none',
+            transitionDelay: '120ms',
+            willChange: 'transform',
+          }}
         >
           <ExportsVisual />
         </div>
@@ -205,13 +218,17 @@ const AnalyticsRow = () => {
   const { ref, isVisible } = useScrollAnimation();
   return (
     <div ref={ref} className="py-16 md:py-20 border-b border-gray-100">
-      <div
-        className="transition-all duration-700 ease-out"
-        style={{ opacity: isVisible ? 1 : 0, transform: isVisible ? 'translateY(0)' : 'translateY(20px)' }}
-      >
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8">
+      <div>
+        <div
+          className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8"
+          style={{
+            opacity: isVisible ? 1 : 0,
+            transform: isVisible ? 'translateY(0)' : 'translateY(32px)',
+            transition: 'opacity 0.6s ease, transform 0.6s ease',
+          }}
+        >
           <div>
-            <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-black/30 mb-3">Analytics and reporting</p>
+            <span className="inline-flex items-center px-3 py-1 rounded-full text-[11px] font-semibold uppercase tracking-[0.15em] bg-black/[0.05] text-black/40 mb-3">Analytics and reporting</span>
             <h3 className="font-display text-2xl md:text-3xl font-bold text-black leading-[1.2] max-w-sm">
               One unified view of predictive and real-world performance.
             </h3>
@@ -221,8 +238,15 @@ const AnalyticsRow = () => {
           </p>
         </div>
         <div
-          className="w-full transition-all duration-700 ease-out"
-          style={{ opacity: isVisible ? 1 : 0, transform: isVisible ? 'translateY(0)' : 'translateY(24px)', transitionDelay: '120ms', height: 240 }}
+          style={{
+            width: '100%',
+            height: 240,
+            opacity: isVisible ? 1 : 0,
+            transform: isVisible ? 'rotateX(0deg) translateY(0) scale(1)' : 'rotateX(10deg) translateY(40px) scale(0.96)',
+            transition: isVisible ? 'opacity 0.75s ease, transform 0.75s cubic-bezier(0.22, 1, 0.36, 1)' : 'none',
+            transitionDelay: '140ms',
+            willChange: 'transform',
+          }}
         >
           <AnalyticsVisual />
         </div>
@@ -237,10 +261,14 @@ const PublishingRow = () => {
     <div ref={ref} className="py-16 md:py-20">
       <div className="flex flex-col md:flex-row-reverse items-center gap-12 md:gap-20">
         <div
-          className="flex-1 transition-all duration-700 ease-out"
-          style={{ opacity: isVisible ? 1 : 0, transform: isVisible ? 'translateY(0)' : 'translateY(20px)' }}
+          style={{
+            flex: 1,
+            opacity: isVisible ? 1 : 0,
+            transform: isVisible ? 'translateX(0) translateY(0)' : 'translateX(28px) translateY(16px)',
+            transition: 'opacity 0.6s ease, transform 0.6s ease',
+          }}
         >
-          <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-black/30 mb-4">Content and publishing platforms</p>
+          <span className="inline-flex items-center px-3 py-1 rounded-full text-[11px] font-semibold uppercase tracking-[0.15em] bg-black/[0.05] text-black/40 mb-4">Content and publishing platforms</span>
           <h3 className="font-display text-2xl md:text-3xl font-bold text-black leading-[1.2] mb-4">
             From brief to publication without changing how you work.
           </h3>
@@ -249,8 +277,17 @@ const PublishingRow = () => {
           </p>
         </div>
         <div
-          className="flex-1 w-full max-w-[380px] transition-all duration-700 ease-out"
-          style={{ opacity: isVisible ? 1 : 0, transform: isVisible ? 'translateY(0)' : 'translateY(32px)', transitionDelay: '120ms', height: 260 }}
+          style={{
+            flex: 1,
+            width: '100%',
+            maxWidth: 380,
+            height: 260,
+            opacity: isVisible ? 1 : 0,
+            transform: isVisible ? 'rotate3d(0,0,0,0deg) translateX(0) translateY(0) scale(1)' : 'rotate3d(0.4, -1, 0.1, 15deg) translateX(-44px) translateY(28px) scale(0.93)',
+            transition: isVisible ? 'opacity 0.75s ease, transform 0.75s cubic-bezier(0.22, 1, 0.36, 1)' : 'none',
+            transitionDelay: '120ms',
+            willChange: 'transform',
+          }}
         >
           <PublishingVisual />
         </div>
@@ -270,7 +307,7 @@ const IntegrationsSection = () => {
           className="mb-4 transition-all duration-700 ease-out"
           style={{ opacity: isVisible ? 1 : 0, transform: isVisible ? 'translateY(0)' : 'translateY(20px)' }}
         >
-          <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-black/30 mb-4">Integrations</p>
+          <span className="inline-flex items-center px-3 py-1 rounded-full text-[11px] font-semibold uppercase tracking-[0.15em] bg-black/[0.05] text-black/40 mb-4">Integrations</span>
           <h2 className="font-display text-4xl md:text-5xl font-bold text-black leading-[1.1] mb-4 max-w-2xl">
             The performance layer across your entire content stack.
           </h2>
@@ -284,7 +321,7 @@ const IntegrationsSection = () => {
         <PublishingRow />
 
         <div className="pt-8 border-t border-gray-100">
-          <p className="text-sm text-gray-400 italic">An operating system doesn't replace your tools. It coordinates them.</p>
+          <p className="text-sm text-gray-400 italic">An operating system does not replace your tools. It coordinates them.</p>
         </div>
       </div>
     </section>
