@@ -25,7 +25,7 @@ const RecognizedBy = () => {
                 <img
                   src={logo.src}
                   alt={logo.name}
-                  className="h-8 w-auto object-contain grayscale opacity-40 hover:grayscale-0 hover:opacity-80 transition-all duration-300"
+                  className="h-8 w-auto object-contain opacity-70 hover:opacity-100 transition-all duration-300"
                 />
               </div>
             ))}
