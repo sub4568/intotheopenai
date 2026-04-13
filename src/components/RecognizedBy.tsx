@@ -1,11 +1,13 @@
 const logos = [
-  { name: "AI Forge", src: "/logos/ai-forge.svg" },
-  { name: "PurposeTech", src: "/logos/purposetech.svg" },
-  { name: "AI Spy Media", src: "/logos/ai-spy.svg" },
-  { name: "SaaStock", src: "/logos/saastock.svg" },
-  { name: "NVIDIA Inception", src: "/logos/nvidia.svg" },
-  { name: "Vestd", src: "/logos/vestd.svg" },
-  { name: "BAE HQ", src: "/logos/bae.svg" },
+  { name: "AI Forge", src: "/logos/ai-forge.svg", tall: false },
+  { name: "PurposeTech", src: "/logos/purposetech.svg", tall: false },
+  { name: "AI Spy Media", src: "/logos/ai-spy.svg", tall: false },
+  { name: "SaaStock", src: "/logos/saastock.svg", tall: false },
+  { name: "NVIDIA Inception", src: "/logos/nvidia.svg", tall: false },
+  { name: "Vestd", src: "/logos/vestd.svg", tall: false },
+  { name: "BAE HQ", src: "/logos/bae.svg", tall: false },
+  { name: "Barclays Eagle Labs", src: "/logos/eagle-labs.png", tall: true },
+  { name: "Foundervine", src: "/logos/foundervine.webp", tall: true },
 ];
 
 const RecognizedBy = () => {
@@ -20,12 +22,12 @@ const RecognizedBy = () => {
             {[...logos, ...logos].map((logo, index) => (
               <div
                 key={`${logo.name}-${index}`}
-                className="flex-shrink-0 mx-8"
+                className="flex-shrink-0 mx-8 flex items-center"
               >
                 <img
                   src={logo.src}
                   alt={logo.name}
-                  className="h-8 w-auto object-contain opacity-70 hover:opacity-100 transition-all duration-300"
+                  className={`w-auto object-contain opacity-90 hover:opacity-100 transition-all duration-300 ${logo.tall ? 'h-14' : 'h-10'}`}
                 />
               </div>
             ))}
